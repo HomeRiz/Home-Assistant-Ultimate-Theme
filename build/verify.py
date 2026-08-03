@@ -40,6 +40,16 @@ WWW = os.path.join(ROOT, "www")
 CDN_PREFIX = "https://cdn.jsdelivr.net/gh/"
 LOCAL_PREFIX = "/local/"
 
+# The complete set of card-mod theme types, from card-mod's README-themes.md.
+# "theme" is the name-matching key, not a type. Anything outside this set is
+# accepted by YAML, ignored by card-mod, and impossible to notice by eye.
+CARD_MOD_TYPES = {
+    "theme",
+    "card", "row", "glance", "badge", "heading-badge", "assist-chip", "element",
+    "root", "view", "more-info", "sidebar", "config", "panel-custom",
+    "top-app-bar-fixed", "dialog",
+}
+
 errors: list[str] = []
 warnings: list[str] = []
 checks = 0
@@ -125,6 +135,21 @@ def main() -> int:
                     errors.append(
                         f"{name!r} -> {key}: unbalanced braces "
                         f"({val.count('{')} open, {val.count('}')} close)")
+
+            # card-mod ignores unknown keys without a word of warning, so a typo
+            # or an invented type is dead CSS you will never be told about.
+            # Types are from card-mod's README-themes.md.
+            if key.startswith("card-mod-"):
+                checks += 1
+                base = key[len("card-mod-"):]
+                if base.endswith("-yaml"):
+                    base = base[:-len("-yaml")]
+                if base.endswith("-debug"):
+                    base = base[:-len("-debug")]
+                if base not in CARD_MOD_TYPES:
+                    errors.append(
+                        f"{name!r}: {key!r} is not a card-mod type - it will be "
+                        f"silently ignored. Valid: {', '.join(sorted(CARD_MOD_TYPES))}")
 
         for req in ("modes", "primary-color", "ha-card-backdrop-filter",
                     "card-mod-card", "card-mod-root", "card-mod-view"):

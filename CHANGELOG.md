@@ -7,6 +7,28 @@ and versions follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
+## [Unreleased]
+
+### Fixed
+
+- `card-mod-drawer-yaml` was not a real card-mod type, so that block had never
+  applied. card-mod ignores unknown keys silently, which is why it went
+  unnoticed. Removed.
+- `verify.py` now validates every `card-mod-*` key against card-mod's documented
+  type list and fails on anything else.
+
+### Added
+
+- `card-mod-config` and `card-mod-panel-custom`, so the backdrop and glass reach
+  Settings, Developer Tools, History and custom panels such as HACS — not just
+  Lovelace dashboards.
+- `card-mod-dialog` and `card-mod-top-app-bar-fixed` for dialogs and the header.
+- Install docs now cover `frontend: extra_module_url`, which card-mod requires
+  in order to run on anything other than a Lovelace dashboard. Without it the
+  theme only ever applies to dashboards.
+
+---
+
 ## [0.0.1] — 2026-08-03
 
 First public release.

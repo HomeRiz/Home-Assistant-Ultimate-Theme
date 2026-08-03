@@ -22,10 +22,45 @@ is the mechanism that injects the glass CSS. Without it you get the colours but
 no blur, no sheen, no rounded sidebar — the theme will look flat and wrong, with
 no error to tell you why.
 
-HACS → **Frontend** → search **card-mod** → **Download** → restart.
+HACS → **Frontend** → search **card-mod** → **Download**.
 
-Verify: Settings → Devices & Services → **Dashboards** → ⋮ → **Resources**
-should list `/hacsfiles/lovelace-card-mod/card-mod.js`.
+### Then register it as a frontend module — this part is not optional
+
+Dashboard resources are loaded **only on Lovelace dashboards**. On Settings,
+HACS, Developer Tools and every add-on panel, card-mod is never loaded at all —
+so those pages get the theme's colours but no backdrop and no glass.
+
+card-mod's own documentation is explicit about this: installing it as a frontend
+module *"is required if you are using card-mod to style panels of Home Assistant
+which are not Lovelace dashboards"*.
+
+Find your exact resource URL first — Settings → Dashboards → ⋮ → **Resources**.
+It looks like the line below, but **the number is unique to your install** —
+copy yours, don't retype this one:
+
+```
+/hacsfiles/lovelace-card-mod/card-mod.js?hacstag=XXXXXXXXXXXX
+```
+
+Add it to `configuration.yaml`, alongside the themes line:
+
+```yaml
+frontend:
+  themes: !include_dir_merge_named themes
+  extra_module_url:
+    - /hacsfiles/lovelace-card-mod/card-mod.js?hacstag=XXXXXXXXXXXX
+```
+
+**Restart Home Assistant.** A theme reload is not enough — `extra_module_url` is
+only read at startup.
+
+> Keep the HACS resource entry as it is. You need both: the resource for
+> dashboards and CAST devices, the module for everything else. And when HACS
+> updates card-mod, the `hacstag` changes — update `extra_module_url` to match,
+> or card-mod loads twice and warns about duplicate patching.
+
+Verify it worked: open **Settings**. You should see the theme's background behind
+the page. If the page is flat dark, the module is not loading.
 
 Mushroom, Bubble Card and button-card are supported but not required.
 
@@ -291,7 +326,18 @@ If you hit it in your own build, quote the value and re-run
 
 **Everything is flat — no blur, no rounded sidebar.**
 card-mod isn't loading. Check Settings → Dashboards → Resources for
-`/hacsfiles/lovelace-card-mod/card-mod.js`.
+`/hacsfiles/lovelace-card-mod/card-mod.js`. If it is listed, reload the browser —
+resources are only fetched when the frontend boots, so a tab you had open before
+installing card-mod will not have it.
+
+**The theme works on dashboards but Settings and HACS are plain.**
+You skipped `extra_module_url` in Step 0. Dashboard resources are not loaded on
+non-Lovelace panels, so card-mod simply is not present there. Add the module,
+restart, and the backdrop will follow you across the whole UI.
+
+**Add-on panels (File editor, Terminal, Studio Code Server) have no theme.**
+Expected, and not fixable by any theme. Add-ons are shown in an iframe — a
+separate document with its own CSS that Home Assistant cannot style.
 
 **Cards are fully transparent and unreadable.**
 `backdrop-filter` unsupported. There is an `@supports` fallback for exactly this;

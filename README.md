@@ -63,10 +63,19 @@ In `configuration.yaml`:
 ```yaml
 frontend:
   themes: !include_dir_merge_named themes
+  extra_module_url:
+    - /hacsfiles/lovelace-card-mod/card-mod.js?hacstag=YOUR_TAG
 ```
 
-If you already have a `frontend:` block, add the `themes:` line to it — a second
+If you already have a `frontend:` block, add these lines to it — a second
 `frontend:` key is a YAML error.
+
+**The `extra_module_url` line is not optional.** Dashboard resources are loaded
+only on Lovelace dashboards, so without it card-mod never runs on Settings,
+HACS or Developer Tools — those pages get the colours but no backdrop and no
+glass. Copy your exact URL, `hacstag` included, from
+Settings → Dashboards → ⋮ → **Resources**, and keep that resource entry as it is:
+you need both.
 
 </details>
 

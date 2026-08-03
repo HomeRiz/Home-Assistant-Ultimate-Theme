@@ -418,21 +418,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -865,21 +887,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -1312,21 +1356,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -1759,21 +1825,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -2206,21 +2294,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -2653,21 +2763,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -3100,21 +3232,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -3547,21 +3701,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -3994,21 +4170,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -4441,21 +4639,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -4888,21 +5108,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -5335,21 +5577,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -5782,21 +6046,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -6229,21 +6515,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -6676,21 +6984,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -7123,21 +7453,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -7570,21 +7922,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -8017,21 +8391,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -8464,21 +8860,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -8911,21 +9329,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -9358,21 +9798,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -9805,21 +10267,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -10252,21 +10736,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -10699,21 +11205,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -11145,21 +11673,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -11592,21 +12142,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -12039,21 +12611,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -12486,21 +13080,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -12933,21 +13549,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -13380,21 +14018,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -13827,21 +14487,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -14274,21 +14956,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -14721,21 +15425,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -15168,21 +15894,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -15615,21 +16363,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -16062,21 +16832,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -16509,21 +17301,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -16956,21 +17770,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -17403,21 +18239,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -17850,21 +18708,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -18297,21 +19177,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -18744,21 +19646,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -19191,21 +20115,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -19638,21 +20584,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -20085,21 +21053,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -20532,21 +21522,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -20979,21 +21991,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -21426,21 +22460,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -21872,21 +22928,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -22319,21 +23397,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -22766,21 +23866,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -23213,21 +24335,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -23660,21 +24804,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -24107,21 +25273,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -24554,21 +25742,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -25001,21 +26211,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -25448,21 +26680,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -25895,21 +27149,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -26342,21 +27618,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -26789,21 +28087,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -27236,21 +28556,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -27683,21 +29025,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -28130,21 +29494,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -28577,21 +29963,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -29024,21 +30432,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -29471,21 +30901,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -29918,21 +31370,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -30365,21 +31839,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -30812,21 +32308,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -31259,21 +32777,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -31706,21 +33246,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
@@ -32153,21 +33715,43 @@
       background: var(--ha-color-fill-primary-quiet-resting) !important;
     }
 
-  card-mod-drawer-yaml: |
-    .: |
-      .mdc-drawer {
-        background-color: var(--sidebar-background-color) !important;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
-      .sidebar-shell {
-        background-color: var(--sidebar-background-color) !important;
-      }
-    wa-drawer$: |
-      dialog {
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
-      }
+  
+
+  card-mod-top-app-bar-fixed: |
+    /* The header sits above every panel, not just dashboards. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-dialog: |
+    /* more-info, settings dialogs, pickers. */
+    :host {
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+    }
+
+  card-mod-config: |
+    /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
+       These are transparent by default, so the root backdrop shows through;
+       all that is needed is to stop their cards painting an opaque surface. */
+    :host {
+      background: transparent !important;
+    }
+    ha-card {
+      background: var(--ha-card-glass-tint) !important;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-card-border-radius) !important;
+      box-shadow: var(--ha-card-glass-inset-shadow) !important;
+    }
+
+  card-mod-panel-custom: |
+    /* Custom panels such as HACS. They render their own frontend, so only the
+       outer surface can be reached - enough to let the backdrop through. */
+    :host {
+      background: transparent !important;
+    }
 
   card-mod-view: |
     /* Per-view background override hook.
