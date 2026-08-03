@@ -480,10 +480,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(18, 18, 24, 0.55) !important;
+    }
     ha-drawer {
       background-image: linear-gradient(180deg, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.30) 100%), var(--ultimate-background);
       background-size: cover;
@@ -1005,10 +1032,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(18, 18, 24, 0.55) !important;
+    }
     ha-drawer {
       background-image: linear-gradient(180deg, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.30) 100%), var(--ultimate-background);
       background-size: cover;
@@ -1530,10 +1584,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(18, 18, 24, 0.55) !important;
+    }
     ha-drawer {
       background-image: linear-gradient(180deg, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.30) 100%), var(--ultimate-background);
       background-size: cover;
@@ -2055,10 +2136,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(18, 18, 24, 0.55) !important;
+    }
     ha-drawer {
       background-image: linear-gradient(180deg, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.30) 100%), var(--ultimate-background);
       background-size: cover;
@@ -2580,10 +2688,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(18, 18, 24, 0.55) !important;
+    }
     ha-drawer {
       background-image: linear-gradient(180deg, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.30) 100%), var(--ultimate-background);
       background-size: cover;
@@ -3105,10 +3240,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(18, 18, 24, 0.55) !important;
+    }
     ha-drawer {
       background-image: linear-gradient(180deg, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.30) 100%), var(--ultimate-background);
       background-size: cover;
@@ -3630,10 +3792,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(18, 18, 24, 0.55) !important;
+    }
     ha-drawer {
       background-image: linear-gradient(180deg, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.30) 100%), var(--ultimate-background);
       background-size: cover;
@@ -4155,10 +4344,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(18, 18, 24, 0.55) !important;
+    }
     ha-drawer {
       background-image: linear-gradient(180deg, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.30) 100%), var(--ultimate-background);
       background-size: cover;
@@ -4680,10 +4896,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(18, 18, 24, 0.55) !important;
+    }
     ha-drawer {
       background-image: linear-gradient(180deg, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.30) 100%), var(--ultimate-background);
       background-size: cover;
@@ -5205,10 +5448,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(18, 18, 24, 0.55) !important;
+    }
     ha-drawer {
       background-image: linear-gradient(180deg, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.30) 100%), var(--ultimate-background);
       background-size: cover;
@@ -5730,10 +6000,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(18, 18, 24, 0.55) !important;
+    }
     ha-drawer {
       background-image: linear-gradient(180deg, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.30) 100%), var(--ultimate-background);
       background-size: cover;
@@ -6255,10 +6552,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(18, 18, 24, 0.55) !important;
+    }
     ha-drawer {
       background-image: linear-gradient(180deg, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.30) 100%), var(--ultimate-background);
       background-size: cover;
@@ -6780,10 +7104,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(18, 18, 24, 0.55) !important;
+    }
     ha-drawer {
       background-image: linear-gradient(180deg, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.30) 100%), var(--ultimate-background);
       background-size: cover;
@@ -7305,10 +7656,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(18, 18, 24, 0.55) !important;
+    }
     ha-drawer {
       background-image: linear-gradient(180deg, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.30) 100%), var(--ultimate-background);
       background-size: cover;
@@ -7830,10 +8208,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(18, 18, 24, 0.55) !important;
+    }
     ha-drawer {
       background-image: linear-gradient(180deg, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.30) 100%), var(--ultimate-background);
       background-size: cover;
@@ -8355,10 +8760,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(18, 18, 24, 0.55) !important;
+    }
     ha-drawer {
       background-image: linear-gradient(180deg, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.30) 100%), var(--ultimate-background);
       background-size: cover;
@@ -8880,10 +9312,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(18, 18, 24, 0.55) !important;
+    }
     ha-drawer {
       background-image: linear-gradient(180deg, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.30) 100%), var(--ultimate-background);
       background-size: cover;
@@ -9405,10 +9864,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(18, 18, 24, 0.55) !important;
+    }
     ha-drawer {
       background-image: linear-gradient(180deg, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.30) 100%), var(--ultimate-background);
       background-size: cover;
@@ -9930,10 +10416,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(18, 18, 24, 0.55) !important;
+    }
     ha-drawer {
       background-image: linear-gradient(180deg, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.30) 100%), var(--ultimate-background);
       background-size: cover;
@@ -10455,10 +10968,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(18, 18, 24, 0.55) !important;
+    }
     ha-drawer {
       background-image: linear-gradient(180deg, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.30) 100%), var(--ultimate-background);
       background-size: cover;
@@ -10980,10 +11520,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(18, 18, 24, 0.55) !important;
+    }
     ha-drawer {
       background-image: linear-gradient(180deg, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.30) 100%), var(--ultimate-background);
       background-size: cover;
@@ -11505,10 +12072,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(18, 18, 24, 0.55) !important;
+    }
     ha-drawer {
       background-image: linear-gradient(180deg, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.30) 100%), var(--ultimate-background);
       background-size: cover;
@@ -12030,10 +12624,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(18, 18, 24, 0.55) !important;
+    }
     ha-drawer {
       background-image: linear-gradient(180deg, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.30) 100%), var(--ultimate-background);
       background-size: cover;
@@ -12555,10 +13176,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(18, 18, 24, 0.55) !important;
+    }
     ha-drawer {
       background-image: linear-gradient(180deg, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.30) 100%), var(--ultimate-background);
       background-size: cover;
@@ -13080,10 +13728,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(24, 24, 37, 0.62) !important;
+    }
     ha-drawer {
       background-image: linear-gradient(180deg, rgba(17,17,27,0.28) 0%, rgba(17,17,27,0.48) 100%), var(--ultimate-background);
       background-size: cover;
@@ -13605,10 +14280,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(24, 24, 37, 0.62) !important;
+    }
     ha-drawer {
       background-image: linear-gradient(180deg, rgba(17,17,27,0.28) 0%, rgba(17,17,27,0.48) 100%), var(--ultimate-background);
       background-size: cover;
@@ -14130,10 +14832,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(24, 24, 37, 0.62) !important;
+    }
     ha-drawer {
       background-image: linear-gradient(180deg, rgba(17,17,27,0.28) 0%, rgba(17,17,27,0.48) 100%), var(--ultimate-background);
       background-size: cover;
@@ -14655,10 +15384,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(24, 24, 37, 0.62) !important;
+    }
     ha-drawer {
       background-image: linear-gradient(180deg, rgba(17,17,27,0.28) 0%, rgba(17,17,27,0.48) 100%), var(--ultimate-background);
       background-size: cover;
@@ -15180,10 +15936,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(24, 24, 37, 0.62) !important;
+    }
     ha-drawer {
       background-image: linear-gradient(180deg, rgba(17,17,27,0.28) 0%, rgba(17,17,27,0.48) 100%), var(--ultimate-background);
       background-size: cover;
@@ -15705,10 +16488,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(24, 24, 37, 0.62) !important;
+    }
     ha-drawer {
       background-image: linear-gradient(180deg, rgba(17,17,27,0.28) 0%, rgba(17,17,27,0.48) 100%), var(--ultimate-background);
       background-size: cover;
@@ -16230,10 +17040,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(24, 24, 37, 0.62) !important;
+    }
     ha-drawer {
       background-image: linear-gradient(180deg, rgba(17,17,27,0.28) 0%, rgba(17,17,27,0.48) 100%), var(--ultimate-background);
       background-size: cover;
@@ -16755,10 +17592,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(24, 24, 37, 0.62) !important;
+    }
     ha-drawer {
       background-image: linear-gradient(180deg, rgba(17,17,27,0.28) 0%, rgba(17,17,27,0.48) 100%), var(--ultimate-background);
       background-size: cover;
@@ -17280,10 +18144,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(24, 24, 37, 0.62) !important;
+    }
     ha-drawer {
       background-image: linear-gradient(180deg, rgba(17,17,27,0.28) 0%, rgba(17,17,27,0.48) 100%), var(--ultimate-background);
       background-size: cover;
@@ -17805,10 +18696,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(24, 24, 37, 0.62) !important;
+    }
     ha-drawer {
       background-image: linear-gradient(180deg, rgba(17,17,27,0.28) 0%, rgba(17,17,27,0.48) 100%), var(--ultimate-background);
       background-size: cover;
@@ -18330,10 +19248,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(24, 24, 37, 0.62) !important;
+    }
     ha-drawer {
       background-image: linear-gradient(180deg, rgba(17,17,27,0.28) 0%, rgba(17,17,27,0.48) 100%), var(--ultimate-background);
       background-size: cover;
@@ -18855,10 +19800,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(24, 24, 37, 0.62) !important;
+    }
     ha-drawer {
       background-image: linear-gradient(180deg, rgba(17,17,27,0.28) 0%, rgba(17,17,27,0.48) 100%), var(--ultimate-background);
       background-size: cover;
@@ -19380,10 +20352,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(24, 24, 37, 0.62) !important;
+    }
     ha-drawer {
       background-image: linear-gradient(180deg, rgba(17,17,27,0.28) 0%, rgba(17,17,27,0.48) 100%), var(--ultimate-background);
       background-size: cover;
@@ -19905,10 +20904,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(24, 24, 37, 0.62) !important;
+    }
     ha-drawer {
       background-image: linear-gradient(180deg, rgba(17,17,27,0.28) 0%, rgba(17,17,27,0.48) 100%), var(--ultimate-background);
       background-size: cover;
@@ -20430,10 +21456,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(24, 24, 37, 0.62) !important;
+    }
     ha-drawer {
       background-image: linear-gradient(180deg, rgba(17,17,27,0.28) 0%, rgba(17,17,27,0.48) 100%), var(--ultimate-background);
       background-size: cover;
@@ -20955,10 +22008,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(24, 24, 37, 0.62) !important;
+    }
     ha-drawer {
       background-image: linear-gradient(180deg, rgba(17,17,27,0.28) 0%, rgba(17,17,27,0.48) 100%), var(--ultimate-background);
       background-size: cover;
@@ -21480,10 +22560,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(24, 24, 37, 0.62) !important;
+    }
     ha-drawer {
       background-image: linear-gradient(180deg, rgba(17,17,27,0.28) 0%, rgba(17,17,27,0.48) 100%), var(--ultimate-background);
       background-size: cover;
@@ -22005,10 +23112,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(24, 24, 37, 0.62) !important;
+    }
     ha-drawer {
       background-image: linear-gradient(180deg, rgba(17,17,27,0.28) 0%, rgba(17,17,27,0.48) 100%), var(--ultimate-background);
       background-size: cover;
@@ -22530,10 +23664,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(24, 24, 37, 0.62) !important;
+    }
     ha-drawer {
       background-image: linear-gradient(180deg, rgba(17,17,27,0.28) 0%, rgba(17,17,27,0.48) 100%), var(--ultimate-background);
       background-size: cover;
@@ -23055,10 +24216,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(24, 24, 37, 0.62) !important;
+    }
     ha-drawer {
       background-image: linear-gradient(180deg, rgba(17,17,27,0.28) 0%, rgba(17,17,27,0.48) 100%), var(--ultimate-background);
       background-size: cover;
@@ -23580,10 +24768,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(24, 24, 37, 0.62) !important;
+    }
     ha-drawer {
       background-image: linear-gradient(180deg, rgba(17,17,27,0.28) 0%, rgba(17,17,27,0.48) 100%), var(--ultimate-background);
       background-size: cover;
@@ -24105,10 +25320,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(24, 24, 37, 0.62) !important;
+    }
     ha-drawer {
       background-image: linear-gradient(180deg, rgba(17,17,27,0.28) 0%, rgba(17,17,27,0.48) 100%), var(--ultimate-background);
       background-size: cover;
@@ -24630,10 +25872,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(24, 24, 37, 0.62) !important;
+    }
     ha-drawer {
       background-image: linear-gradient(180deg, rgba(17,17,27,0.28) 0%, rgba(17,17,27,0.48) 100%), var(--ultimate-background);
       background-size: cover;
@@ -25155,10 +26424,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(24, 24, 37, 0.62) !important;
+    }
     ha-drawer {
       background-image: linear-gradient(180deg, rgba(17,17,27,0.28) 0%, rgba(17,17,27,0.48) 100%), var(--ultimate-background);
       background-size: cover;
@@ -25680,10 +26976,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(4, 5, 10, 0.72) !important;
+    }
     ha-drawer {
       background-image: radial-gradient(120% 90% at 50% 0%, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0.78) 100%), var(--ultimate-background);
       background-size: cover;
@@ -26205,10 +27528,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(4, 5, 10, 0.72) !important;
+    }
     ha-drawer {
       background-image: radial-gradient(120% 90% at 50% 0%, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0.78) 100%), var(--ultimate-background);
       background-size: cover;
@@ -26730,10 +28080,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(4, 5, 10, 0.72) !important;
+    }
     ha-drawer {
       background-image: radial-gradient(120% 90% at 50% 0%, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0.78) 100%), var(--ultimate-background);
       background-size: cover;
@@ -27255,10 +28632,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(4, 5, 10, 0.72) !important;
+    }
     ha-drawer {
       background-image: radial-gradient(120% 90% at 50% 0%, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0.78) 100%), var(--ultimate-background);
       background-size: cover;
@@ -27780,10 +29184,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(4, 5, 10, 0.72) !important;
+    }
     ha-drawer {
       background-image: radial-gradient(120% 90% at 50% 0%, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0.78) 100%), var(--ultimate-background);
       background-size: cover;
@@ -28305,10 +29736,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(4, 5, 10, 0.72) !important;
+    }
     ha-drawer {
       background-image: radial-gradient(120% 90% at 50% 0%, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0.78) 100%), var(--ultimate-background);
       background-size: cover;
@@ -28830,10 +30288,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(4, 5, 10, 0.72) !important;
+    }
     ha-drawer {
       background-image: radial-gradient(120% 90% at 50% 0%, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0.78) 100%), var(--ultimate-background);
       background-size: cover;
@@ -29355,10 +30840,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(4, 5, 10, 0.72) !important;
+    }
     ha-drawer {
       background-image: radial-gradient(120% 90% at 50% 0%, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0.78) 100%), var(--ultimate-background);
       background-size: cover;
@@ -29880,10 +31392,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(4, 5, 10, 0.72) !important;
+    }
     ha-drawer {
       background-image: radial-gradient(120% 90% at 50% 0%, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0.78) 100%), var(--ultimate-background);
       background-size: cover;
@@ -30405,10 +31944,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(4, 5, 10, 0.72) !important;
+    }
     ha-drawer {
       background-image: radial-gradient(120% 90% at 50% 0%, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0.78) 100%), var(--ultimate-background);
       background-size: cover;
@@ -30930,10 +32496,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(4, 5, 10, 0.72) !important;
+    }
     ha-drawer {
       background-image: radial-gradient(120% 90% at 50% 0%, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0.78) 100%), var(--ultimate-background);
       background-size: cover;
@@ -31455,10 +33048,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(4, 5, 10, 0.72) !important;
+    }
     ha-drawer {
       background-image: radial-gradient(120% 90% at 50% 0%, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0.78) 100%), var(--ultimate-background);
       background-size: cover;
@@ -31980,10 +33600,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(4, 5, 10, 0.72) !important;
+    }
     ha-drawer {
       background-image: radial-gradient(120% 90% at 50% 0%, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0.78) 100%), var(--ultimate-background);
       background-size: cover;
@@ -32505,10 +34152,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(4, 5, 10, 0.72) !important;
+    }
     ha-drawer {
       background-image: radial-gradient(120% 90% at 50% 0%, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0.78) 100%), var(--ultimate-background);
       background-size: cover;
@@ -33030,10 +34704,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(4, 5, 10, 0.72) !important;
+    }
     ha-drawer {
       background-image: radial-gradient(120% 90% at 50% 0%, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0.78) 100%), var(--ultimate-background);
       background-size: cover;
@@ -33555,10 +35256,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(4, 5, 10, 0.72) !important;
+    }
     ha-drawer {
       background-image: radial-gradient(120% 90% at 50% 0%, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0.78) 100%), var(--ultimate-background);
       background-size: cover;
@@ -34080,10 +35808,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(4, 5, 10, 0.72) !important;
+    }
     ha-drawer {
       background-image: radial-gradient(120% 90% at 50% 0%, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0.78) 100%), var(--ultimate-background);
       background-size: cover;
@@ -34605,10 +36360,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(4, 5, 10, 0.72) !important;
+    }
     ha-drawer {
       background-image: radial-gradient(120% 90% at 50% 0%, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0.78) 100%), var(--ultimate-background);
       background-size: cover;
@@ -35130,10 +36912,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(4, 5, 10, 0.72) !important;
+    }
     ha-drawer {
       background-image: radial-gradient(120% 90% at 50% 0%, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0.78) 100%), var(--ultimate-background);
       background-size: cover;
@@ -35655,10 +37464,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(4, 5, 10, 0.72) !important;
+    }
     ha-drawer {
       background-image: radial-gradient(120% 90% at 50% 0%, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0.78) 100%), var(--ultimate-background);
       background-size: cover;
@@ -36180,10 +38016,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(4, 5, 10, 0.72) !important;
+    }
     ha-drawer {
       background-image: radial-gradient(120% 90% at 50% 0%, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0.78) 100%), var(--ultimate-background);
       background-size: cover;
@@ -36705,10 +38568,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(4, 5, 10, 0.72) !important;
+    }
     ha-drawer {
       background-image: radial-gradient(120% 90% at 50% 0%, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0.78) 100%), var(--ultimate-background);
       background-size: cover;
@@ -37230,10 +39120,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(4, 5, 10, 0.72) !important;
+    }
     ha-drawer {
       background-image: radial-gradient(120% 90% at 50% 0%, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0.78) 100%), var(--ultimate-background);
       background-size: cover;
@@ -37755,10 +39672,37 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend inside an
-       iframe or their own shadow tree, so only the outer surface is reachable -
-       but that is enough to carry the backdrop. Same reasoning as
-       `card-mod-config` above: paint the drawer, not the panel. */
+    /* Custom panels. They render their own frontend inside an iframe or their
+       own shadow tree, so only the outer surface is reachable - but that is
+       enough to carry the backdrop. Same reasoning as `card-mod-config` above:
+       paint the drawer, not the panel.
+
+       ---- Why the sidebar loses its blur here --------------------------------
+       `backdrop-filter` on `ha-sidebar` corrupts the layout of any iframe
+       panel rendered beside it. Chrome composites the blurred sidebar on its
+       own layer, and the iframe's document ends up resolving positions against
+       a stale coordinate space: elements inside it are painted at an origin
+       their own parent does not agree with.
+
+       Measured on a HACS download dialog, same clicks, same theme, sidebar
+       blur the only variable:
+
+         blur on   surface [525,197]  children [136,33]  [136,362]   broken
+         blur off  surface [525,197]  children [525,250] [525,578]   correct
+
+       The visible result is a dialog whose contents spill outside the box with
+       the dropdown floating loose. It affects HACS, File editor, Terminal and
+       Studio Code Server - anything registered with `embed_iframe: true`.
+
+       So: drop the blur on custom panels only, and put the sidebar tint back as
+       a plain translucent fill. The drawer underneath still carries the
+       artwork, so the sidebar stays on-theme; it just is not frosted while an
+       iframe panel is open. A working UI beats a blurred one. */
+    ha-sidebar {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(4, 5, 10, 0.72) !important;
+    }
     ha-drawer {
       background-image: radial-gradient(120% 90% at 50% 0%, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0.78) 100%), var(--ultimate-background);
       background-size: cover;

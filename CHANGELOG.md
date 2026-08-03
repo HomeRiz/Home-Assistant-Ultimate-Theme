@@ -34,6 +34,24 @@ lands somewhere useless.
   themes, which is not a valid `background-image` value — so the declaration
   was dropped and their backdrop never painted. It is now always a bare image,
   and `verify.py` fails if that ever regresses.
+- **Dialogs inside iframe panels no longer break.** `backdrop-filter` on
+  `ha-sidebar` corrupts the layout of an iframe rendered beside it: Chrome
+  composites the blurred sidebar on its own layer and the iframe's document
+  resolves positions against a stale coordinate space, so elements are painted
+  at an origin their own parent disagrees with. In HACS this showed up as a
+  download dialog with its contents spilling outside the box and the version
+  dropdown floating loose. Measured on that dialog — same clicks, same theme,
+  sidebar blur the only variable:
+
+  | | dialog surface | its children |
+  |---|---|---|
+  | blur on | `[525, 197]` | `[136, 33]` `[136, 362]` |
+  | blur off | `[525, 197]` | `[525, 250]` `[525, 578]` |
+
+  The sidebar now drops its blur while a custom panel is open and falls back to
+  a plain translucent tint. The drawer underneath still carries the artwork, so
+  it stays on-theme — it just is not frosted on those pages. Affects HACS, File
+  editor, Terminal and Studio Code Server.
 
 ---
 
