@@ -133,7 +133,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(30, 30, 38, 0.72)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(30, 30, 38, 0.72)"
@@ -458,10 +459,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -588,8 +594,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/home.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/home.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/home.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/home.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#201d1c"
@@ -693,7 +699,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(30, 30, 38, 0.72)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(30, 30, 38, 0.72)"
@@ -1018,10 +1025,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -1148,8 +1160,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/living-room.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/living-room.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/living-room.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/living-room.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#2c1415"
@@ -1253,7 +1265,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(30, 30, 38, 0.72)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(30, 30, 38, 0.72)"
@@ -1578,10 +1591,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -1708,8 +1726,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/kitchen.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/kitchen.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/kitchen.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/kitchen.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#3d2516"
@@ -1813,7 +1831,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(30, 30, 38, 0.72)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(30, 30, 38, 0.72)"
@@ -2138,10 +2157,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -2268,8 +2292,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/bedroom.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/bedroom.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/bedroom.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/bedroom.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#0d0e33"
@@ -2373,7 +2397,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(30, 30, 38, 0.72)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(30, 30, 38, 0.72)"
@@ -2698,10 +2723,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -2828,8 +2858,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/master-bedroom.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/master-bedroom.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/master-bedroom.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/master-bedroom.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#1f0916"
@@ -2933,7 +2963,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(30, 30, 38, 0.72)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(30, 30, 38, 0.72)"
@@ -3258,10 +3289,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -3388,8 +3424,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/guest.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/guest.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/guest.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/guest.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#1c3125"
@@ -3493,7 +3529,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(30, 30, 38, 0.72)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(30, 30, 38, 0.72)"
@@ -3818,10 +3855,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -3948,8 +3990,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/bathroom.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/bathroom.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/bathroom.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/bathroom.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#02313a"
@@ -4053,7 +4095,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(30, 30, 38, 0.72)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(30, 30, 38, 0.72)"
@@ -4378,10 +4421,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -4508,8 +4556,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/office.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/office.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/office.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/office.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#10283a"
@@ -4613,7 +4661,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(30, 30, 38, 0.72)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(30, 30, 38, 0.72)"
@@ -4938,10 +4987,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -5068,8 +5122,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/ai.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/ai.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/ai.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/ai.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#19082f"
@@ -5173,7 +5227,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(30, 30, 38, 0.72)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(30, 30, 38, 0.72)"
@@ -5498,10 +5553,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -5628,8 +5688,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/outside.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/outside.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/outside.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/outside.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#3e403e"
@@ -5733,7 +5793,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(30, 30, 38, 0.72)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(30, 30, 38, 0.72)"
@@ -6058,10 +6119,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -6188,8 +6254,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/hallway.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/hallway.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/hallway.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/hallway.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#392e27"
@@ -6293,7 +6359,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(30, 30, 38, 0.72)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(30, 30, 38, 0.72)"
@@ -6618,10 +6685,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -6748,8 +6820,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/garage.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/garage.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/garage.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/garage.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#281d18"
@@ -6853,7 +6925,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(30, 30, 38, 0.72)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(30, 30, 38, 0.72)"
@@ -7178,10 +7251,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -7308,8 +7386,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/front-yard.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/front-yard.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/front-yard.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/front-yard.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#323411"
@@ -7413,7 +7491,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(30, 30, 38, 0.72)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(30, 30, 38, 0.72)"
@@ -7738,10 +7817,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -7868,8 +7952,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/back-yard.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/back-yard.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/back-yard.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/back-yard.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#3c280c"
@@ -7973,7 +8057,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(30, 30, 38, 0.72)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(30, 30, 38, 0.72)"
@@ -8298,10 +8383,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -8428,8 +8518,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/electrical-room.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/electrical-room.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/electrical-room.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/electrical-room.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#2e1a05"
@@ -8533,7 +8623,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(30, 30, 38, 0.72)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(30, 30, 38, 0.72)"
@@ -8858,10 +8949,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -8988,8 +9084,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/technic-room.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/technic-room.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/technic-room.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/technic-room.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#051c29"
@@ -9093,7 +9189,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(30, 30, 38, 0.72)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(30, 30, 38, 0.72)"
@@ -9418,10 +9515,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -9548,8 +9650,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/garden.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/garden.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/garden.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/garden.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#223414"
@@ -9653,7 +9755,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(30, 30, 38, 0.72)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(30, 30, 38, 0.72)"
@@ -9978,10 +10081,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -10108,8 +10216,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/energy.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/energy.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/energy.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/energy.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#233610"
@@ -10213,7 +10321,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(30, 30, 38, 0.72)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(30, 30, 38, 0.72)"
@@ -10538,10 +10647,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -10668,8 +10782,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/security.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/security.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/security.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/security.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#280506"
@@ -10773,7 +10887,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(30, 30, 38, 0.72)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(30, 30, 38, 0.72)"
@@ -11098,10 +11213,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -11228,8 +11348,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/climate.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/climate.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/climate.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/climate.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#231f1c"
@@ -11333,7 +11453,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(30, 30, 38, 0.72)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(30, 30, 38, 0.72)"
@@ -11658,10 +11779,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -11788,8 +11914,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/media.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/media.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/media.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/media.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#2e0922"
@@ -11893,7 +12019,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(30, 30, 38, 0.72)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(30, 30, 38, 0.72)"
@@ -12218,10 +12345,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -12348,8 +12480,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/network.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/network.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/network.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/network.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#011d35"
@@ -12453,7 +12585,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(30, 30, 38, 0.72)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(30, 30, 38, 0.72)"
@@ -12778,10 +12911,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -12908,8 +13046,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/settings.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/settings.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/settings.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/settings.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#212428"
@@ -13013,7 +13151,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(30, 30, 38, 0.72)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(30, 30, 38, 0.72)"
@@ -13338,10 +13477,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -13573,7 +13717,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(30, 30, 46, 0.80)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(30, 30, 46, 0.80)"
@@ -13898,10 +14043,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -14028,8 +14178,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/home.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/home.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/home.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/home.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#29232f"
@@ -14133,7 +14283,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(30, 30, 46, 0.80)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(30, 30, 46, 0.80)"
@@ -14458,10 +14609,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -14588,8 +14744,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/living-room.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/living-room.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/living-room.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/living-room.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#2e202b"
@@ -14693,7 +14849,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(30, 30, 46, 0.80)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(30, 30, 46, 0.80)"
@@ -15018,10 +15175,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -15148,8 +15310,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/kitchen.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/kitchen.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/kitchen.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/kitchen.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#2e2127"
@@ -15253,7 +15415,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(30, 30, 46, 0.80)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(30, 30, 46, 0.80)"
@@ -15578,10 +15741,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -15708,8 +15876,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/bedroom.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/bedroom.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/bedroom.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/bedroom.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#1c1a2e"
@@ -15813,7 +15981,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(30, 30, 46, 0.80)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(30, 30, 46, 0.80)"
@@ -16138,10 +16307,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -16268,8 +16442,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/master-bedroom.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/master-bedroom.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/master-bedroom.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/master-bedroom.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#1d1522"
@@ -16373,7 +16547,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(30, 30, 46, 0.80)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(30, 30, 46, 0.80)"
@@ -16698,10 +16873,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -16828,8 +17008,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/guest.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/guest.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/guest.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/guest.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#1f252c"
@@ -16933,7 +17113,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(30, 30, 46, 0.80)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(30, 30, 46, 0.80)"
@@ -17258,10 +17439,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -17388,8 +17574,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/bathroom.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/bathroom.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/bathroom.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/bathroom.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#1b2c3d"
@@ -17493,7 +17679,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(30, 30, 46, 0.80)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(30, 30, 46, 0.80)"
@@ -17818,10 +18005,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -17948,8 +18140,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/office.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/office.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/office.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/office.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#28293a"
@@ -18053,7 +18245,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(30, 30, 46, 0.80)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(30, 30, 46, 0.80)"
@@ -18378,10 +18571,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -18508,8 +18706,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/ai.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/ai.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/ai.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/ai.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#181528"
@@ -18613,7 +18811,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(30, 30, 46, 0.80)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(30, 30, 46, 0.80)"
@@ -18938,10 +19137,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -19068,8 +19272,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/outside.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/outside.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/outside.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/outside.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#463c4d"
@@ -19173,7 +19377,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(30, 30, 46, 0.80)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(30, 30, 46, 0.80)"
@@ -19498,10 +19703,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -19628,8 +19838,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/hallway.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/hallway.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/hallway.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/hallway.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#2f2530"
@@ -19733,7 +19943,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(30, 30, 46, 0.80)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(30, 30, 46, 0.80)"
@@ -20058,10 +20269,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -20188,8 +20404,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/garage.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/garage.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/garage.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/garage.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#32262c"
@@ -20293,7 +20509,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(30, 30, 46, 0.80)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(30, 30, 46, 0.80)"
@@ -20618,10 +20835,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -20748,8 +20970,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/front-yard.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/front-yard.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/front-yard.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/front-yard.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#2e292d"
@@ -20853,7 +21075,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(30, 30, 46, 0.80)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(30, 30, 46, 0.80)"
@@ -21178,10 +21401,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -21308,8 +21536,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/back-yard.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/back-yard.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/back-yard.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/back-yard.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#2c1d27"
@@ -21413,7 +21641,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(30, 30, 46, 0.80)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(30, 30, 46, 0.80)"
@@ -21738,10 +21967,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -21868,8 +22102,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/electrical-room.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/electrical-room.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/electrical-room.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/electrical-room.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#241c27"
@@ -21973,7 +22207,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(30, 30, 46, 0.80)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(30, 30, 46, 0.80)"
@@ -22298,10 +22533,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -22428,8 +22668,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/technic-room.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/technic-room.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/technic-room.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/technic-room.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#16141f"
@@ -22533,7 +22773,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(30, 30, 46, 0.80)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(30, 30, 46, 0.80)"
@@ -22858,10 +23099,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -22988,8 +23234,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/garden.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/garden.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/garden.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/garden.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#292a2c"
@@ -23093,7 +23339,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(30, 30, 46, 0.80)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(30, 30, 46, 0.80)"
@@ -23418,10 +23665,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -23548,8 +23800,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/energy.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/energy.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/energy.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/energy.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#2c2b2c"
@@ -23653,7 +23905,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(30, 30, 46, 0.80)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(30, 30, 46, 0.80)"
@@ -23978,10 +24231,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -24108,8 +24366,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/security.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/security.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/security.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/security.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#21121b"
@@ -24213,7 +24471,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(30, 30, 46, 0.80)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(30, 30, 46, 0.80)"
@@ -24538,10 +24797,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -24668,8 +24932,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/climate.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/climate.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/climate.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/climate.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#2f2731"
@@ -24773,7 +25037,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(30, 30, 46, 0.80)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(30, 30, 46, 0.80)"
@@ -25098,10 +25363,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -25228,8 +25498,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/media.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/media.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/media.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/media.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#281c30"
@@ -25333,7 +25603,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(30, 30, 46, 0.80)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(30, 30, 46, 0.80)"
@@ -25658,10 +25929,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -25788,8 +26064,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/network.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/network.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/network.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/network.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#16182a"
@@ -25893,7 +26169,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(30, 30, 46, 0.80)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(30, 30, 46, 0.80)"
@@ -26218,10 +26495,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -26348,8 +26630,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/settings.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/settings.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/settings.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/settings.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#1f1d25"
@@ -26453,7 +26735,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(30, 30, 46, 0.80)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(30, 30, 46, 0.80)"
@@ -26778,10 +27061,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -27013,7 +27301,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(8, 10, 20, 0.86)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(8, 10, 20, 0.86)"
@@ -27338,10 +27627,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -27468,8 +27762,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/home.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/home.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/home.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/home.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#181218"
@@ -27573,7 +27867,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(8, 10, 20, 0.86)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(8, 10, 20, 0.86)"
@@ -27898,10 +28193,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -28028,8 +28328,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/living-room.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/living-room.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/living-room.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/living-room.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#260d16"
@@ -28133,7 +28433,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(8, 10, 20, 0.86)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(8, 10, 20, 0.86)"
@@ -28458,10 +28759,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -28588,8 +28894,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/kitchen.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/kitchen.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/kitchen.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/kitchen.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#2b1610"
@@ -28693,7 +28999,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(8, 10, 20, 0.86)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(8, 10, 20, 0.86)"
@@ -29018,10 +29325,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -29148,8 +29460,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/bedroom.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/bedroom.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/bedroom.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/bedroom.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#0d0522"
@@ -29253,7 +29565,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(8, 10, 20, 0.86)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(8, 10, 20, 0.86)"
@@ -29578,10 +29891,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -29708,8 +30026,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/master-bedroom.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/master-bedroom.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/master-bedroom.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/master-bedroom.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#0e010e"
@@ -29813,7 +30131,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(8, 10, 20, 0.86)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(8, 10, 20, 0.86)"
@@ -30138,10 +30457,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -30268,8 +30592,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/guest.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/guest.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/guest.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/guest.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#021312"
@@ -30373,7 +30697,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(8, 10, 20, 0.86)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(8, 10, 20, 0.86)"
@@ -30698,10 +31023,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -30828,8 +31158,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/bathroom.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/bathroom.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/bathroom.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/bathroom.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#011820"
@@ -30933,7 +31263,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(8, 10, 20, 0.86)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(8, 10, 20, 0.86)"
@@ -31258,10 +31589,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -31388,8 +31724,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/office.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/office.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/office.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/office.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#081422"
@@ -31493,7 +31829,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(8, 10, 20, 0.86)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(8, 10, 20, 0.86)"
@@ -31818,10 +32155,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -31948,8 +32290,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/ai.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/ai.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/ai.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/ai.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#0a0317"
@@ -32053,7 +32395,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(8, 10, 20, 0.86)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(8, 10, 20, 0.86)"
@@ -32378,10 +32721,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -32508,8 +32856,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/outside.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/outside.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/outside.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/outside.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#2d2e45"
@@ -32613,7 +32961,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(8, 10, 20, 0.86)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(8, 10, 20, 0.86)"
@@ -32938,10 +33287,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -33068,8 +33422,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/hallway.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/hallway.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/hallway.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/hallway.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#161118"
@@ -33173,7 +33527,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(8, 10, 20, 0.86)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(8, 10, 20, 0.86)"
@@ -33498,10 +33853,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -33628,8 +33988,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/garage.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/garage.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/garage.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/garage.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#1a0e0c"
@@ -33733,7 +34093,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(8, 10, 20, 0.86)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(8, 10, 20, 0.86)"
@@ -34058,10 +34419,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -34188,8 +34554,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/front-yard.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/front-yard.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/front-yard.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/front-yard.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#141e10"
@@ -34293,7 +34659,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(8, 10, 20, 0.86)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(8, 10, 20, 0.86)"
@@ -34618,10 +34985,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -34748,8 +35120,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/back-yard.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/back-yard.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/back-yard.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/back-yard.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#1f1710"
@@ -34853,7 +35225,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(8, 10, 20, 0.86)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(8, 10, 20, 0.86)"
@@ -35178,10 +35551,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -35308,8 +35686,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/electrical-room.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/electrical-room.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/electrical-room.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/electrical-room.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#140a07"
@@ -35413,7 +35791,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(8, 10, 20, 0.86)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(8, 10, 20, 0.86)"
@@ -35738,10 +36117,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -35868,8 +36252,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/technic-room.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/technic-room.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/technic-room.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/technic-room.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#020a18"
@@ -35973,7 +36357,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(8, 10, 20, 0.86)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(8, 10, 20, 0.86)"
@@ -36298,10 +36683,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -36428,8 +36818,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/garden.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/garden.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/garden.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/garden.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#081907"
@@ -36533,7 +36923,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(8, 10, 20, 0.86)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(8, 10, 20, 0.86)"
@@ -36858,10 +37249,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -36988,8 +37384,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/energy.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/energy.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/energy.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/energy.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#151f07"
@@ -37093,7 +37489,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(8, 10, 20, 0.86)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(8, 10, 20, 0.86)"
@@ -37418,10 +37815,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -37548,8 +37950,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/security.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/security.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/security.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/security.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#100103"
@@ -37653,7 +38055,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(8, 10, 20, 0.86)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(8, 10, 20, 0.86)"
@@ -37978,10 +38381,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -38108,8 +38516,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/climate.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/climate.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/climate.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/climate.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#171314"
@@ -38213,7 +38621,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(8, 10, 20, 0.86)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(8, 10, 20, 0.86)"
@@ -38538,10 +38947,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -38668,8 +39082,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/media.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/media.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/media.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/media.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#210228"
@@ -38773,7 +39187,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(8, 10, 20, 0.86)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(8, 10, 20, 0.86)"
@@ -39098,10 +39513,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -39228,8 +39648,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/network.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/network.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/network.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/network.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#020e21"
@@ -39333,7 +39753,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(8, 10, 20, 0.86)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(8, 10, 20, 0.86)"
@@ -39658,10 +40079,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |
@@ -39788,8 +40214,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/settings.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/settings.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/settings.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/settings.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#06080a"
@@ -39893,7 +40319,8 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "rgba(8, 10, 20, 0.86)"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "rgba(8, 10, 20, 0.86)"
@@ -40218,10 +40645,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |

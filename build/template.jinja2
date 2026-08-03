@@ -129,7 +129,14 @@
   # DIALOGS
   # =========================================================================
   ha-dialog-surface-background: "{{ m.dialog_bg }}"
-  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  {# Deliberately NOT blurred. `backdrop-filter` on a dialog surface makes that
+     surface a containing block for every `position: fixed` descendant, so any
+     dropdown opened inside the dialog anchors to the dialog instead of the
+     viewport and lands outside it. Home Assistant copies theme variables onto
+     the *body of custom-panel iframes* too, which is how this reached HACS -
+     card-mod never enters that frame, but the variables do. The scrim below is
+     safe: it is a sibling of the dialog, with no fixed descendants of its own. #}
+  ha-dialog-surface-backdrop-filter: none
   ha-dialog-scrim-backdrop-filter: blur(2px)
   dialog-box-shadow: var(--ha-card-box-shadow)
   paper-dialog-background-color: "{{ m.dialog_bg }}"
@@ -431,10 +438,15 @@
     }
 
   card-mod-dialog: |
-    /* more-info, settings dialogs, pickers. */
+    /* more-info, settings dialogs, pickers.
+
+       No `backdrop-filter` here either, for the same reason as
+       `ha-dialog-surface-backdrop-filter` above: it would make the dialog a
+       containing block and throw every dropdown opened inside it out of place.
+       Dialogs get their depth from `ha-dialog-surface-background` and from the
+       blurred scrim behind them instead. */
     :host {
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      -webkit-backdrop-filter: var(--ha-card-backdrop-filter);
+      --dialog-backdrop-filter: none;
     }
 
   card-mod-config: |

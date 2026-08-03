@@ -301,6 +301,26 @@ build overwrites it. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ---
 
+## Which version am I actually running?
+
+Not the one HACS lists — the one Home Assistant has loaded. Those differ more
+often than you would expect: HACS writes the file, but the frontend keeps the
+old theme definitions until the page is fully reloaded, and a `Reload themes`
+alone does not always refresh an already-open tab.
+
+Open the browser console on any Home Assistant page and run:
+
+```js
+document.querySelector('home-assistant')
+  .hass.themes.themes['Ultimate Glass - Home']['ultimate-background']
+```
+
+The URL it prints ends in `@<version>` — that is the build actually in use.
+If it does not match what you just installed, hard refresh (`Ctrl/Cmd + Shift + R`)
+and run it again before debugging anything else.
+
+---
+
 ## Troubleshooting
 
 **Themes don't appear in the picker.**
@@ -344,13 +364,12 @@ group even though it is a custom panel rather than an add-on. You can confirm
 what a panel is by opening the browser console on it and running
 `document.querySelector('home-assistant').hass.panels`.
 
-> **If a HACS dialog opens with its contents spilling outside the box** and the
-> version dropdown floating loose, you are on 0.0.2. `backdrop-filter` on the
-> sidebar host corrupts the layout of an iframe rendered next to it — a Chrome
-> compositing quirk this theme was triggering, and one that only became
-> reachable once `extra_module_url` made card-mod run outside Lovelace. Fixed in
-> 0.0.3, which moves the blur onto the sidebar's inner elements; it looks
-> identical. On 0.0.2, switch to a non-Ultimate theme while you use HACS.
+> **If a dropdown opened inside a dialog renders outside it** — most visibly the
+> version picker in the HACS download dialog — you are on 0.0.3 or earlier. The
+> theme was blurring dialog surfaces, and `backdrop-filter` makes an element a
+> containing block for `position: fixed` children, so the menu anchored to the
+> dialog instead of the viewport. Home Assistant copies theme variables into
+> custom-panel iframes, which is how it reached HACS. Fixed in 0.0.4.
 
 **Cards are fully transparent and unreadable.**
 `backdrop-filter` unsupported. There is an `@supports` fallback for exactly this;

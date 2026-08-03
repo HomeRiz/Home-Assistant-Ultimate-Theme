@@ -4,6 +4,7 @@
 
 **72 themes. 3 aesthetics. 23 areas. A background for every dashboard and every tab.**
 
+[![Latest release](https://img.shields.io/github/v/release/HomeRiz/Home-Assistant-Ultimate-Theme?style=flat-square&label=release)](https://github.com/HomeRiz/Home-Assistant-Ultimate-Theme/releases/latest)
 [![HACS Custom](https://img.shields.io/badge/HACS-Custom-41BDF5.svg?style=flat-square)](https://hacs.xyz)
 [![Validate](https://img.shields.io/github/actions/workflow/status/HomeRiz/Home-Assistant-Ultimate-Theme/validate.yml?branch=main&style=flat-square&label=validate)](https://github.com/HomeRiz/Home-Assistant-Ultimate-Theme/actions/workflows/validate.yml)
 [![License](https://img.shields.io/github/license/HomeRiz/Home-Assistant-Ultimate-Theme?style=flat-square)](LICENSE)
@@ -211,7 +212,7 @@ the image changes.
     card_mod:
       style: |
         :host {
-          --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/kitchen.webp');
+          --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/kitchen.webp');
         }
 ```
 

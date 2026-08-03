@@ -115,6 +115,21 @@ def main() -> int:
         check(cmt == name,
               f"{name!r}: card-mod-theme={cmt!r} must equal its own name")
 
+        # A `backdrop-filter` on a dialog surface turns that surface into a
+        # containing block for every `position: fixed` descendant, so any
+        # dropdown opened inside the dialog anchors to the dialog instead of
+        # the viewport and renders outside it. Home Assistant also copies theme
+        # variables onto the body of custom-panel iframes, so this escapes into
+        # HACS and every other embedded panel. Nothing errors - the menu just
+        # lands in the wrong place, which is easy to blame on the panel.
+        checks += 1
+        dlg = str(theme.get("ha-dialog-surface-backdrop-filter", "none")).strip()
+        if dlg and dlg != "none":
+            errors.append(
+                f"{name!r}: ha-dialog-surface-backdrop-filter must be 'none' - "
+                f"got {dlg!r}. It makes dialogs a containing block and throws "
+                f"dropdowns opened inside them out of position.")
+
         bg = str(theme.get("ultimate-background", ""))
 
         # --ultimate-background is consumed by `background-image`, so it must be

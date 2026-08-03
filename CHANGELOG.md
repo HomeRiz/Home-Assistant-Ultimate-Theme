@@ -7,6 +7,52 @@ and versions follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
+## [0.0.4] — 2026-08-04
+
+### Fixed
+
+- **Dropdowns opened inside a dialog no longer land outside it.** This is the
+  HACS bug 0.0.3 claimed to fix and did not. The real cause was a single theme
+  variable:
+
+  ```yaml
+  ha-dialog-surface-backdrop-filter: var(--ha-card-backdrop-filter)
+  ```
+
+  `backdrop-filter` makes an element a containing block for every
+  `position: fixed` descendant. MDC renders select menus as
+  `.mdc-menu-surface--fixed`, so with a blurred dialog surface the menu anchored
+  to the dialog instead of the viewport — and rendered outside it, with the
+  dialog's own contents dragged along.
+
+  It reached HACS because **Home Assistant copies theme variables onto the body
+  of custom-panel iframes.** card-mod never enters that frame, and neither does
+  any of this theme's CSS — but the variables do. That is what made the bug so
+  hard to place: every inspection of the frame's `documentElement` showed
+  Home Assistant's defaults, while its `<body>` carried 315 theme variables.
+
+  Dialog surfaces are no longer blurred. They keep their tint from
+  `ha-dialog-surface-background`, and the scrim behind them stays blurred — a
+  scrim is a sibling of the dialog, so it has no fixed descendants to displace.
+  `card-mod-dialog` no longer applies `backdrop-filter` either, for the same
+  reason: it would have done this to every dialog in the main document too.
+
+- `verify.py` fails if `ha-dialog-surface-backdrop-filter` is ever set to
+  anything but `none`.
+
+### Correction to 0.0.3
+
+The 0.0.3 notes blamed `backdrop-filter` on the `ha-sidebar` host and presented
+a table of measurements to support it. That diagnosis was wrong. The bug is
+intermittent, the trials were too few to tell a fix from a lucky run, and the
+"4/4 correct" result did not survive retesting. The sidebar change shipped in
+0.0.3 is harmless and stays, but it never fixed anything.
+
+The other three fixes in 0.0.3 — per-view backdrops, the Settings backdrop, and
+the base themes' missing background — are unaffected and remain correct.
+
+---
+
 ## [0.0.3] — 2026-08-03
 
 Most of this release is one lesson twice over: `:host` only means what you think
@@ -170,6 +216,7 @@ See [INSTALL.md](INSTALL.md). Short version: HACS → ⋮ → Custom repositorie
 add this repo as type **Theme** → Download → add `frontend: themes:` to
 `configuration.yaml` → restart → pick a theme and set the mode to **Dark**.
 
+[0.0.4]: https://github.com/HomeRiz/Home-Assistant-Ultimate-Theme/releases/tag/0.0.4
 [0.0.3]: https://github.com/HomeRiz/Home-Assistant-Ultimate-Theme/releases/tag/0.0.3
 [0.0.2]: https://github.com/HomeRiz/Home-Assistant-Ultimate-Theme/releases/tag/0.0.2
 [0.0.1]: https://github.com/HomeRiz/Home-Assistant-Ultimate-Theme/releases/tag/0.0.1
