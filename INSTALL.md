@@ -345,11 +345,12 @@ what a panel is by opening the browser console on it and running
 `document.querySelector('home-assistant').hass.panels`.
 
 > **If a HACS dialog opens with its contents spilling outside the box** and the
-> version dropdown floating loose, you are on 0.0.2 or earlier. `backdrop-filter`
-> on the sidebar corrupts the layout of an iframe rendered next to it — a
-> compositing quirk in Chrome that this theme was triggering. Fixed in 0.0.3,
-> which drops the sidebar blur while an iframe panel is open. As a stopgap on an
-> older build, switch to a non-Ultimate theme while you use HACS.
+> version dropdown floating loose, you are on 0.0.2. `backdrop-filter` on the
+> sidebar host corrupts the layout of an iframe rendered next to it — a Chrome
+> compositing quirk this theme was triggering, and one that only became
+> reachable once `extra_module_url` made card-mod run outside Lovelace. Fixed in
+> 0.0.3, which moves the blur onto the sidebar's inner elements; it looks
+> identical. On 0.0.2, switch to a non-Ultimate theme while you use HACS.
 
 **Cards are fully transparent and unreadable.**
 `backdrop-filter` unsupported. There is an `@supports` fallback for exactly this;
