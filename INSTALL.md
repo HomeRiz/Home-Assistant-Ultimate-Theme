@@ -330,14 +330,24 @@ card-mod isn't loading. Check Settings → Dashboards → Resources for
 resources are only fetched when the frontend boots, so a tab you had open before
 installing card-mod will not have it.
 
-**The theme works on dashboards but Settings and HACS are plain.**
+**The theme works on dashboards but Settings is plain.**
 You skipped `extra_module_url` in Step 0. Dashboard resources are not loaded on
 non-Lovelace panels, so card-mod simply is not present there. Add the module,
 restart, and the backdrop will follow you across the whole UI.
 
-**Add-on panels (File editor, Terminal, Studio Code Server) have no theme.**
-Expected, and not fixable by any theme. Add-ons are shown in an iframe — a
-separate document with its own CSS that Home Assistant cannot style.
+**Add-on panels (File editor, Terminal, Studio Code Server) and HACS have no
+theme.**
+Expected, and not fixable by any theme. These are shown in an iframe — a
+separate document with its own CSS that neither Home Assistant nor card-mod can
+reach. HACS registers itself with `embed_iframe: true`, so it falls in this
+group even though it is a custom panel rather than an add-on. You can confirm
+what a panel is by opening the browser console on it and running
+`document.querySelector('home-assistant').hass.panels`.
+
+> A related symptom, and not caused by this theme: a HACS dialog occasionally
+> opens with its contents spilling outside the box and the version dropdown
+> floating loose. That is HACS's own dialog laying itself out before the iframe
+> has finished sizing. Close it and open it again, or reload the page.
 
 **Cards are fully transparent and unreadable.**
 `backdrop-filter` unsupported. There is an `@supports` fallback for exactly this;

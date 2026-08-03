@@ -23,10 +23,10 @@ lands somewhere useless.
   the profile theme however the tab was set. The backdrop is now painted at
   view level, inside the scope the view theme reaches. Set `theme:` on a view
   and the image follows.
-- **Settings, Developer Tools, History and custom panels such as HACS** paint
-  their backdrop on `ha-drawer` rather than on the panel. The drawer spans the
-  whole viewport, so the sidebar's blur has an image behind it — no more themed
-  content area sitting next to a flat grey sidebar.
+- **Settings, Developer Tools and History** paint their backdrop on `ha-drawer`
+  rather than on the panel. The drawer spans the whole viewport, so the
+  sidebar's blur has an image behind it — no more themed content area sitting
+  next to a flat grey sidebar.
 - The negative-`z-index` pseudo-elements those blocks used could not render
   anyway: with no stacking context to sit behind, `z-index: -2` puts the layer
   behind the document background.
@@ -50,8 +50,9 @@ lands somewhere useless.
 ### Added
 
 - `card-mod-config` and `card-mod-panel-custom`, so the backdrop and glass reach
-  Settings, Developer Tools, History and custom panels such as HACS — not just
-  Lovelace dashboards.
+  Settings, Developer Tools, History and custom panels — not just Lovelace
+  dashboards. (Panels registered with `embed_iframe: true`, HACS among them,
+  are a separate document and stay unthemed; see ARCHITECTURE.md.)
 - `card-mod-dialog` and `card-mod-top-app-bar-fixed` for dialogs and the header.
 - Install docs now cover `frontend: extra_module_url`, which card-mod requires
   in order to run on anything other than a Lovelace dashboard. Without it the

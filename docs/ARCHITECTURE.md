@@ -37,7 +37,15 @@ theme and injects their contents into the right shadow roots:
 | `card-mod-sidebar` | the sidebar |
 | `card-mod-view` | each view (tab) |
 | `card-mod-config` | built-in panels: Settings, Developer Tools, History |
-| `card-mod-panel-custom` | custom panels such as HACS |
+| `card-mod-panel-custom` | custom panels — but only those *not* embedded in an iframe |
+
+**Iframe panels cannot be themed, by anyone.** Add-on panels (File editor,
+Terminal, Studio Code Server) and any custom panel registered with
+`embed_iframe: true` — HACS is one — render in a separate document. Neither the
+theme's CSS variables nor card-mod cross that boundary; inside, Home Assistant's
+default palette applies. This is a browser guarantee, not a limitation worth
+working around. To check a panel, open the console and read
+`document.querySelector('home-assistant').hass.panels`.
 
 One critical gotcha: **`card-mod-theme` must equal the theme's own name**, exactly.
 If it doesn't match, card-mod silently does nothing — no error, just a flat theme.
@@ -107,7 +115,7 @@ unreadable.
 
 **`card-mod-root` is the Lovelace root, not the application root.** It is
 injected into `hui-root`, which only exists inside a dashboard — so its fixed
-backdrop can never reach Settings or HACS. Those panels get their own copy of the
+backdrop can never reach Settings or Developer Tools. Those panels get their own copy of the
 same pseudo-element pair through `card-mod-config` and `card-mod-panel-custom`.
 
 And card-mod itself is only loaded on dashboards unless you register it via
