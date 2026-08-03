@@ -32,11 +32,12 @@ theme and injects their contents into the right shadow roots:
 
 | Key | Injected into |
 |---|---|
-| `card-mod-root` | the top-level `home-assistant` element |
+| `card-mod-root` | `hui-root` — the **Lovelace** root, not the app root |
 | `card-mod-card` | every `ha-card` on every dashboard |
 | `card-mod-sidebar` | the sidebar |
-| `card-mod-drawer-yaml` | the drawer / narrow-screen sidebar |
 | `card-mod-view` | each view (tab) |
+| `card-mod-config` | built-in panels: Settings, Developer Tools, History |
+| `card-mod-panel-custom` | custom panels such as HACS |
 
 One critical gotcha: **`card-mod-theme` must equal the theme's own name**, exactly.
 If it doesn't match, card-mod silently does nothing — no error, just a flat theme.
@@ -103,6 +104,14 @@ painted in `card-mod-root` onto a genuinely fixed pseudo-element:
 A second pseudo-element at `z-index: -1` lays a scrim over it. That scrim is what
 guarantees legibility — it's why a bright patch in the artwork never makes a card
 unreadable.
+
+**`card-mod-root` is the Lovelace root, not the application root.** It is
+injected into `hui-root`, which only exists inside a dashboard — so its fixed
+backdrop can never reach Settings or HACS. Those panels get their own copy of the
+same pseudo-element pair through `card-mod-config` and `card-mod-panel-custom`.
+
+And card-mod itself is only loaded on dashboards unless you register it via
+`frontend: extra_module_url` — see [INSTALL.md](../INSTALL.md).
 
 `card-mod-view` declares the same pattern but reads `--ultimate-view-background`.
 Views sit inside the root, so a view setting that variable paints over the

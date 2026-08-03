@@ -116,6 +116,20 @@ def main() -> int:
               f"{name!r}: card-mod-theme={cmt!r} must equal its own name")
 
         bg = str(theme.get("ultimate-background", ""))
+
+        # --ultimate-background is consumed by `background-image`, so it must be
+        # an <image>, never a `background:` shorthand. A shorthand here parses
+        # as an invalid background-image, the whole declaration is dropped, and
+        # the backdrop just silently fails to paint - no console error, nothing.
+        checks += 1
+        first = bg.split("(", 1)[0].strip().lower()
+        if first and not first.startswith(("url", "linear-gradient",
+                                           "radial-gradient", "conic-gradient",
+                                           "image-set", "none")):
+            errors.append(
+                f"{name!r}: ultimate-background must be a bare <image>, not a "
+                f"background shorthand - got {bg[:60]!r}")
+
         m = re.search(r"url\('([^']+)'\)", bg)
         if m:
             url = m.group(1)

@@ -44,7 +44,9 @@
   background-image: "center / cover no-repeat fixed url('{{ bg_url }}')"
   lovelace-background: var(--background-image)
 {% else %}
-  ultimate-background: "{{ m.fallback_gradient }}"
+  {# Image-only, never the `background:` shorthand - this var is consumed by
+     `background-image` in the card-mod blocks below. #}
+  ultimate-background: "{{ m.fallback_image }}"
   background-image: "{{ m.fallback_gradient }}"
   lovelace-background: var(--background-image)
 {% endif %}
@@ -408,9 +410,38 @@
 
   card-mod-config: |
     /* Settings, Developer Tools, History - every built-in non-Lovelace panel.
-       These are transparent by default, so the root backdrop shows through;
-       all that is needed is to stop their cards painting an opaque surface. */
-    :host {
+
+       These must paint the backdrop themselves. `card-mod-root` is injected
+       into `hui-root`, which is the *Lovelace* root - it does not exist here,
+       so its fixed pseudo-element can never reach this panel.
+
+       Three things this block gets deliberately right, each of which was wrong
+       in 0.0.1 and cost an evening to find:
+
+       1. Not `:host`. `ha-panel-config` has no shadow root of its own, so
+          card-mod falls back to the shadow root of `home-assistant-main`.
+          `:host` there resolves to `home-assistant-main`, whose background is
+          covered by the opaque `ha-drawer` on top of it. Target elements in
+          that tree by name instead.
+
+       2. Not a negative-z pseudo-element. There is no stacking context here to
+          sit behind, so `z-index: -2` puts the layer behind the document
+          background and it never renders.
+
+       3. Paint on `ha-drawer`, not on the panel. The drawer spans the whole
+          viewport - sidebar included - so the sidebar's own backdrop-filter
+          finally has an image to blur. Painting only `ha-panel-config` gives
+          you a backdrop in the content area and a flat grey sidebar beside it,
+          which is exactly the seam this fixes. */
+    ha-drawer {
+      background-image: {{ m.background_scrim }}, var(--ultimate-background);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+    ha-panel-config,
+    partial-panel-resolver {
       background: transparent !important;
     }
     ha-card {
@@ -422,9 +453,19 @@
     }
 
   card-mod-panel-custom: |
-    /* Custom panels such as HACS. They render their own frontend, so only the
-       outer surface can be reached - enough to let the backdrop through. */
-    :host {
+    /* Custom panels such as HACS. They render their own frontend inside an
+       iframe or their own shadow tree, so only the outer surface is reachable -
+       but that is enough to carry the backdrop. Same reasoning as
+       `card-mod-config` above: paint the drawer, not the panel. */
+    ha-drawer {
+      background-image: {{ m.background_scrim }}, var(--ultimate-background);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+    ha-panel-custom,
+    partial-panel-resolver {
       background: transparent !important;
     }
 

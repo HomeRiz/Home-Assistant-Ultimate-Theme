@@ -248,8 +248,18 @@ MODES = {
     ),
 }
 
+_BG_SHORTHAND_PREFIX = "center / cover no-repeat fixed "
+
 for _m in MODES.values():
     _m["tokens"] = tokens(_m["palette"])
+
+    # `fallback_gradient` is a `background:` shorthand, so it cannot be used as
+    # a `background-image` value - the declaration would simply be dropped.
+    # Several card-mod blocks paint the backdrop via `background-image`, so keep
+    # an image-only form of the same gradient alongside it.
+    _fg = _m["fallback_gradient"]
+    assert _fg.startswith(_BG_SHORTHAND_PREFIX), _fg
+    _m["fallback_image"] = _fg[len(_BG_SHORTHAND_PREFIX):]
 
 
 # ---------------------------------------------------------------------------

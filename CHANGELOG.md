@@ -16,6 +16,16 @@ and versions follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   unnoticed. Removed.
 - `verify.py` now validates every `card-mod-*` key against card-mod's documented
   type list and fails on anything else.
+- The backdrop on non-Lovelace panels is now painted on `ha-drawer` rather than
+  on the panel. `ha-panel-config` has no shadow root of its own, so card-mod
+  falls back to the shadow root of `home-assistant-main` — where `:host` means
+  `home-assistant-main`, which the opaque drawer covers. The drawer also spans
+  the full viewport, so the sidebar's blur finally has an image behind it
+  instead of a flat grey seam next to a themed content area.
+- `--ultimate-background` was a `background:` shorthand in the three base
+  themes, which is not a valid `background-image` value — so the declaration
+  was dropped and their backdrop never painted. It is now always a bare image,
+  and `verify.py` fails if that ever regresses.
 
 ### Added
 
