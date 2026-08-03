@@ -9,11 +9,14 @@ and versions follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [0.0.3] — 2026-08-03
 
-Three bugs with one root cause: `:host` only means what you think it means if
-the element card-mod is styling actually has a shadow root. `ha-panel-config`
-and `hui-view` do not, so card-mod falls back to the enclosing shadow root and
-`:host` silently resolves to the wrong element. Nothing errors; the CSS just
-lands somewhere useless.
+Most of this release is one lesson twice over: `:host` only means what you think
+it means if the element card-mod is styling actually has a shadow root.
+`ha-panel-config` and `hui-view` do not, so card-mod falls back to the enclosing
+shadow root and `:host` silently resolves to the wrong element. Nothing errors;
+the CSS just lands somewhere useless.
+
+The last entry is the opposite failure — CSS that landed exactly where it was
+aimed, on the `ha-sidebar` host, and broke something in a different document.
 
 ### Fixed
 
