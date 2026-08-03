@@ -60,10 +60,13 @@ REPO = "HomeRiz/Home-Assistant-Ultimate-Theme"
 # would silently change the backgrounds of every already-installed theme. A tag
 # is immutable and cached permanently.
 #
-# The reference is self-consistent: the theme file committed under tag vX.Y.Z
-# points at vX.Y.Z, which is the same commit that carries those images. Bump
+# The reference is self-consistent: the theme file committed under tag X.Y.Z
+# points at X.Y.Z, which is the same commit that carries those images. Bump
 # this, regenerate and commit *before* creating the tag.
-CDN_REF = "v0.0.1"
+#
+# Must match the git tag exactly. jsDelivr happens to resolve 'v0.0.1' to tag
+# '0.0.1' via semver, but relying on that is a trap - keep them identical.
+CDN_REF = "0.0.2"
 CDN_BASE = f"https://cdn.jsdelivr.net/gh/{REPO}@{CDN_REF}/www/ultimate-theme/backgrounds"
 
 
