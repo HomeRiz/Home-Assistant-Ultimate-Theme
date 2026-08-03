@@ -1,0 +1,270 @@
+#!/usr/bin/env python3
+"""
+Verification pass. Run before every commit; CI runs it on every push.
+
+Catches the failures that would otherwise only show up as a broken dashboard:
+  1. the theme file parses as YAML
+  2. exactly one theme file exists (HACS manages only the first one it finds)
+  3. no duplicate theme names
+  4. every card-mod-theme value matches the theme it sits in
+     (card-mod silently does nothing if this is wrong - the classic failure)
+  5. every background URL resolves to a file that exists in this repository
+  6. every CSS block has balanced braces
+  7. no unresolved template syntax leaked into the output
+  8. every area has artwork and a preview in every mode
+  9. documentation and dashboard helper files are present
+"""
+
+from __future__ import annotations
+
+import os
+import re
+import sys
+
+# Set before importing anything local: this script checks that no __pycache__ is
+# committed, and would otherwise fail on the bytecode its own imports create.
+sys.dont_write_bytecode = True
+
+import yaml  # noqa: E402
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(HERE)
+sys.path.insert(0, HERE)
+
+from areas import AREA_KEYS   # noqa: E402
+from modes import MODES       # noqa: E402
+
+THEMES = os.path.join(ROOT, "themes")
+WWW = os.path.join(ROOT, "www")
+
+CDN_PREFIX = "https://cdn.jsdelivr.net/gh/"
+LOCAL_PREFIX = "/local/"
+
+errors: list[str] = []
+warnings: list[str] = []
+checks = 0
+
+
+def check(cond: bool, msg: str) -> None:
+    global checks
+    checks += 1
+    if not cond:
+        errors.append(msg)
+
+
+def url_to_disk(url: str) -> str | None:
+    """Map a theme background URL back to its path inside this repository."""
+    if url.startswith(LOCAL_PREFIX):
+        return os.path.join(WWW, url[len(LOCAL_PREFIX):])
+    if url.startswith(CDN_PREFIX):
+        # https://cdn.jsdelivr.net/gh/<owner>/<repo>@<ref>/<path>
+        tail = url[len(CDN_PREFIX):]
+        if "/" not in tail:
+            return None
+        parts = tail.split("/", 2)
+        if len(parts) < 3:
+            return None
+        return os.path.join(ROOT, parts[2])
+    return None
+
+
+def main() -> int:
+    global checks
+
+    files = sorted(f for f in os.listdir(THEMES) if f.endswith((".yaml", ".yml")))
+    check(len(files) == 1,
+          f"themes/ must contain exactly one theme file (HACS installs only the "
+          f"first); found {len(files)}: {files}")
+    if not files:
+        print("FAILED - no theme file")
+        return 1
+
+    fn = files[0]
+    raw = open(os.path.join(THEMES, fn)).read()
+
+    for tok in ("{{", "{%", "}}"):
+        check(tok not in raw, f"{fn}: unresolved template token {tok!r}")
+
+    try:
+        data = yaml.safe_load(raw)
+    except yaml.YAMLError as e:
+        print(f"FAILED - {fn}: YAML parse error: {e}")
+        return 1
+    checks += 1
+
+    expected = len(MODES) * (1 + len(AREA_KEYS))
+    check(len(data) == expected,
+          f"expected {expected} themes, found {len(data)}")
+
+    seen: set[str] = set()
+    for name, theme in data.items():
+        check(name not in seen, f"duplicate theme name {name!r}")
+        seen.add(name)
+
+        cmt = theme.get("card-mod-theme")
+        check(cmt == name,
+              f"{name!r}: card-mod-theme={cmt!r} must equal its own name")
+
+        bg = str(theme.get("ultimate-background", ""))
+        m = re.search(r"url\('([^']+)'\)", bg)
+        if m:
+            url = m.group(1)
+            disk = url_to_disk(url)
+            check(disk is not None, f"{name!r}: unrecognised background URL {url}")
+            if disk:
+                check(os.path.exists(disk),
+                      f"{name!r}: background missing from repo -> {url}")
+                if os.path.exists(disk):
+                    check(os.path.getsize(disk) > 1024,
+                          f"{name!r}: background looks truncated -> {url}")
+
+        for key, val in theme.items():
+            if key.startswith("card-mod") and isinstance(val, str):
+                checks += 1
+                if val.count("{") != val.count("}"):
+                    errors.append(
+                        f"{name!r} -> {key}: unbalanced braces "
+                        f"({val.count('{')} open, {val.count('}')} close)")
+
+        for req in ("modes", "primary-color", "ha-card-backdrop-filter",
+                    "card-mod-card", "card-mod-root", "card-mod-view"):
+            check(req in theme, f"{name!r}: missing required key {req!r}")
+
+        # Home Assistant rejects the whole themes file if `modes` is malformed,
+        # and the error it logs does not name the offending theme.
+        m = theme.get("modes")
+        check(isinstance(m, dict), f"{name!r}: 'modes' must be a mapping")
+        if isinstance(m, dict):
+            check(set(m) == {"light", "dark"},
+                  f"{name!r}: 'modes' must contain exactly light and dark, "
+                  f"got {sorted(m)}")
+            for variant, body in m.items():
+                check(isinstance(body, dict),
+                      f"{name!r}: modes.{variant} must be a mapping")
+
+        # Every value must be a scalar or block string. A nested mapping outside
+        # `modes` silently breaks HA's theme loader.
+        for key, val in theme.items():
+            if key == "modes":
+                continue
+            check(not isinstance(val, (dict, list)),
+                  f"{name!r}: key {key!r} has a nested "
+                  f"{type(val).__name__}, which HA cannot load")
+
+        # No null or empty values, anywhere, including inside `modes`.
+        #
+        # This is the check that matters most. An unquoted hex colour such as
+        #     primary-background-color: #1e1e2e
+        # is a *comment* in YAML, so the value parses as null. Home Assistant
+        # then rejects the whole themes file and not a single theme loads - and
+        # nothing in the log points at the offending line. Structure checks pass
+        # happily, because the key is present and `modes` is still a mapping.
+        def scan(node, path: str) -> None:
+            if isinstance(node, dict):
+                for k, v in node.items():
+                    scan(v, f"{path}.{k}" if path else str(k))
+                return
+            if isinstance(node, list):
+                for i, v in enumerate(node):
+                    scan(v, f"{path}[{i}]")
+                return
+            checks_local.append(1)
+            if node is None:
+                errors.append(
+                    f"{name!r}: {path} is null - most likely an unquoted value "
+                    f"starting with '#', which YAML reads as a comment")
+            elif isinstance(node, str) and not node.strip():
+                errors.append(f"{name!r}: {path} is empty")
+
+        checks_local: list[int] = []
+        scan(theme, "")
+        checks += len(checks_local)
+
+    # -- artwork + previews --------------------------------------------------
+    for mode in MODES:
+        for key in AREA_KEYS:
+            check(os.path.exists(
+                os.path.join(WWW, "ultimate-theme", "backgrounds", mode, f"{key}.webp")),
+                f"missing artwork: {mode}/{key}.webp")
+            check(os.path.exists(
+                os.path.join(ROOT, "docs", "previews", mode, f"{key}.webp")),
+                f"missing preview: {mode}/{key}.webp")
+        check(os.path.exists(os.path.join(ROOT, "docs", "previews", f"{mode}.webp")),
+              f"missing contact sheet: {mode}.webp")
+
+    # -- repository files ----------------------------------------------------
+    for doc in ("README.md", "INSTALL.md", "NOTICE.md", "LICENSE",
+                "CONTRIBUTING.md", "hacs.json", ".gitignore",
+                "docs/ARCHITECTURE.md", "docs/PER-VIEW-BACKGROUNDS.md",
+                "docs/IMAGE-PROMPTS.md", "CHANGELOG.md",
+                "dashboards/button-card-templates.yaml",
+                "dashboards/per-view-backgrounds.yaml",
+                ".github/workflows/validate.yml"):
+        check(os.path.exists(os.path.join(ROOT, doc)), f"missing file: {doc}")
+
+    # -- hygiene: nothing that should not be published -----------------------
+    # What matters is whether a file would be *committed*, not whether it exists
+    # on disk. macOS recreates .DS_Store every time Finder opens a folder, so
+    # failing on mere presence would make the build red for no reason. Ask git
+    # instead, and only fall back to presence when git isn't available.
+    import subprocess
+
+    def git_ignores(path: str) -> bool | None:
+        """True/False if git can answer, None if there is no usable git."""
+        try:
+            r = subprocess.run(["git", "check-ignore", "-q", path],
+                               cwd=ROOT, capture_output=True, timeout=10)
+        except (OSError, subprocess.SubprocessError):
+            return None
+        if r.returncode in (0, 1):
+            return r.returncode == 0
+        return None                      # 128 = not a git repo
+
+    junk_found: list[str] = []
+    for dirpath, dirnames, filenames in os.walk(ROOT):
+        dirnames[:] = [d for d in dirnames if d != ".git"]
+        for name in list(filenames) + [d for d in dirnames if d == "__pycache__"]:
+            if name in (".DS_Store", "Thumbs.db", ".env", "__pycache__"):
+                junk_found.append(os.path.join(dirpath, name))
+
+    for path in junk_found:
+        rel = os.path.relpath(path, ROOT)
+        ignored = git_ignores(path)
+        if ignored is True:
+            warnings.append(f"{rel} exists but is git-ignored, so it will not "
+                            f"be published (delete it if you want a tidy tree)")
+        else:
+            # git says it would be committed, or there is no git to ask
+            check(False, f"{rel} would be committed - add it to .gitignore "
+                         f"or delete it")
+
+    # -- hacs.json points at the real file -----------------------------------
+    import json
+    try:
+        hacs = json.load(open(os.path.join(ROOT, "hacs.json")))
+        check(hacs.get("filename") == fn,
+              f"hacs.json filename={hacs.get('filename')!r} but theme file is {fn!r}")
+        check("name" in hacs, "hacs.json missing 'name'")
+    except (OSError, ValueError) as e:
+        errors.append(f"hacs.json unreadable: {e}")
+
+    print(f"theme file : {fn}")
+    print(f"themes     : {len(seen)}")
+    print(f"checks run : {checks}")
+    if warnings:
+        print(f"\nwarnings ({len(warnings)}) - not blocking:")
+        for w in warnings:
+            print(f"  ! {w}")
+    if errors:
+        print(f"\nFAILED - {len(errors)} error(s):")
+        for e in errors[:40]:
+            print(f"  x {e}")
+        if len(errors) > 40:
+            print(f"  ... and {len(errors) - 40} more")
+        return 1
+    print("\nOK - all checks passed")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

@@ -1,0 +1,95 @@
+name: Bug report
+description: Something renders wrong, or the theme does not behave as documented
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before filing, please try the two things that fix most reports:
+
+        1. Developer Tools → **Reload themes**, then hard refresh (`Ctrl/Cmd + Shift + R`)
+        2. Confirm **card-mod** is loaded: Settings → Dashboards → Resources should
+           list `/hacsfiles/lovelace-card-mod/card-mod.js`
+
+  - type: checkboxes
+    id: prereqs
+    attributes:
+      label: Checks
+      options:
+        - label: I have card-mod installed and loading
+          required: true
+        - label: I reloaded themes and hard-refreshed
+          required: true
+        - label: I searched existing issues
+          required: true
+
+  - type: input
+    id: theme
+    attributes:
+      label: Which theme
+      description: The exact name from the theme picker
+      placeholder: Ultimate Glass - Kitchen
+    validations:
+      required: true
+
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Light or dark mode
+      options: ["Dark", "Light", "Auto"]
+    validations:
+      required: true
+
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you saw, and what you expected instead
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Screenshot
+      description: Paste an image. This is by far the most useful thing you can include.
+
+  - type: input
+    id: ha
+    attributes:
+      label: Home Assistant version
+      placeholder: "2026.7.2"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: client
+    attributes:
+      label: Where are you seeing it
+      multiple: true
+      options:
+        - Desktop Chrome / Edge
+        - Desktop Firefox
+        - Desktop Safari
+        - iOS companion app
+        - Android companion app
+        - Tablet / wall panel
+    validations:
+      required: true
+
+  - type: textarea
+    id: cards
+    attributes:
+      label: Custom cards in use
+      description: Mushroom, Bubble Card, button-card, auto-entities, kiosk-mode, etc.
+      placeholder: |
+        - Mushroom 4.x
+        - Bubble Card 2.x
+
+  - type: textarea
+    id: yaml
+    attributes:
+      label: Relevant dashboard YAML
+      description: The view or card config that reproduces it. Automatically formatted as code.
+      render: yaml

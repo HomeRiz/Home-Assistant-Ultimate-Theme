@@ -1,0 +1,45 @@
+name: Feature request
+description: Suggest a new area, mode, or capability
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of request
+      options:
+        - A new area (new room / dashboard)
+        - A new aesthetic mode
+        - Support for another custom card
+        - A change to existing styling
+        - Something else
+    validations:
+      required: true
+
+  - type: textarea
+    id: what
+    attributes:
+      label: What would you like
+      description: Describe the outcome, not the implementation
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: Why
+      description: What are you trying to do that the theme makes hard today?
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        **Adding an area yourself is one line.** See `build/areas.py` and the
+        "Add a new area" section in the README — you may not need to wait for this.
+
+  - type: textarea
+    id: refs
+    attributes:
+      label: References
+      description: Screenshots, links, palettes, or anything else that shows what you mean

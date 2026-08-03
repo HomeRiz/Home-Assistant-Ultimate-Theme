@@ -1,0 +1,697 @@
+---
+# Per-view background snippets.
+# Paste the card_mod block into a view in your dashboard's
+# Raw Configuration Editor. See docs/PER-VIEW-BACKGROUNDS.md.
+
+# ===== Ultimate Glass ==============================
+# Home
+# - title: Home
+#   path: home
+#   icon: mdi:home
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/glass/home.webp');
+#       }
+
+# Living Room
+# - title: Living Room
+#   path: living-room
+#   icon: mdi:sofa
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/glass/living-room.webp');
+#       }
+
+# Kitchen
+# - title: Kitchen
+#   path: kitchen
+#   icon: mdi:silverware-fork-knife
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/glass/kitchen.webp');
+#       }
+
+# Bedroom
+# - title: Bedroom
+#   path: bedroom
+#   icon: mdi:bed
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/glass/bedroom.webp');
+#       }
+
+# Master Bedroom
+# - title: Master Bedroom
+#   path: master-bedroom
+#   icon: mdi:bed-king
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/glass/master-bedroom.webp');
+#       }
+
+# Guest
+# - title: Guest
+#   path: guest
+#   icon: mdi:account-heart
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/glass/guest.webp');
+#       }
+
+# Bathroom
+# - title: Bathroom
+#   path: bathroom
+#   icon: mdi:shower
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/glass/bathroom.webp');
+#       }
+
+# Office
+# - title: Office
+#   path: office
+#   icon: mdi:desk
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/glass/office.webp');
+#       }
+
+# AI
+# - title: AI
+#   path: ai
+#   icon: mdi:brain
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/glass/ai.webp');
+#       }
+
+# Outside
+# - title: Outside
+#   path: outside
+#   icon: mdi:tree
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/glass/outside.webp');
+#       }
+
+# Hallway
+# - title: Hallway
+#   path: hallway
+#   icon: mdi:door-open
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/glass/hallway.webp');
+#       }
+
+# Garage
+# - title: Garage
+#   path: garage
+#   icon: mdi:garage
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/glass/garage.webp');
+#       }
+
+# Front Yard
+# - title: Front Yard
+#   path: front-yard
+#   icon: mdi:home-outline
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/glass/front-yard.webp');
+#       }
+
+# Back Yard
+# - title: Back Yard
+#   path: back-yard
+#   icon: mdi:grill
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/glass/back-yard.webp');
+#       }
+
+# Electrical Room
+# - title: Electrical Room
+#   path: electrical-room
+#   icon: mdi:flash
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/glass/electrical-room.webp');
+#       }
+
+# Technic Room
+# - title: Technic Room
+#   path: technic-room
+#   icon: mdi:cog
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/glass/technic-room.webp');
+#       }
+
+# Garden
+# - title: Garden
+#   path: garden
+#   icon: mdi:flower
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/glass/garden.webp');
+#       }
+
+# Energy
+# - title: Energy
+#   path: energy
+#   icon: mdi:lightning-bolt
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/glass/energy.webp');
+#       }
+
+# Security
+# - title: Security
+#   path: security
+#   icon: mdi:shield-home
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/glass/security.webp');
+#       }
+
+# Climate
+# - title: Climate
+#   path: climate
+#   icon: mdi:thermostat
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/glass/climate.webp');
+#       }
+
+# Media
+# - title: Media
+#   path: media
+#   icon: mdi:play-circle
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/glass/media.webp');
+#       }
+
+# Network
+# - title: Network
+#   path: network
+#   icon: mdi:lan
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/glass/network.webp');
+#       }
+
+# Settings
+# - title: Settings
+#   path: settings
+#   icon: mdi:cog-outline
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/glass/settings.webp');
+#       }
+
+# ===== Ultimate Velvet ==============================
+# Home
+# - title: Home
+#   path: home
+#   icon: mdi:home
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/velvet/home.webp');
+#       }
+
+# Living Room
+# - title: Living Room
+#   path: living-room
+#   icon: mdi:sofa
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/velvet/living-room.webp');
+#       }
+
+# Kitchen
+# - title: Kitchen
+#   path: kitchen
+#   icon: mdi:silverware-fork-knife
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/velvet/kitchen.webp');
+#       }
+
+# Bedroom
+# - title: Bedroom
+#   path: bedroom
+#   icon: mdi:bed
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/velvet/bedroom.webp');
+#       }
+
+# Master Bedroom
+# - title: Master Bedroom
+#   path: master-bedroom
+#   icon: mdi:bed-king
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/velvet/master-bedroom.webp');
+#       }
+
+# Guest
+# - title: Guest
+#   path: guest
+#   icon: mdi:account-heart
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/velvet/guest.webp');
+#       }
+
+# Bathroom
+# - title: Bathroom
+#   path: bathroom
+#   icon: mdi:shower
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/velvet/bathroom.webp');
+#       }
+
+# Office
+# - title: Office
+#   path: office
+#   icon: mdi:desk
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/velvet/office.webp');
+#       }
+
+# AI
+# - title: AI
+#   path: ai
+#   icon: mdi:brain
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/velvet/ai.webp');
+#       }
+
+# Outside
+# - title: Outside
+#   path: outside
+#   icon: mdi:tree
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/velvet/outside.webp');
+#       }
+
+# Hallway
+# - title: Hallway
+#   path: hallway
+#   icon: mdi:door-open
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/velvet/hallway.webp');
+#       }
+
+# Garage
+# - title: Garage
+#   path: garage
+#   icon: mdi:garage
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/velvet/garage.webp');
+#       }
+
+# Front Yard
+# - title: Front Yard
+#   path: front-yard
+#   icon: mdi:home-outline
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/velvet/front-yard.webp');
+#       }
+
+# Back Yard
+# - title: Back Yard
+#   path: back-yard
+#   icon: mdi:grill
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/velvet/back-yard.webp');
+#       }
+
+# Electrical Room
+# - title: Electrical Room
+#   path: electrical-room
+#   icon: mdi:flash
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/velvet/electrical-room.webp');
+#       }
+
+# Technic Room
+# - title: Technic Room
+#   path: technic-room
+#   icon: mdi:cog
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/velvet/technic-room.webp');
+#       }
+
+# Garden
+# - title: Garden
+#   path: garden
+#   icon: mdi:flower
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/velvet/garden.webp');
+#       }
+
+# Energy
+# - title: Energy
+#   path: energy
+#   icon: mdi:lightning-bolt
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/velvet/energy.webp');
+#       }
+
+# Security
+# - title: Security
+#   path: security
+#   icon: mdi:shield-home
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/velvet/security.webp');
+#       }
+
+# Climate
+# - title: Climate
+#   path: climate
+#   icon: mdi:thermostat
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/velvet/climate.webp');
+#       }
+
+# Media
+# - title: Media
+#   path: media
+#   icon: mdi:play-circle
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/velvet/media.webp');
+#       }
+
+# Network
+# - title: Network
+#   path: network
+#   icon: mdi:lan
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/velvet/network.webp');
+#       }
+
+# Settings
+# - title: Settings
+#   path: settings
+#   icon: mdi:cog-outline
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/velvet/settings.webp');
+#       }
+
+# ===== Ultimate Neon ==============================
+# Home
+# - title: Home
+#   path: home
+#   icon: mdi:home
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/neon/home.webp');
+#       }
+
+# Living Room
+# - title: Living Room
+#   path: living-room
+#   icon: mdi:sofa
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/neon/living-room.webp');
+#       }
+
+# Kitchen
+# - title: Kitchen
+#   path: kitchen
+#   icon: mdi:silverware-fork-knife
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/neon/kitchen.webp');
+#       }
+
+# Bedroom
+# - title: Bedroom
+#   path: bedroom
+#   icon: mdi:bed
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/neon/bedroom.webp');
+#       }
+
+# Master Bedroom
+# - title: Master Bedroom
+#   path: master-bedroom
+#   icon: mdi:bed-king
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/neon/master-bedroom.webp');
+#       }
+
+# Guest
+# - title: Guest
+#   path: guest
+#   icon: mdi:account-heart
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/neon/guest.webp');
+#       }
+
+# Bathroom
+# - title: Bathroom
+#   path: bathroom
+#   icon: mdi:shower
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/neon/bathroom.webp');
+#       }
+
+# Office
+# - title: Office
+#   path: office
+#   icon: mdi:desk
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/neon/office.webp');
+#       }
+
+# AI
+# - title: AI
+#   path: ai
+#   icon: mdi:brain
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/neon/ai.webp');
+#       }
+
+# Outside
+# - title: Outside
+#   path: outside
+#   icon: mdi:tree
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/neon/outside.webp');
+#       }
+
+# Hallway
+# - title: Hallway
+#   path: hallway
+#   icon: mdi:door-open
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/neon/hallway.webp');
+#       }
+
+# Garage
+# - title: Garage
+#   path: garage
+#   icon: mdi:garage
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/neon/garage.webp');
+#       }
+
+# Front Yard
+# - title: Front Yard
+#   path: front-yard
+#   icon: mdi:home-outline
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/neon/front-yard.webp');
+#       }
+
+# Back Yard
+# - title: Back Yard
+#   path: back-yard
+#   icon: mdi:grill
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/neon/back-yard.webp');
+#       }
+
+# Electrical Room
+# - title: Electrical Room
+#   path: electrical-room
+#   icon: mdi:flash
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/neon/electrical-room.webp');
+#       }
+
+# Technic Room
+# - title: Technic Room
+#   path: technic-room
+#   icon: mdi:cog
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/neon/technic-room.webp');
+#       }
+
+# Garden
+# - title: Garden
+#   path: garden
+#   icon: mdi:flower
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/neon/garden.webp');
+#       }
+
+# Energy
+# - title: Energy
+#   path: energy
+#   icon: mdi:lightning-bolt
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/neon/energy.webp');
+#       }
+
+# Security
+# - title: Security
+#   path: security
+#   icon: mdi:shield-home
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/neon/security.webp');
+#       }
+
+# Climate
+# - title: Climate
+#   path: climate
+#   icon: mdi:thermostat
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/neon/climate.webp');
+#       }
+
+# Media
+# - title: Media
+#   path: media
+#   icon: mdi:play-circle
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/neon/media.webp');
+#       }
+
+# Network
+# - title: Network
+#   path: network
+#   icon: mdi:lan
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/neon/network.webp');
+#       }
+
+# Settings
+# - title: Settings
+#   path: settings
+#   icon: mdi:cog-outline
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@v0.0.1/www/ultimate-theme/backgrounds/neon/settings.webp');
+#       }

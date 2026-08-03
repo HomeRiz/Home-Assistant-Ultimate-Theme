@@ -1,0 +1,150 @@
+---
+# =============================================================================
+# button-card templates for the Ultimate Theme
+# =============================================================================
+# custom:button-card draws its own surface, so by default it ignores the theme's
+# glass engine and ends up looking like a flat rectangle sitting on top of a
+# beautiful background. These templates make it inherit the same glass layer,
+# radii, sheen and glow as every other card.
+#
+# Install: add to the TOP of your dashboard's raw config, above `views:`
+#
+#   button_card_templates: !include button-card-templates.yaml
+#
+# ...or paste the contents inline under a `button_card_templates:` key.
+#
+# Then on any button-card:
+#
+#   type: custom:button-card
+#   template: ultimate_glass
+#   entity: light.kitchen
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Base: matches ha-card exactly. Everything else inherits from this.
+# -----------------------------------------------------------------------------
+ultimate_glass:
+  show_icon: true
+  show_name: true
+  show_state: false
+  tap_action:
+    action: toggle
+  styles:
+    card:
+      - background: var(--ha-card-glass-tint)
+      - backdrop-filter: var(--ha-card-backdrop-filter)
+      - "-webkit-backdrop-filter": var(--ha-card-backdrop-filter)
+      - border-radius: var(--ha-card-border-radius)
+      - border: var(--ha-card-border-width) solid var(--ha-card-border-color)
+      - box-shadow: var(--ha-card-glass-inset-shadow)
+      - transition: var(--ultimate-transition)
+      - overflow: hidden
+      - padding: 12px
+    name:
+      - color: var(--primary-text-color)
+      - font-weight: "600"
+      - font-size: 14px
+      - letter-spacing: 0.01em
+    state:
+      - color: var(--secondary-text-color)
+      - font-size: 12px
+    icon:
+      - color: var(--state-icon-color)
+      - width: 28px
+  state:
+    # Active entities pick up the area accent + a soft glow, same as tiles.
+    - value: "on"
+      styles:
+        icon:
+          - color: var(--state-icon-active-color)
+        card:
+          - box-shadow: >-
+              var(--ha-card-glass-inset-shadow),
+              0 0 22px -8px var(--ultimate-glow-color)
+    - value: "unavailable"
+      styles:
+        card:
+          - opacity: "0.45"
+        icon:
+          - color: var(--state-icon-unavailable-color)
+
+# -----------------------------------------------------------------------------
+# Icon-only square tile
+# -----------------------------------------------------------------------------
+ultimate_glass_icon:
+  template: ultimate_glass
+  show_name: false
+  styles:
+    card:
+      - aspect-ratio: "1 / 1"
+      - padding: 0
+    icon:
+      - width: 34px
+
+# -----------------------------------------------------------------------------
+# Horizontal tile: icon left, name + state right
+# -----------------------------------------------------------------------------
+ultimate_glass_tile:
+  template: ultimate_glass
+  show_state: true
+  styles:
+    grid:
+      - grid-template-areas: '"i n" "i s"'
+      - grid-template-columns: min-content 1fr
+      - grid-template-rows: min-content min-content
+      - gap: 2px 12px
+    card:
+      - padding: 14px 16px
+    name:
+      - justify-self: start
+    state:
+      - justify-self: start
+    img_cell:
+      - justify-self: start
+      - width: 40px
+      - height: 40px
+      - border-radius: var(--mush-icon-border-radius, 50%)
+      - background: var(--ha-color-fill-primary-quiet-resting)
+
+# -----------------------------------------------------------------------------
+# Flat: no glass surface at all. Use inside a card that already has one,
+# otherwise you get glass stacked on glass and the blur doubles up.
+# -----------------------------------------------------------------------------
+ultimate_flat:
+  template: ultimate_glass
+  styles:
+    card:
+      - background: none
+      - backdrop-filter: none
+      - "-webkit-backdrop-filter": none
+      - box-shadow: none
+      - border: none
+
+# -----------------------------------------------------------------------------
+# Neon: hard accent border and a permanent outer glow. Designed for the
+# Ultimate Neon themes, but works anywhere for a "hero" control.
+# -----------------------------------------------------------------------------
+ultimate_neon:
+  template: ultimate_glass
+  styles:
+    card:
+      - border: 1px solid
+          color-mix(in srgb, var(--ultimate-glow-color) 55%, transparent)
+      - box-shadow: >-
+          0 0 0 1px color-mix(in srgb, var(--ultimate-glow-color) 30%, transparent),
+          0 0 18px -6px var(--ultimate-glow-color)
+    name:
+      - text-transform: uppercase
+      - letter-spacing: 0.08em
+      - font-size: 12px
+  state:
+    - value: "on"
+      styles:
+        card:
+          - border-color: var(--ultimate-glow-color)
+          - box-shadow: >-
+              0 0 0 1px var(--ultimate-glow-color),
+              0 0 34px -6px var(--ultimate-glow-color)
+        icon:
+          - color: var(--ultimate-glow-color)
+          - filter: drop-shadow(0 0 6px var(--ultimate-glow-color))

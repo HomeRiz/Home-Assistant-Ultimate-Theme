@@ -1,0 +1,40 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# Local secrets / env
+.env
+.env.*
+
+# drop-in/ is a local workspace, not project content. You put source artwork
+# here and build/import_backgrounds.py converts it into www/. Nothing in it
+# belongs in the repository.
+drop-in/
+
+# Release assets, built by build/make_release_assets.py and attached to the
+# GitHub release. Not versioned.
+dist/

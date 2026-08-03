@@ -1,0 +1,83 @@
+name: Validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    # HACS validation depends on external state, so re-run it weekly
+    - cron: "0 4 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build and verify
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install build dependencies
+        run: pip install --quiet numpy Pillow jinja2 pyyaml
+
+      - name: Regenerate themes
+        run: python3 build/generate_themes.py
+
+      - name: Fail if generated output is out of date
+        run: |
+          if ! git diff --quiet -- themes/ dashboards/; then
+            echo "::error::themes/ or dashboards/ is out of date."
+            echo "Run 'python3 build/generate_themes.py' and commit the result."
+            git --no-pager diff --stat -- themes/ dashboards/
+            exit 1
+          fi
+
+      - name: Verify
+        run: python3 build/verify.py
+
+  yaml:
+    name: YAML lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check theme YAML parses
+        run: |
+          pip install --quiet pyyaml
+          python3 - <<'PY'
+          import glob, sys, yaml
+          for f in glob.glob("themes/*.yaml") + glob.glob("dashboards/*.yaml"):
+              with open(f) as fh:
+                  yaml.safe_load(fh)
+              print(f"ok  {f}")
+          PY
+
+  hacs:
+    name: HACS
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hacs/action@main
+        with:
+          category: theme
+
+  layout:
+    name: Repository layout
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check repository layout
+        run: |
+          test -f hacs.json || { echo "::error::hacs.json missing"; exit 1; }
+          count=$(find themes -maxdepth 1 -name '*.yaml' | wc -l)
+          if [ "$count" -ne 1 ]; then
+            echo "::error::themes/ must contain exactly one .yaml file (found $count)."
+            echo "HACS installs only the first theme file it finds."
+            exit 1
+          fi
+          echo "Repository layout OK"
