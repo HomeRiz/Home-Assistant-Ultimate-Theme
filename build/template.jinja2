@@ -472,14 +472,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);

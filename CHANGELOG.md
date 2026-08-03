@@ -7,6 +7,36 @@ and versions follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
+## [0.0.3] — 2026-08-03
+
+Three bugs with one root cause: `:host` only means what you think it means if
+the element card-mod is styling actually has a shadow root. `ha-panel-config`
+and `hui-view` do not, so card-mod falls back to the enclosing shadow root and
+`:host` silently resolves to the wrong element. Nothing errors; the CSS just
+lands somewhere useless.
+
+### Fixed
+
+- **A per-view `theme:` now changes the backdrop, not just the colours.** Home
+  Assistant applies a view's theme to `hui-view-container`, which sits *below*
+  `hui-root` — so the backdrop painted by `card-mod-root` always resolved to
+  the profile theme however the tab was set. The backdrop is now painted at
+  view level, inside the scope the view theme reaches. Set `theme:` on a view
+  and the image follows.
+- **Settings, Developer Tools, History and custom panels such as HACS** paint
+  their backdrop on `ha-drawer` rather than on the panel. The drawer spans the
+  whole viewport, so the sidebar's blur has an image behind it — no more themed
+  content area sitting next to a flat grey sidebar.
+- The negative-`z-index` pseudo-elements those blocks used could not render
+  anyway: with no stacking context to sit behind, `z-index: -2` puts the layer
+  behind the document background.
+- `--ultimate-background` was a `background:` shorthand in the three base
+  themes, which is not a valid `background-image` value — so the declaration
+  was dropped and their backdrop never painted. It is now always a bare image,
+  and `verify.py` fails if that ever regresses.
+
+---
+
 ## [0.0.2] — 2026-08-03
 
 ### Fixed
@@ -16,16 +46,6 @@ and versions follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   unnoticed. Removed.
 - `verify.py` now validates every `card-mod-*` key against card-mod's documented
   type list and fails on anything else.
-- The backdrop on non-Lovelace panels is now painted on `ha-drawer` rather than
-  on the panel. `ha-panel-config` has no shadow root of its own, so card-mod
-  falls back to the shadow root of `home-assistant-main` — where `:host` means
-  `home-assistant-main`, which the opaque drawer covers. The drawer also spans
-  the full viewport, so the sidebar's blur finally has an image behind it
-  instead of a flat grey seam next to a themed content area.
-- `--ultimate-background` was a `background:` shorthand in the three base
-  themes, which is not a valid `background-image` value — so the declaration
-  was dropped and their backdrop never painted. It is now always a bare image,
-  and `verify.py` fails if that ever regresses.
 
 ### Added
 
@@ -121,5 +141,6 @@ See [INSTALL.md](INSTALL.md). Short version: HACS → ⋮ → Custom repositorie
 add this repo as type **Theme** → Download → add `frontend: themes:` to
 `configuration.yaml` → restart → pick a theme and set the mode to **Dark**.
 
+[0.0.3]: https://github.com/HomeRiz/Home-Assistant-Ultimate-Theme/releases/tag/0.0.3
 [0.0.2]: https://github.com/HomeRiz/Home-Assistant-Ultimate-Theme/releases/tag/0.0.2
 [0.0.1]: https://github.com/HomeRiz/Home-Assistant-Ultimate-Theme/releases/tag/0.0.1

@@ -7,7 +7,7 @@ specific one wins.
 |---|---|---|
 | **Profile** | Your default everywhere | Profile → Theme |
 | **Dashboard** | One whole dashboard | Assign an area theme to that dashboard |
-| **View (tab)** | A single tab | `card_mod` on the view |
+| **View (tab)** | A single tab | `theme:` on the view, or `card_mod` for the image alone |
 
 ---
 
@@ -48,8 +48,44 @@ views:
 
 ## 3. View level — a background per tab
 
-This is the one people usually want, and it is the reason the theme exposes
-`--ultimate-view-background`.
+This is the one people usually want, and there are two ways to do it.
+
+### The short way — `theme:` on the view
+
+Home Assistant lets a view carry its own theme, and as of 0.0.3 that changes
+the backdrop as well as the colours:
+
+```yaml
+theme: Ultimate Glass - Home          # dashboard default
+
+views:
+  - title: Kitchen
+    path: kitchen
+    icon: mdi:silverware-fork-knife
+    theme: Ultimate Glass - Kitchen
+
+  - title: Energy
+    path: energy
+    icon: mdi:lightning-bolt
+    theme: Ultimate Neon - Electrical Room
+```
+
+Modes can be mixed freely across tabs of one dashboard.
+
+> **Before 0.0.3 this only changed the colours.** Home Assistant applies a
+> view's theme to `hui-view-container`, which sits below `hui-root` — and the
+> backdrop was painted on the root, so it always resolved to the profile theme.
+> If your tabs recolour but keep one image, you are on an older build: update
+> and reload themes.
+>
+> The sidebar and header stay on the profile theme by design. They are outside
+> the view, and repainting them on every tab switch reads as a flicker rather
+> than a feature.
+
+### The precise way — image only, colours untouched
+
+Use this when you want a different backdrop but the *same* palette and card
+styling across tabs. It is what `--ultimate-view-background` exists for.
 
 Add a `card_mod` block to the **view** (not to a card inside it):
 

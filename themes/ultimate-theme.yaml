@@ -499,14 +499,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -536,8 +553,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/glass/home.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/glass/home.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/home.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/home.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#201d1c"
@@ -1007,14 +1024,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -1044,8 +1078,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/glass/living-room.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/glass/living-room.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/living-room.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/living-room.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#2c1415"
@@ -1515,14 +1549,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -1552,8 +1603,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/glass/kitchen.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/glass/kitchen.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/kitchen.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/kitchen.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#3d2516"
@@ -2023,14 +2074,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -2060,8 +2128,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/glass/bedroom.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/glass/bedroom.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/bedroom.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/bedroom.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#0d0e33"
@@ -2531,14 +2599,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -2568,8 +2653,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/glass/master-bedroom.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/glass/master-bedroom.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/master-bedroom.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/master-bedroom.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#1f0916"
@@ -3039,14 +3124,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -3076,8 +3178,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/glass/guest.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/glass/guest.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/guest.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/guest.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#1c3125"
@@ -3547,14 +3649,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -3584,8 +3703,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/glass/bathroom.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/glass/bathroom.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/bathroom.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/bathroom.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#02313a"
@@ -4055,14 +4174,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -4092,8 +4228,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/glass/office.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/glass/office.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/office.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/office.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#10283a"
@@ -4563,14 +4699,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -4600,8 +4753,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/glass/ai.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/glass/ai.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/ai.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/ai.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#19082f"
@@ -5071,14 +5224,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -5108,8 +5278,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/glass/outside.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/glass/outside.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/outside.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/outside.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#3e403e"
@@ -5579,14 +5749,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -5616,8 +5803,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/glass/hallway.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/glass/hallway.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/hallway.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/hallway.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#392e27"
@@ -6087,14 +6274,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -6124,8 +6328,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/glass/garage.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/glass/garage.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/garage.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/garage.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#281d18"
@@ -6595,14 +6799,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -6632,8 +6853,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/glass/front-yard.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/glass/front-yard.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/front-yard.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/front-yard.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#323411"
@@ -7103,14 +7324,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -7140,8 +7378,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/glass/back-yard.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/glass/back-yard.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/back-yard.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/back-yard.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#3c280c"
@@ -7611,14 +7849,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -7648,8 +7903,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/glass/electrical-room.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/glass/electrical-room.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/electrical-room.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/electrical-room.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#2e1a05"
@@ -8119,14 +8374,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -8156,8 +8428,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/glass/technic-room.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/glass/technic-room.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/technic-room.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/technic-room.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#051c29"
@@ -8627,14 +8899,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -8664,8 +8953,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/glass/garden.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/glass/garden.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/garden.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/garden.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#223414"
@@ -9135,14 +9424,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -9172,8 +9478,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/glass/energy.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/glass/energy.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/energy.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/energy.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#233610"
@@ -9643,14 +9949,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -9680,8 +10003,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/glass/security.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/glass/security.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/security.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/security.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#280506"
@@ -10151,14 +10474,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -10188,8 +10528,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/glass/climate.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/glass/climate.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/climate.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/climate.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#231f1c"
@@ -10659,14 +10999,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -10696,8 +11053,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/glass/media.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/glass/media.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/media.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/media.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#2e0922"
@@ -11167,14 +11524,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -11204,8 +11578,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/glass/network.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/glass/network.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/network.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/network.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#011d35"
@@ -11675,14 +12049,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -11712,8 +12103,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/glass/settings.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/glass/settings.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/settings.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/settings.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#212428"
@@ -12183,14 +12574,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -12691,14 +13099,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -12728,8 +13153,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/velvet/home.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/velvet/home.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/home.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/home.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#29232f"
@@ -13199,14 +13624,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -13236,8 +13678,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/velvet/living-room.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/velvet/living-room.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/living-room.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/living-room.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#2e202b"
@@ -13707,14 +14149,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -13744,8 +14203,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/velvet/kitchen.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/velvet/kitchen.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/kitchen.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/kitchen.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#2e2127"
@@ -14215,14 +14674,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -14252,8 +14728,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/velvet/bedroom.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/velvet/bedroom.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/bedroom.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/bedroom.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#1c1a2e"
@@ -14723,14 +15199,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -14760,8 +15253,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/velvet/master-bedroom.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/velvet/master-bedroom.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/master-bedroom.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/master-bedroom.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#1d1522"
@@ -15231,14 +15724,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -15268,8 +15778,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/velvet/guest.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/velvet/guest.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/guest.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/guest.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#1f252c"
@@ -15739,14 +16249,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -15776,8 +16303,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/velvet/bathroom.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/velvet/bathroom.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/bathroom.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/bathroom.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#1b2c3d"
@@ -16247,14 +16774,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -16284,8 +16828,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/velvet/office.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/velvet/office.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/office.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/office.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#28293a"
@@ -16755,14 +17299,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -16792,8 +17353,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/velvet/ai.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/velvet/ai.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/ai.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/ai.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#181528"
@@ -17263,14 +17824,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -17300,8 +17878,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/velvet/outside.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/velvet/outside.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/outside.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/outside.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#463c4d"
@@ -17771,14 +18349,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -17808,8 +18403,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/velvet/hallway.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/velvet/hallway.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/hallway.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/hallway.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#2f2530"
@@ -18279,14 +18874,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -18316,8 +18928,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/velvet/garage.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/velvet/garage.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/garage.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/garage.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#32262c"
@@ -18787,14 +19399,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -18824,8 +19453,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/velvet/front-yard.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/velvet/front-yard.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/front-yard.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/front-yard.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#2e292d"
@@ -19295,14 +19924,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -19332,8 +19978,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/velvet/back-yard.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/velvet/back-yard.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/back-yard.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/back-yard.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#2c1d27"
@@ -19803,14 +20449,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -19840,8 +20503,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/velvet/electrical-room.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/velvet/electrical-room.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/electrical-room.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/electrical-room.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#241c27"
@@ -20311,14 +20974,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -20348,8 +21028,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/velvet/technic-room.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/velvet/technic-room.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/technic-room.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/technic-room.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#16141f"
@@ -20819,14 +21499,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -20856,8 +21553,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/velvet/garden.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/velvet/garden.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/garden.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/garden.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#292a2c"
@@ -21327,14 +22024,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -21364,8 +22078,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/velvet/energy.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/velvet/energy.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/energy.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/energy.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#2c2b2c"
@@ -21835,14 +22549,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -21872,8 +22603,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/velvet/security.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/velvet/security.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/security.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/security.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#21121b"
@@ -22343,14 +23074,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -22380,8 +23128,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/velvet/climate.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/velvet/climate.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/climate.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/climate.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#2f2731"
@@ -22851,14 +23599,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -22888,8 +23653,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/velvet/media.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/velvet/media.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/media.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/media.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#281c30"
@@ -23359,14 +24124,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -23396,8 +24178,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/velvet/network.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/velvet/network.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/network.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/network.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#16182a"
@@ -23867,14 +24649,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -23904,8 +24703,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/velvet/settings.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/velvet/settings.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/settings.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/velvet/settings.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#1f1d25"
@@ -24375,14 +25174,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -24883,14 +25699,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -24920,8 +25753,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/neon/home.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/neon/home.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/home.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/home.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#181218"
@@ -25391,14 +26224,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -25428,8 +26278,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/neon/living-room.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/neon/living-room.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/living-room.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/living-room.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#260d16"
@@ -25899,14 +26749,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -25936,8 +26803,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/neon/kitchen.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/neon/kitchen.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/kitchen.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/kitchen.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#2b1610"
@@ -26407,14 +27274,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -26444,8 +27328,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/neon/bedroom.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/neon/bedroom.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/bedroom.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/bedroom.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#0d0522"
@@ -26915,14 +27799,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -26952,8 +27853,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/neon/master-bedroom.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/neon/master-bedroom.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/master-bedroom.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/master-bedroom.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#0e010e"
@@ -27423,14 +28324,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -27460,8 +28378,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/neon/guest.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/neon/guest.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/guest.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/guest.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#021312"
@@ -27931,14 +28849,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -27968,8 +28903,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/neon/bathroom.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/neon/bathroom.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/bathroom.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/bathroom.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#011820"
@@ -28439,14 +29374,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -28476,8 +29428,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/neon/office.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/neon/office.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/office.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/office.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#081422"
@@ -28947,14 +29899,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -28984,8 +29953,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/neon/ai.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/neon/ai.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/ai.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/ai.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#0a0317"
@@ -29455,14 +30424,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -29492,8 +30478,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/neon/outside.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/neon/outside.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/outside.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/outside.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#2d2e45"
@@ -29963,14 +30949,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -30000,8 +31003,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/neon/hallway.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/neon/hallway.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/hallway.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/hallway.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#161118"
@@ -30471,14 +31474,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -30508,8 +31528,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/neon/garage.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/neon/garage.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/garage.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/garage.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#1a0e0c"
@@ -30979,14 +31999,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -31016,8 +32053,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/neon/front-yard.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/neon/front-yard.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/front-yard.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/front-yard.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#141e10"
@@ -31487,14 +32524,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -31524,8 +32578,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/neon/back-yard.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/neon/back-yard.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/back-yard.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/back-yard.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#1f1710"
@@ -31995,14 +33049,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -32032,8 +33103,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/neon/electrical-room.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/neon/electrical-room.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/electrical-room.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/electrical-room.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#140a07"
@@ -32503,14 +33574,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -32540,8 +33628,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/neon/technic-room.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/neon/technic-room.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/technic-room.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/technic-room.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#020a18"
@@ -33011,14 +34099,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -33048,8 +34153,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/neon/garden.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/neon/garden.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/garden.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/garden.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#081907"
@@ -33519,14 +34624,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -33556,8 +34678,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/neon/energy.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/neon/energy.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/energy.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/energy.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#151f07"
@@ -34027,14 +35149,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -34064,8 +35203,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/neon/security.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/neon/security.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/security.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/security.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#100103"
@@ -34535,14 +35674,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -34572,8 +35728,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/neon/climate.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/neon/climate.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/climate.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/climate.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#171314"
@@ -35043,14 +36199,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -35080,8 +36253,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/neon/media.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/neon/media.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/media.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/media.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#210228"
@@ -35551,14 +36724,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -35588,8 +36778,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/neon/network.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/neon/network.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/network.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/network.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#020e21"
@@ -36059,14 +37249,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);
@@ -36096,8 +37303,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/neon/settings.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.2/www/ultimate-theme/backgrounds/neon/settings.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/settings.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/neon/settings.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#06080a"
@@ -36567,14 +37774,31 @@
   card-mod-view: |
     /* Per-view background override hook.
        Set --ultimate-view-background in a view's card_mod to give that single
-       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md */
-    :host::before {
+       tab its own backdrop - see docs/PER-VIEW-BACKGROUNDS.md
+
+       This block is also what makes a per-view `theme:` change the backdrop.
+       Home Assistant applies a view's theme to `hui-view-container`, which is
+       *below* `hui-root` - so the backdrop `card-mod-root` paints on the root
+       always resolves to the profile theme, no matter what the tab is set to.
+       Colours changed per tab, the image never did. Painting here instead puts
+       the backdrop inside the scope the view theme actually reaches.
+
+       Not `:host`: `hui-view` has no shadow root, so card-mod injects this into
+       `hui-root`'s shadow root, where `:host` is `hui-root` - the wrong element,
+       with the wrong theme in scope. Target `hui-view` by name.
+
+       The fallback chain means this is a no-op where nothing is overridden: an
+       explicit --ultimate-view-background wins, otherwise the theme in scope at
+       view level, which on an unthemed tab is the same image already painted
+       underneath. */
+    hui-view::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: var(--ultimate-view-background, none);
+      background-image: var(--ultimate-view-background, var(--ultimate-background));
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: -2;
       pointer-events: none;
       opacity: var(--ultimate-view-background-opacity, 1);

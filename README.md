@@ -178,26 +178,49 @@ Three levels, most specific wins.
 |---|---|---|
 | Profile | your default everywhere | Profile → Theme |
 | Dashboard | one whole dashboard | `theme:` key in the dashboard config |
-| View (tab) | a single tab | `card_mod` on the view |
+| View (tab) | a single tab | `theme:` key on the view |
 
-Per tab, in your dashboard's **Raw configuration editor**:
+Per tab, in your dashboard's **Raw configuration editor** — one line each:
 
 ```yaml
-theme: Ultimate Glass - Home
+theme: Ultimate Glass - Home        # the whole dashboard
 
 views:
   - title: Kitchen
     path: kitchen
     icon: mdi:silverware-fork-knife
+    theme: Ultimate Glass - Kitchen  # just this tab
+
+  - title: Energy
+    path: energy
+    theme: Ultimate Neon - Electrical Room
+```
+
+Each tab gets that theme's colours *and* its backdrop. Mixing modes across tabs
+of one dashboard works — Glass on one, Neon on the next.
+
+<details>
+<summary><b>Want a background without changing the tab's colours?</b></summary>
+
+Set `--ultimate-view-background` instead. The theme stays whatever it was; only
+the image changes.
+
+```yaml
+  - title: Kitchen
+    path: kitchen
     card_mod:
       style: |
         :host {
-          --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@main/www/ultimate-theme/backgrounds/glass/kitchen.webp');
+          --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.3/www/ultimate-theme/backgrounds/glass/kitchen.webp');
         }
 ```
 
 `dashboards/per-view-backgrounds.yaml` has a ready-made block for every area in
-every mode. [Full guide, including opacity blending →](docs/PER-VIEW-BACKGROUNDS.md)
+every mode.
+
+</details>
+
+[Full guide, including opacity blending →](docs/PER-VIEW-BACKGROUNDS.md)
 
 ---
 
