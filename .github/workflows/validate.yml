@@ -17,9 +17,9 @@ jobs:
     name: Build and verify
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
 
@@ -45,7 +45,7 @@ jobs:
     name: YAML lint
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Check theme YAML parses
         run: |
           pip install --quiet pyyaml
@@ -61,7 +61,7 @@ jobs:
     name: HACS
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: hacs/action@main
         with:
           category: theme
@@ -70,7 +70,7 @@ jobs:
     name: Repository layout
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Check repository layout
         run: |
           test -f hacs.json || { echo "::error::hacs.json missing"; exit 1; }

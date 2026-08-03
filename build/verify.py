@@ -238,15 +238,49 @@ def main() -> int:
             check(False, f"{rel} would be committed - add it to .gitignore "
                          f"or delete it")
 
-    # -- hacs.json points at the real file -----------------------------------
+    # -- hacs.json -----------------------------------------------------------
+    # HACS validates this with voluptuous using extra=PREVENT_EXTRA, so a single
+    # unrecognised key fails the whole manifest check. Mirror the real schema
+    # (custom_components/hacs/utils/validate.py) rather than trusting the docs
+    # table, which is missing at least render_readme.
+    HACS_KEYS = {
+        "content_in_root": bool, "country": (str, list), "filename": str,
+        "hacs": str, "hide_default_branch": bool, "homeassistant": str,
+        "persistent_directory": str, "render_readme": bool,
+        "zip_release": bool, "name": str,
+    }
     import json
     try:
         hacs = json.load(open(os.path.join(ROOT, "hacs.json")))
+        check("name" in hacs, "hacs.json missing required key 'name'")
         check(hacs.get("filename") == fn,
               f"hacs.json filename={hacs.get('filename')!r} but theme file is {fn!r}")
-        check("name" in hacs, "hacs.json missing 'name'")
+        for key, val in hacs.items():
+            check(key in HACS_KEYS,
+                  f"hacs.json: unknown key {key!r} - HACS rejects the whole "
+                  f"manifest on any extra key")
+            if key in HACS_KEYS:
+                check(isinstance(val, HACS_KEYS[key]),
+                      f"hacs.json: {key!r} should be "
+                      f"{HACS_KEYS[key]}, got {type(val).__name__}")
     except (OSError, ValueError) as e:
         errors.append(f"hacs.json unreadable: {e}")
+
+    # -- README must contain an image HACS will render ------------------------
+    # HACS scans the readme for a line with '<img' or '![' that is not a shield
+    # or a buymeacoffee link. Badges alone do not count.
+    try:
+        readme = open(os.path.join(ROOT, "README.md")).read()
+        ignored = ("-shield", "img.shields.io", "buymeacoffee.com")
+        has_image = any(
+            ("<img" in line or "![" in line)
+            and not any(i in line for i in ignored)
+            for line in readme.splitlines())
+        check(has_image,
+              "README.md has no image that HACS will count - badges are "
+              "ignored, so at least one real screenshot is required")
+    except OSError as e:
+        errors.append(f"README.md unreadable: {e}")
 
     print(f"theme file : {fn}")
     print(f"themes     : {len(seen)}")

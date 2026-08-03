@@ -1,0 +1,19 @@
+version: 2
+
+# Keeps the workflow's action versions current. Without this they quietly rot
+# until GitHub retires the Node runtime they target, and every run starts
+# emitting deprecation warnings — which is exactly how v4/v5 drifted out of date.
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    commit-message:
+      prefix: ci
+    labels:
+      - ci
+    groups:
+      # One PR for all of them rather than three separate ones.
+      actions:
+        patterns:
+          - "*"
