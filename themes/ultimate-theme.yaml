@@ -594,8 +594,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/home.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/home.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/home.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/home.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#201d1c"
@@ -1160,8 +1160,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/living-room.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/living-room.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/living-room.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/living-room.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#2c1415"
@@ -1726,8 +1726,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/kitchen.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/kitchen.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/kitchen.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/kitchen.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#3d2516"
@@ -2292,8 +2292,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/bedroom.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/bedroom.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/bedroom.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/bedroom.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#0d0e33"
@@ -2858,8 +2858,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/master-bedroom.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/master-bedroom.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/master-bedroom.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/master-bedroom.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#1f0916"
@@ -3424,8 +3424,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/guest.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/guest.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/guest.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/guest.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#1c3125"
@@ -3990,8 +3990,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/bathroom.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/bathroom.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/bathroom.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/bathroom.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#02313a"
@@ -4556,8 +4556,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/office.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/office.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/office.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/office.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#10283a"
@@ -5122,8 +5122,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/ai.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/ai.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/ai.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/ai.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#19082f"
@@ -5688,8 +5688,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/outside.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/outside.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/outside.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/outside.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#3e403e"
@@ -6254,8 +6254,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/hallway.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/hallway.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/hallway.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/hallway.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#392e27"
@@ -6820,8 +6820,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/garage.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/garage.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/garage.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/garage.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#281d18"
@@ -7386,8 +7386,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/front-yard.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/front-yard.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/front-yard.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/front-yard.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#323411"
@@ -7952,8 +7952,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/back-yard.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/back-yard.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/back-yard.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/back-yard.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#3c280c"
@@ -8518,8 +8518,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/electrical-room.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/electrical-room.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/electrical-room.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/electrical-room.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#2e1a05"
@@ -9084,8 +9084,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/technic-room.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/technic-room.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/technic-room.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/technic-room.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#051c29"
@@ -9650,8 +9650,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/garden.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/garden.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/garden.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/garden.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#223414"
@@ -10216,8 +10216,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/energy.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/energy.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/energy.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/energy.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#233610"
@@ -10782,8 +10782,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/security.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/security.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/security.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/security.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#280506"
@@ -11348,8 +11348,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/climate.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/climate.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/climate.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/climate.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#231f1c"
@@ -11914,8 +11914,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/media.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/media.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/media.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/media.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#2e0922"
@@ -12480,8 +12480,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/network.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/network.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/network.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/network.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#011d35"
@@ -13046,8 +13046,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/settings.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/settings.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/settings.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/settings.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#212428"
@@ -14178,8 +14178,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/home.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/home.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/home.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/home.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#29232f"
@@ -14744,8 +14744,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/living-room.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/living-room.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/living-room.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/living-room.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#2e202b"
@@ -15310,8 +15310,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/kitchen.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/kitchen.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/kitchen.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/kitchen.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#2e2127"
@@ -15876,8 +15876,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/bedroom.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/bedroom.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/bedroom.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/bedroom.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#1c1a2e"
@@ -16442,8 +16442,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/master-bedroom.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/master-bedroom.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/master-bedroom.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/master-bedroom.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#1d1522"
@@ -17008,8 +17008,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/guest.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/guest.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/guest.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/guest.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#1f252c"
@@ -17574,8 +17574,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/bathroom.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/bathroom.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/bathroom.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/bathroom.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#1b2c3d"
@@ -18140,8 +18140,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/office.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/office.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/office.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/office.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#28293a"
@@ -18706,8 +18706,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/ai.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/ai.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/ai.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/ai.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#181528"
@@ -19272,8 +19272,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/outside.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/outside.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/outside.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/outside.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#463c4d"
@@ -19838,8 +19838,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/hallway.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/hallway.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/hallway.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/hallway.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#2f2530"
@@ -20404,8 +20404,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/garage.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/garage.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/garage.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/garage.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#32262c"
@@ -20970,8 +20970,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/front-yard.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/front-yard.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/front-yard.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/front-yard.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#2e292d"
@@ -21536,8 +21536,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/back-yard.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/back-yard.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/back-yard.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/back-yard.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#2c1d27"
@@ -22102,8 +22102,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/electrical-room.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/electrical-room.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/electrical-room.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/electrical-room.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#241c27"
@@ -22668,8 +22668,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/technic-room.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/technic-room.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/technic-room.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/technic-room.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#16141f"
@@ -23234,8 +23234,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/garden.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/garden.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/garden.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/garden.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#292a2c"
@@ -23800,8 +23800,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/energy.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/energy.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/energy.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/energy.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#2c2b2c"
@@ -24366,8 +24366,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/security.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/security.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/security.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/security.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#21121b"
@@ -24932,8 +24932,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/climate.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/climate.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/climate.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/climate.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#2f2731"
@@ -25498,8 +25498,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/media.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/media.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/media.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/media.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#281c30"
@@ -26064,8 +26064,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/network.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/network.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/network.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/network.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#16182a"
@@ -26630,8 +26630,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/settings.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/velvet/settings.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/settings.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/settings.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#1f1d25"
@@ -27762,8 +27762,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/home.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/home.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/home.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/home.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#181218"
@@ -28328,8 +28328,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/living-room.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/living-room.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/living-room.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/living-room.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#260d16"
@@ -28894,8 +28894,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/kitchen.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/kitchen.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/kitchen.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/kitchen.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#2b1610"
@@ -29460,8 +29460,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/bedroom.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/bedroom.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/bedroom.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/bedroom.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#0d0522"
@@ -30026,8 +30026,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/master-bedroom.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/master-bedroom.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/master-bedroom.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/master-bedroom.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#0e010e"
@@ -30592,8 +30592,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/guest.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/guest.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/guest.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/guest.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#021312"
@@ -31158,8 +31158,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/bathroom.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/bathroom.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/bathroom.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/bathroom.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#011820"
@@ -31724,8 +31724,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/office.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/office.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/office.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/office.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#081422"
@@ -32290,8 +32290,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/ai.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/ai.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/ai.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/ai.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#0a0317"
@@ -32856,8 +32856,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/outside.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/outside.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/outside.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/outside.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#2d2e45"
@@ -33422,8 +33422,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/hallway.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/hallway.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/hallway.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/hallway.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#161118"
@@ -33988,8 +33988,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/garage.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/garage.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/garage.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/garage.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#1a0e0c"
@@ -34554,8 +34554,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/front-yard.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/front-yard.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/front-yard.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/front-yard.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#141e10"
@@ -35120,8 +35120,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/back-yard.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/back-yard.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/back-yard.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/back-yard.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#1f1710"
@@ -35686,8 +35686,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/electrical-room.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/electrical-room.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/electrical-room.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/electrical-room.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#140a07"
@@ -36252,8 +36252,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/technic-room.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/technic-room.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/technic-room.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/technic-room.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#020a18"
@@ -36818,8 +36818,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/garden.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/garden.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/garden.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/garden.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#081907"
@@ -37384,8 +37384,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/energy.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/energy.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/energy.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/energy.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#151f07"
@@ -37950,8 +37950,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/security.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/security.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/security.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/security.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#100103"
@@ -38516,8 +38516,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/climate.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/climate.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/climate.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/climate.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#171314"
@@ -39082,8 +39082,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/media.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/media.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/media.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/media.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#210228"
@@ -39648,8 +39648,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/network.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/network.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/network.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/network.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#020e21"
@@ -40214,8 +40214,8 @@
   # BACKGROUND
   # =========================================================================
 
-  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/settings.webp')"
-  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/neon/settings.webp')"
+  ultimate-background: "url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/settings.webp')"
+  background-image: "center / cover no-repeat fixed url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/settings.webp')"
   lovelace-background: var(--background-image)
 
   app-theme-color: "#06080a"

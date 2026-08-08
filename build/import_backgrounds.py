@@ -40,7 +40,10 @@ ROOT = os.path.dirname(HERE)
 DROP = os.path.join(ROOT, "drop-in")
 OUT = os.path.join(ROOT, "www", "ultimate-theme", "backgrounds")
 AVG = os.path.join(ROOT, "www", "ultimate-theme", "avg-colors.json")
-MODES = ("glass", "velvet", "neon")
+# Single source of truth: the styles that have artwork prompts. Hardcoding the
+# list here once meant a new drop-in/<style>/ folder was silently skipped.
+from prompts import STYLES as _STYLES   # noqa: E402
+MODES = tuple(_STYLES)
 W, H = 2560, 1440
 EXTS = (".png", ".jpg", ".jpeg", ".webp", ".bmp", ".tif", ".tiff")
 

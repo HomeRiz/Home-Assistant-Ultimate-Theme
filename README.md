@@ -7,139 +7,166 @@
 [![Latest release](https://img.shields.io/github/v/release/HomeRiz/Home-Assistant-Ultimate-Theme?style=flat-square&label=release)](https://github.com/HomeRiz/Home-Assistant-Ultimate-Theme/releases/latest)
 [![HACS Custom](https://img.shields.io/badge/HACS-Custom-41BDF5.svg?style=flat-square)](https://hacs.xyz)
 [![Validate](https://img.shields.io/github/actions/workflow/status/HomeRiz/Home-Assistant-Ultimate-Theme/validate.yml?branch=main&style=flat-square&label=validate)](https://github.com/HomeRiz/Home-Assistant-Ultimate-Theme/actions/workflows/validate.yml)
-[![License](https://img.shields.io/github/license/HomeRiz/Home-Assistant-Ultimate-Theme?style=flat-square)](LICENSE)
+[![License MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](LICENSE)
 [![Home Assistant](https://img.shields.io/badge/Home%20Assistant-2024.11%2B-41BDF5.svg?style=flat-square)](https://www.home-assistant.io)
-[![Stars](https://img.shields.io/github/stars/HomeRiz/Home-Assistant-Ultimate-Theme?style=flat-square)](https://github.com/HomeRiz/Home-Assistant-Ultimate-Theme/stargazers)
 
-<img src="docs/previews/glass/ai.webp" width="80%" alt="Ultimate Glass, AI dashboard">
+<a href="https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Theme/main/docs/previews/glass/ai.webp"><img src="https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Theme/main/docs/previews/glass/ai.webp" width="62%" alt="Ultimate Glass, AI dashboard"></a>
 
 </div>
 
 ---
 
-Three complete visual systems, each rendered across 23 areas of the home. Every
-area gets its own artwork, its own accent colour, and its own theme entry — so a
-dashboard can look like the room it controls.
+Three complete visual systems — **Glass**, **Velvet** and **Neon** — each rendered
+across 23 areas of the home. Every area gets its own artwork, its own accent
+colour and its own theme entry, so a dashboard can look like the room it controls.
 
 ```
 3 modes  ×  (1 base + 23 areas)  =  72 themes
 3 modes  ×  23 areas             =  69 backgrounds
 ```
 
-**Requires** [card-mod](https://github.com/thomasloven/lovelace-card-mod).
-Mushroom, Bubble Card and button-card are supported but optional.
-
 ---
 
 ## Install
 
-### Via HACS (recommended)
+### Step 1 — install card-mod
 
-<details open>
-<summary><b>Step 1 — add this repository</b></summary>
+**This theme does not work without it.** card-mod is what draws the glass and the
+backgrounds; without it you get the colours and nothing else, and no error
+explaining why.
 
-1. **HACS** → **⋮** (top right) → **Custom repositories**
-2. Repository: `https://github.com/HomeRiz/Home-Assistant-Ultimate-Theme`
-3. Type: **Theme**
-4. **Add**
+[![Open card-mod in HACS](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=thomasloven&repository=lovelace-card-mod&category=plugin)
 
-</details>
+Or in HACS, search for **card-mod** and download it.
 
-<details open>
-<summary><b>Step 2 — download</b></summary>
+### Step 2 — install this theme
 
-Search HACS for **Home Assistant Ultimate Theme** → **Download**.
+[![Open this theme in HACS](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=HomeRiz&repository=Home-Assistant-Ultimate-Theme&category=theme)
 
-HACS creates `/config/themes/ultimate-theme/ultimate-theme.yaml` — one file, all
-72 themes. Leave it in that subfolder; the include recurses and finds it.
-Backgrounds are served from a CDN, so there is nothing else to copy.
+The button adds it as a custom repository. If you would rather do it by hand:
+**HACS → ⋮ (top right) → Custom repositories**, paste
+`https://github.com/HomeRiz/Home-Assistant-Ultimate-Theme`, type **Theme**, **Add**.
 
-</details>
+Then search HACS for **Home Assistant Ultimate Theme** and **Download**.
 
-<details open>
-<summary><b>Step 3 — enable themes</b></summary>
+### Step 3 — find your card-mod URL
 
-In `configuration.yaml`:
+Go to **Settings → Dashboards → ⋮ (top right) → Resources**.
+
+Find the row for card-mod. It has this shape, ending in a 12-digit number:
+
+```
+/hacsfiles/lovelace-card-mod/card-mod.js?hacstag=############
+```
+
+**Copy the real line from your own screen, number included.** Do not copy the
+one above — `hacstag` is the version stamp HACS puts on the file, so it differs
+per instance and changes whenever card-mod updates. A number taken from
+somewhere else gives you a 404 that only shows up on Settings, while dashboards
+keep working — which makes it look like a theme bug rather than a wrong URL.
+
+### Step 4 — add one line to `configuration.yaml`
+
+You most likely already have this block:
+
+```yaml
+frontend:
+  themes: !include_dir_merge_named themes
+```
+
+Add `extra_module_url` to it, with the line you just copied:
 
 ```yaml
 frontend:
   themes: !include_dir_merge_named themes
   extra_module_url:
-    - /hacsfiles/lovelace-card-mod/card-mod.js?hacstag=YOUR_TAG
+    - /hacsfiles/lovelace-card-mod/card-mod.js?hacstag=XXXXXXXXXXXX
 ```
 
-If you already have a `frontend:` block, add these lines to it — a second
-`frontend:` key is a YAML error.
+Replace `XXXXXXXXXXXX` with your own number from Step 3.
 
-**The `extra_module_url` line is not optional.** Dashboard resources are loaded
-only on Lovelace dashboards, so without it card-mod never runs on Settings,
-HACS or Developer Tools — those pages get the colours but no backdrop and no
-glass. Copy your exact URL, `hacstag` included, from
-Settings → Dashboards → ⋮ → **Resources**, and keep that resource entry as it is:
-you need both.
+> **Why this line is needed:** dashboard resources are only loaded on Lovelace
+> dashboards. Without `extra_module_url`, card-mod never runs on Settings,
+> Developer Tools or HACS — those pages get the colours but no background and no
+> glass. Keep the Resources entry as it is; you need both.
 
-</details>
+### Step 5 — restart and pick a theme
 
-<details open>
-<summary><b>Step 4 — restart and pick a theme</b></summary>
-
-Restart Home Assistant (a theme reload is not enough the first time — the
-include is only evaluated at startup).
+**Restart Home Assistant.** A theme reload is not enough — `extra_module_url` is
+only read at startup.
 
 Then: your username, bottom left → **Theme** → pick one. Start with
 `Ultimate Glass - Home`, and set the dropdown beside it to **Dark**.
 
-</details>
-
-That's it. [Full install guide with troubleshooting →](INSTALL.md)
+> **Give it a few seconds on the first load.** The module is fetched separately
+> from the rest of the frontend, so Settings can render plain and then pick up the
+> background a moment later. That is not a broken install.
 
 > **Why dark?** All backgrounds are dark so white card text stays readable. Light
 > mode works and uses lighter card surfaces, but keeps light text.
 
-### Prefer to self-host the images?
+**Something not working?** → [Troubleshooting](INSTALL.md#troubleshooting)
 
-The default build loads backgrounds from jsDelivr. To serve them from your own
-Home Assistant instead, copy `www/` to `/config/www/` and rebuild:
+---
 
-```bash
-python3 build/generate_themes.py --base local
+## A theme per tab
+
+Every area exists as a full theme, so a single dashboard can change backdrop as
+you move between tabs. In the dashboard's **Raw configuration editor**:
+
+```yaml
+theme: Ultimate Glass - Home        # the whole dashboard
+
+views:
+  - title: Kitchen
+    path: kitchen
+    theme: Ultimate Glass - Kitchen  # just this tab
+
+  - title: Energy
+    path: energy
+    theme: Ultimate Neon - Electrical Room
 ```
 
-[Why this trade-off exists →](docs/ARCHITECTURE.md#where-backgrounds-come-from)
+Each tab gets that theme's colours *and* its backdrop. Mixing modes across tabs
+works — Glass on one, Neon on the next.
+
+[Full guide, including image-only overrides →](docs/PER-VIEW-BACKGROUNDS.md)
 
 ---
 
 ## Gallery
 
-Every area, in all three modes. Full-size previews live in
-[`docs/previews/`](docs/previews).
-
 ### Ultimate Glass
 
 Heavy blur, 30px radii, no borders, bright specular rim.
 
-<img src="docs/previews/glass.webp" alt="All 23 areas in Ultimate Glass">
+<a href="https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Theme/main/docs/previews/glass.webp"><img src="https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Theme/main/docs/previews/glass.webp" width="78%" alt="All 23 areas in Ultimate Glass"></a>
+
+<sub>Click to view full size.</sub>
 
 ### Ultimate Velvet
 
 Softer blur, 18px radii, hairline borders, muted pastel accents.
 
-<img src="docs/previews/velvet.webp" alt="All 23 areas in Ultimate Velvet">
+<a href="https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Theme/main/docs/previews/velvet.webp"><img src="https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Theme/main/docs/previews/velvet.webp" width="78%" alt="All 23 areas in Ultimate Velvet"></a>
+
+<sub>Click to view full size.</sub>
 
 ### Ultimate Neon
 
 Near-black, 12px radii, accent borders with outer glow, scanlined backdrops.
 
-<img src="docs/previews/neon.webp" alt="All 23 areas in Ultimate Neon">
+<a href="https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Theme/main/docs/previews/neon.webp"><img src="https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Theme/main/docs/previews/neon.webp" width="78%" alt="All 23 areas in Ultimate Neon"></a>
+
+<sub>Click to view full size.</sub>
 
 <details>
-<summary><b>Side by side — the same area across all three modes</b></summary>
+<summary><b>The same area across all three modes</b></summary>
 
 | Glass | Velvet | Neon |
 |---|---|---|
-| <img src="docs/previews/glass/kitchen.webp" width="260"> | <img src="docs/previews/velvet/kitchen.webp" width="260"> | <img src="docs/previews/neon/kitchen.webp" width="260"> |
-| <img src="docs/previews/glass/security.webp" width="260"> | <img src="docs/previews/velvet/security.webp" width="260"> | <img src="docs/previews/neon/security.webp" width="260"> |
-| <img src="docs/previews/glass/network.webp" width="260"> | <img src="docs/previews/velvet/network.webp" width="260"> | <img src="docs/previews/neon/network.webp" width="260"> |
+| <a href="https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Theme/main/docs/previews/glass/kitchen.webp"><img src="https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Theme/main/docs/previews/glass/kitchen.webp" width="240"></a> | <a href="https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Theme/main/docs/previews/velvet/kitchen.webp"><img src="https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Theme/main/docs/previews/velvet/kitchen.webp" width="240"></a> | <a href="https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Theme/main/docs/previews/neon/kitchen.webp"><img src="https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Theme/main/docs/previews/neon/kitchen.webp" width="240"></a> |
+| <a href="https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Theme/main/docs/previews/glass/security.webp"><img src="https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Theme/main/docs/previews/glass/security.webp" width="240"></a> | <a href="https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Theme/main/docs/previews/velvet/security.webp"><img src="https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Theme/main/docs/previews/velvet/security.webp" width="240"></a> | <a href="https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Theme/main/docs/previews/neon/security.webp"><img src="https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Theme/main/docs/previews/neon/security.webp" width="240"></a> |
 
 The composition is deliberately identical across modes — only palette and grade
 change, so a room stays recognisable when you switch aesthetic.
@@ -157,162 +184,34 @@ change, so a room stays recognisable when you switch aesthetic.
 | Borders | none | 1px hairline | 1px accent, glowing |
 | Character | rich, luminous, soft | muted, cozy, matte | high-chroma, scanlined |
 
-Accents adapt per mode rather than being reused verbatim — Garden's `#32D74B`
-becomes `#A6E3A1` in Velvet and `#00FF27` in Neon.
-
 ## The 23 areas
 
-`home` · `living-room` · `kitchen` · `bedroom` · `master-bedroom` · `guest` ·
-`bathroom` · `office` · `ai` · `outside` · `hallway` · `garage` · `front-yard` ·
-`back-yard` · `electrical-room` · `technic-room` · `garden` · `energy` ·
-`security` · `climate` · `media` · `network` · `settings`
+| Rooms | Outdoors | Systems |
+|---|---|---|
+| `home` | `outside` | `ai` |
+| `living-room` | `front-yard` | `electrical-room` |
+| `kitchen` | `back-yard` | `technic-room` |
+| `bedroom` | `garden` | `energy` |
+| `master-bedroom` | `garage` | `security` |
+| `guest` | | `climate` |
+| `bathroom` | | `media` |
+| `office` | | `network` |
+| `hallway` | | `settings` |
 
 Adding one is a single line in `build/areas.py`.
 
 ---
 
-## Backgrounds per dashboard and per tab
+## Documentation
 
-Three levels, most specific wins.
-
-| Level | Sets | How |
-|---|---|---|
-| Profile | your default everywhere | Profile → Theme |
-| Dashboard | one whole dashboard | `theme:` key in the dashboard config |
-| View (tab) | a single tab | `theme:` key on the view |
-
-Per tab, in your dashboard's **Raw configuration editor** — one line each:
-
-```yaml
-theme: Ultimate Glass - Home        # the whole dashboard
-
-views:
-  - title: Kitchen
-    path: kitchen
-    icon: mdi:silverware-fork-knife
-    theme: Ultimate Glass - Kitchen  # just this tab
-
-  - title: Energy
-    path: energy
-    theme: Ultimate Neon - Electrical Room
-```
-
-Each tab gets that theme's colours *and* its backdrop. Mixing modes across tabs
-of one dashboard works — Glass on one, Neon on the next.
-
-<details>
-<summary><b>Want a background without changing the tab's colours?</b></summary>
-
-Set `--ultimate-view-background` instead. The theme stays whatever it was; only
-the image changes.
-
-```yaml
-  - title: Kitchen
-    path: kitchen
-    card_mod:
-      style: |
-        :host {
-          --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.4/www/ultimate-theme/backgrounds/glass/kitchen.webp');
-        }
-```
-
-`dashboards/per-view-backgrounds.yaml` has a ready-made block for every area in
-every mode.
-
-</details>
-
-[Full guide, including opacity blending →](docs/PER-VIEW-BACKGROUNDS.md)
-
----
-
-## Features
-
-- **Specular sheen** — a `::after` rim gradient, so cards read as glass rather
-  than frosted plastic
-- **Graceful degradation** — an `@supports` fallback swaps in solid surfaces
-  where `backdrop-filter` is unsupported, instead of rendering unreadable
-- **iOS-safe backgrounds** — painted onto a fixed pseudo-element, because
-  `background-attachment: fixed` misbehaves on iOS Safari and the companion app
-- **Per-view background hook** — one dashboard, a different backdrop per tab
-- **Full accent ladder** — `--ha-color-primary-05..95` computed per area
-- **Hover lift** — guarded by `prefers-reduced-motion`
-- **button-card templates** — `ultimate_glass`, `ultimate_glass_icon`,
-  `ultimate_glass_tile`, `ultimate_flat`, `ultimate_neon`
-- **Card compatibility** — Mushroom, Bubble Card, heading, glance and text-only
-  cards are excluded from the glass layer so they don't double-blur
-
----
-
-## Customising
-
-Everything is generated. **Never edit `themes/ultimate-theme.yaml`** — it is
-rebuilt from `build/` and your changes will be lost.
-
-```bash
-pip install numpy Pillow jinja2 pyyaml
-
-python3 build/generate_themes.py      # rebuild themes
-python3 build/verify.py               # validates every value in every theme
-```
-
-| Want to change | Edit | Then |
-|---|---|---|
-| How cards look | `build/template.jinja2` | regenerate themes |
-| A mode's palette or geometry | `build/modes.py` | regenerate themes |
-| Add an area | `build/areas.py` | backgrounds `--resume`, previews `--resume`, themes |
-| The artwork itself | `build/generate_backgrounds.py` | re-render that mode |
-
-Copy the rebuilt `themes/ultimate-theme.yaml` onto the instance, then
-Developer Tools → **Reload themes**.
-
-Put it *over* the existing file rather than beside it. If you installed via
-HACS that means `/config/themes/ultimate-theme/ultimate-theme.yaml`; a second
-copy at `/config/themes/ultimate-theme.yaml` defines all 72 theme names twice,
-because the include recurses into subfolders.
-
-**If you customise and want HACS to keep managing it:** fork this repository,
-push your changes, and add *your fork* as the custom repository instead. Then
-your edits survive updates. Copying files over Samba or SSH works too, but HACS
-will overwrite them on the next update.
-
-[Architecture, the build pipeline, and how the glass engine works →](docs/ARCHITECTURE.md)
-
----
-
-## Using your own artwork
-
-The shipped backgrounds are generated procedurally.
-[`docs/IMAGE-PROMPTS.md`](docs/IMAGE-PROMPTS.md) has a ready-to-paste prompt for
-all 69 images, and [`docs/image-prompts.tsv`](docs/image-prompts.tsv) is the same
-list as `target<TAB>prompt` rows if you're driving a batch tool.
-
-```bash
-mkdir -p drop-in/{glass,velvet,neon}    # local workspace, not tracked by git
-
-# save yours as drop-in/<mode>/<area-key>.png, then:
-python3 build/import_backgrounds.py     # crop, darken, convert, re-tint headers
-python3 build/generate_themes.py
-```
-
-Anything you don't supply keeps its generated background, so you can replace them
-a few at a time.
-
----
-
-## Troubleshooting
-
-| Symptom | Cause |
+| | |
 |---|---|
-| Theme not in the picker | `frontend: themes:` include missing, or no restart yet |
-| Everything flat, no blur | card-mod not loading — check Settings → Dashboards → Resources |
-| Cards transparent and unreadable | very old Android WebView; update the companion app |
-| Backgrounds don't load | CDN blocked on your network — rebuild with `--base local` |
-| Edited the theme, nothing changed | Reload themes, then hard refresh (`Ctrl/Cmd + Shift + R`) |
-| A custom card looks wrong | it draws its own surface — add it to `EXCLUSIONS` in the template |
-
-[Longer troubleshooting →](INSTALL.md#troubleshooting)
-
----
+| [Install guide](INSTALL.md) | Every route, in detail, plus troubleshooting |
+| [Per-tab backgrounds](docs/PER-VIEW-BACKGROUNDS.md) | Profile, dashboard and view level |
+| [Customising](docs/CUSTOMISING.md) | Feature list, rebuilding, your own artwork |
+| [Architecture](docs/ARCHITECTURE.md) | How the glass engine and build pipeline work |
+| [Image prompts](docs/IMAGE-PROMPTS.md) | Every prompt behind the artwork |
+| [Changelog](CHANGELOG.md) | What changed, and what turned out to be wrong |
 
 ## Contributing
 

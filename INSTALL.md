@@ -60,7 +60,13 @@ only read at startup.
 > or card-mod loads twice and warns about duplicate patching.
 
 Verify it worked: open **Settings**. You should see the theme's background behind
-the page. If the page is flat dark, the module is not loading.
+the page.
+
+> **Give it a few seconds on the first load.** `extra_module_url` modules are
+> fetched separately from the rest of the frontend, so right after a restart
+> Settings can render plain and then pick up the background a moment later.
+> That looks exactly like a broken install and is not one. Only start
+> troubleshooting if it is still flat after a reload.
 
 Mushroom, Bubble Card and button-card are supported but not required.
 
@@ -350,7 +356,25 @@ card-mod isn't loading. Check Settings → Dashboards → Resources for
 resources are only fetched when the frontend boots, so a tab you had open before
 installing card-mod will not have it.
 
-**The theme works on dashboards but Settings is plain.**
+**Settings is plain for a few seconds after a restart, then fixes itself.**
+Expected. The module is still being fetched. Nothing to do.
+
+**The theme works on dashboards but Settings stays plain.**
+The module is not loading, even if the line is present — the two are separate
+things. On the Settings page, open the browser console:
+
+```js
+console.log('card-mod loaded here:', !!customElements.get('card-mod'));
+```
+
+`false` means it never arrived. Check the Network tab for the URL you put in
+`extra_module_url`: a 404 there while dashboards still work is the classic
+split — the dashboard *resource* entry and `extra_module_url` are two different
+settings and can point at two different paths. Copy the working one from
+Settings → Dashboards → ⋮ → **Resources** on that same instance; a `hacstag`
+from another server will not resolve.
+
+**The theme works on dashboards but Settings is plain — and the line is missing.**
 You skipped `extra_module_url` in Step 0. Dashboard resources are not loaded on
 non-Lovelace panels, so card-mod simply is not present there. Add the module,
 restart, and the backdrop will follow you across the whole UI.

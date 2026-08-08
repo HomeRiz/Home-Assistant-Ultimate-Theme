@@ -39,6 +39,35 @@ theme and injects their contents into the right shadow roots:
 | `card-mod-config` | built-in panels: Settings, Developer Tools, History |
 | `card-mod-panel-custom` | custom panels — but only those *not* embedded in an iframe |
 
+### Why this needs a line in `configuration.yaml`
+
+A recurring question: can the theme not just load card-mod itself?
+
+No. A theme is inert YAML — Home Assistant reads it into CSS custom properties
+and nothing more. It cannot execute JavaScript or register a module, and
+`extra_module_url` belongs to the `frontend` integration, which reads it once at
+startup. There is no hook from one to the other.
+
+A **custom integration** could, and that is the honest alternative:
+
+- `add_extra_js_url(hass, url)` registers the module programmatically — no
+  manual line, and no wrong `hacstag`, because the integration can read the
+  path that is actually installed rather than one you copied by hand
+- `await hass.http.async_register_static_paths([StaticPathConfig(...)])` serves
+  the artwork from the integration's own folder, removing the CDN entirely
+- it could install the theme file and reload themes on its own
+
+The reasons this project is still a theme:
+
+- converting breaks every existing install — HACS treats Theme and Integration
+  as different categories, so everyone would have to remove and re-add it
+- a broken theme is ugly; a broken integration can stop Home Assistant starting
+- it would not remove the card-mod dependency, only the configuration step
+- those APIs churn: the synchronous `register_static_path` was removed in
+  2025.7, so an integration is a standing maintenance commitment
+
+One line in `configuration.yaml`, once, is the cheaper trade.
+
 **Iframe panels cannot be themed, by anyone.** Add-on panels (File editor,
 Terminal, Studio Code Server) and any custom panel registered with
 `embed_iframe: true` — HACS is one — render in a separate document. Neither the

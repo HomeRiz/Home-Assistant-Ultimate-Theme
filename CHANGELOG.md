@@ -7,6 +7,59 @@ and versions follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
+## [0.0.5] — 2026-08-08
+
+No theme changes. Documentation, packaging and the artwork pipeline.
+
+### Fixed
+
+- **Every image in the README was broken inside HACS.** The paths were relative,
+  which works on GitHub but not in HACS — it renders the README inside Home
+  Assistant, so `docs/previews/glass.webp` resolved against
+  `http://<your-instance>:8123/` and 404'd. The repository page looked perfect
+  while the HACS page showed broken icons with the user's own IP in the URL.
+  All images are now absolute `raw.githubusercontent.com` URLs.
+- The licence badge depended on GitHub's licence detection and rendered broken.
+  It is a static MIT badge now.
+- The README carried a real `hacstag` as an example. Not a secret — it is the
+  version stamp HACS puts on the file — but it invited copy-paste, and a copied
+  `hacstag` 404s *only* on Settings while dashboards keep working, which reads
+  as a theme bug rather than a wrong URL. Replaced with a placeholder.
+
+### Added
+
+- **One-click install buttons** for card-mod and for this theme, via
+  My Home Assistant.
+- Install is now five explicit steps, including where to find your own card-mod
+  URL (Settings → Dashboards → ⋮ → Resources) and the fact that the module is
+  fetched asynchronously — Settings can render plain for a few seconds after a
+  restart and then pick up the background. That is not a broken install.
+- Gallery images are click-to-enlarge and smaller inline; the 23 areas are a
+  grouped table rather than a run-on line.
+- [`docs/CUSTOMISING.md`](docs/CUSTOMISING.md) — the feature list, rebuild
+  instructions and own-artwork workflow, moved out of the README.
+- `docs/ARCHITECTURE.md` explains why the theme cannot load card-mod itself,
+  what a custom integration would change, and why this is still a theme.
+- **Artwork prompts for seven more aesthetics:** `cyberprep`, `cyberpunk`,
+  `solarpunk`, `art-deco`, `dark-academia`, `cottagecore` and `synthwave`.
+  Prompts only — no palettes yet, so no new themes. `build/prompts.py` writes a
+  `prompt.txt` into each `drop-in/<style>/` folder, so the prompts sit where the
+  images go.
+- A palette arbitration clause in every prompt. The 23 subjects are shared
+  across styles and several name a colour outright, which was harmless while all
+  three modes were abstract light — but Art Deco in amber is not the brief. The
+  style palette now wins while composition and light direction carry over.
+
+### Changed
+
+- `build/import_backgrounds.py` takes its style list from `build/prompts.py`
+  instead of hardcoding three names, so a new `drop-in/<style>/` folder is no
+  longer skipped in silence.
+- `verify.py` gained two guards: it fails on a relative image path in the README,
+  and on a literal `hacstag` in the README or install guide.
+
+---
+
 ## [0.0.4] — 2026-08-04
 
 ### Fixed
@@ -216,6 +269,7 @@ See [INSTALL.md](INSTALL.md). Short version: HACS → ⋮ → Custom repositorie
 add this repo as type **Theme** → Download → add `frontend: themes:` to
 `configuration.yaml` → restart → pick a theme and set the mode to **Dark**.
 
+[0.0.5]: https://github.com/HomeRiz/Home-Assistant-Ultimate-Theme/releases/tag/0.0.5
 [0.0.4]: https://github.com/HomeRiz/Home-Assistant-Ultimate-Theme/releases/tag/0.0.4
 [0.0.3]: https://github.com/HomeRiz/Home-Assistant-Ultimate-Theme/releases/tag/0.0.3
 [0.0.2]: https://github.com/HomeRiz/Home-Assistant-Ultimate-Theme/releases/tag/0.0.2

@@ -343,6 +343,35 @@ def main() -> int:
         print(f"\nwarnings ({len(warnings)}) - not blocking:")
         for w in warnings:
             print(f"  ! {w}")
+    # A real hacstag in the docs is not a secret - it is just the version stamp
+    # HACS puts on the file - but it is per-instance and changes on every
+    # card-mod update, and people copy examples. A copied one 404s only on
+    # non-Lovelace panels while dashboards keep working, which reads as a theme
+    # bug rather than a wrong URL. Keep the docs unpastable.
+    for doc in ("README.md", "INSTALL.md"):
+        path = os.path.join(ROOT, doc)
+        if os.path.exists(path):
+            checks += 1
+            for m in re.finditer(r"hacstag=(\d{6,})", open(path).read()):
+                errors.append(
+                    f"{doc}: contains a literal hacstag {m.group(1)!r}. Use a "
+                    f"placeholder - a copied hacstag 404s on Settings only.")
+
+    # HACS renders README.md inside Home Assistant, so a relative image path
+    # resolves against http://<your-ha>:8123/... and 404s. On GitHub the same
+    # path works fine, which is what makes this easy to ship without noticing:
+    # the repository page looks perfect and the HACS page is full of broken
+    # image icons - with the user's own IP in the URL.
+    readme = os.path.join(ROOT, "README.md")
+    if os.path.exists(readme):
+        for m in re.finditer(r'<img[^>]+src="([^"]+)"', open(readme).read()):
+            checks += 1
+            src = m.group(1)
+            if not src.startswith(("http://", "https://")):
+                errors.append(
+                    f"README.md: image src {src!r} is relative - it will 404 "
+                    f"inside HACS. Use an absolute raw.githubusercontent.com URL.")
+
     if errors:
         print(f"\nFAILED - {len(errors)} error(s):")
         for e in errors[:40]:
