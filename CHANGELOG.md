@@ -19,6 +19,21 @@ No theme changes. Documentation, packaging and the artwork pipeline.
   `http://<your-instance>:8123/` and 404'd. The repository page looked perfect
   while the HACS page showed broken icons with the user's own IP in the URL.
   All images are now absolute `raw.githubusercontent.com` URLs.
+
+  **That alone was not enough**, found after 0.0.5 was tagged. Measured on a
+  live instance: of 19 images on the HACS page, 13 had no `src` attribute at
+  all. HACS's markdown renderer strips `src` from raw HTML `<img>` tags —
+  only markdown-syntax images survive. The gallery was written as HTML for the
+  `width` control, so it rendered as a column of empty boxes.
+
+  Separately, the licence badge was the only image wrapped in a *relative*
+  link (`](LICENSE)`), and HACS responded by prefixing its absolute URL with
+  `raw.githubusercontent.com/<owner>/<repo>/<tag>/` — producing a URL with two
+  schemes in it.
+
+  Every image is markdown now, every link target is absolute, and the `width`
+  attributes are gone with them. `verify.py` rejects raw `<img>` tags, relative
+  image URLs, and images inside relative links.
 - The licence badge depended on GitHub's licence detection and rendered broken.
   It is a static MIT badge now.
 - The README carried a real `hacstag` as an example. Not a secret — it is the

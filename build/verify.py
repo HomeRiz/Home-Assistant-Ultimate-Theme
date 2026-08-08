@@ -357,20 +357,46 @@ def main() -> int:
                     f"{doc}: contains a literal hacstag {m.group(1)!r}. Use a "
                     f"placeholder - a copied hacstag 404s on Settings only.")
 
-    # HACS renders README.md inside Home Assistant, so a relative image path
-    # resolves against http://<your-ha>:8123/... and 404s. On GitHub the same
-    # path works fine, which is what makes this easy to ship without noticing:
-    # the repository page looks perfect and the HACS page is full of broken
-    # image icons - with the user's own IP in the URL.
+    # Two things HACS's markdown renderer does that GitHub does not, both
+    # measured on a live instance:
+    #
+    #  1. It strips `src` from raw HTML <img> tags. Only markdown-syntax images
+    #     survive. On the repository page everything looks perfect; in HACS the
+    #     gallery is a column of empty boxes.
+    #  2. It resolves image URLs against the repository, and gets confused when
+    #     a markdown image sits inside a *relative* link - it prefixes the
+    #     absolute image URL with raw.githubusercontent.com/<owner>/<repo>/<tag>/
+    #     and the badge 404s.
+    #
+    # So: markdown images only, and never inside a relative link.
     readme = os.path.join(ROOT, "README.md")
     if os.path.exists(readme):
-        for m in re.finditer(r'<img[^>]+src="([^"]+)"', open(readme).read()):
+        text = open(readme).read()
+
+        checks += 1
+        n_html_img = len(re.findall(r"<img\b", text))
+        if n_html_img:
+            errors.append(
+                f"README.md: {n_html_img} raw <img> tag(s). HACS strips their "
+                f"src - use markdown ![alt](url) instead.")
+
+        for m in re.finditer(r"\[!\[[^\]]*\]\(([^)]+)\)\]\(([^)]+)\)", text):
             checks += 1
-            src = m.group(1)
-            if not src.startswith(("http://", "https://")):
+            img, link = m.group(1), m.group(2)
+            if not img.startswith(("http://", "https://")):
                 errors.append(
-                    f"README.md: image src {src!r} is relative - it will 404 "
-                    f"inside HACS. Use an absolute raw.githubusercontent.com URL.")
+                    f"README.md: image {img!r} is relative - it 404s inside HACS.")
+            if not link.startswith(("http://", "https://")):
+                errors.append(
+                    f"README.md: image linked to relative target {link!r}. HACS "
+                    f"rewrites the image URL when it sees this and the image breaks.")
+
+        for m in re.finditer(r"(?<!\[)!\[[^\]]*\]\(([^)]+)\)", text):
+            checks += 1
+            if not m.group(1).startswith(("http://", "https://")):
+                errors.append(
+                    f"README.md: image {m.group(1)!r} is relative - it 404s "
+                    f"inside HACS. Use an absolute URL.")
 
     if errors:
         print(f"\nFAILED - {len(errors)} error(s):")
