@@ -7,6 +7,31 @@ and versions follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
+## [0.0.6] — 2026-08-08
+
+Ships the README fix that 0.0.5 could not: it landed one commit after the tag,
+and **HACS renders the README from the installed release's tag, not from
+`main`.** The repository page showed the corrected version the whole time while
+HACS kept serving the old one — which is why the gallery looked fixed and the
+licence badge did not.
+
+### Fixed
+
+- Images in the README are markdown, not raw HTML. HACS's markdown renderer
+  strips `src` from `<img>` tags; measured on a live instance, 13 of 19 images
+  had no `src` at all.
+- The licence badge no longer sits inside a relative link. HACS reacted to
+  `](LICENSE)` by prefixing the badge's absolute URL with
+  `raw.githubusercontent.com/<owner>/<repo>/<tag>/`, and by sending the click to
+  the HACS panel instead of the repository.
+- `verify.py` rejects raw `<img>` tags, relative image URLs, and images wrapped
+  in relative links.
+
+No theme CSS changed. `CDN_REF` moves to `0.0.6` so the artwork URLs stay
+self-consistent with their tag.
+
+---
+
 ## [0.0.5] — 2026-08-08
 
 No theme changes. Documentation, packaging and the artwork pipeline.
@@ -284,6 +309,7 @@ See [INSTALL.md](INSTALL.md). Short version: HACS → ⋮ → Custom repositorie
 add this repo as type **Theme** → Download → add `frontend: themes:` to
 `configuration.yaml` → restart → pick a theme and set the mode to **Dark**.
 
+[0.0.6]: https://github.com/HomeRiz/Home-Assistant-Ultimate-Theme/releases/tag/0.0.6
 [0.0.5]: https://github.com/HomeRiz/Home-Assistant-Ultimate-Theme/releases/tag/0.0.5
 [0.0.4]: https://github.com/HomeRiz/Home-Assistant-Ultimate-Theme/releases/tag/0.0.4
 [0.0.3]: https://github.com/HomeRiz/Home-Assistant-Ultimate-Theme/releases/tag/0.0.3

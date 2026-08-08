@@ -11,7 +11,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/home.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/glass/home.webp');
 #       }
 
 # Living Room
@@ -21,7 +21,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/living-room.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/glass/living-room.webp');
 #       }
 
 # Kitchen
@@ -31,7 +31,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/kitchen.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/glass/kitchen.webp');
 #       }
 
 # Bedroom
@@ -41,7 +41,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/bedroom.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/glass/bedroom.webp');
 #       }
 
 # Master Bedroom
@@ -51,7 +51,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/master-bedroom.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/glass/master-bedroom.webp');
 #       }
 
 # Guest
@@ -61,7 +61,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/guest.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/glass/guest.webp');
 #       }
 
 # Bathroom
@@ -71,7 +71,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/bathroom.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/glass/bathroom.webp');
 #       }
 
 # Office
@@ -81,7 +81,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/office.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/glass/office.webp');
 #       }
 
 # AI
@@ -91,7 +91,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/ai.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/glass/ai.webp');
 #       }
 
 # Outside
@@ -101,7 +101,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/outside.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/glass/outside.webp');
 #       }
 
 # Hallway
@@ -111,7 +111,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/hallway.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/glass/hallway.webp');
 #       }
 
 # Garage
@@ -121,7 +121,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/garage.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/glass/garage.webp');
 #       }
 
 # Front Yard
@@ -131,7 +131,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/front-yard.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/glass/front-yard.webp');
 #       }
 
 # Back Yard
@@ -141,7 +141,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/back-yard.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/glass/back-yard.webp');
 #       }
 
 # Electrical Room
@@ -151,7 +151,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/electrical-room.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/glass/electrical-room.webp');
 #       }
 
 # Technic Room
@@ -161,7 +161,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/technic-room.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/glass/technic-room.webp');
 #       }
 
 # Garden
@@ -171,7 +171,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/garden.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/glass/garden.webp');
 #       }
 
 # Energy
@@ -181,7 +181,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/energy.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/glass/energy.webp');
 #       }
 
 # Security
@@ -191,7 +191,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/security.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/glass/security.webp');
 #       }
 
 # Climate
@@ -201,7 +201,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/climate.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/glass/climate.webp');
 #       }
 
 # Media
@@ -211,7 +211,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/media.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/glass/media.webp');
 #       }
 
 # Network
@@ -221,7 +221,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/network.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/glass/network.webp');
 #       }
 
 # Settings
@@ -231,7 +231,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/glass/settings.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/glass/settings.webp');
 #       }
 
 # ===== Ultimate Velvet ==============================
@@ -242,7 +242,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/home.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/velvet/home.webp');
 #       }
 
 # Living Room
@@ -252,7 +252,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/living-room.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/velvet/living-room.webp');
 #       }
 
 # Kitchen
@@ -262,7 +262,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/kitchen.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/velvet/kitchen.webp');
 #       }
 
 # Bedroom
@@ -272,7 +272,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/bedroom.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/velvet/bedroom.webp');
 #       }
 
 # Master Bedroom
@@ -282,7 +282,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/master-bedroom.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/velvet/master-bedroom.webp');
 #       }
 
 # Guest
@@ -292,7 +292,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/guest.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/velvet/guest.webp');
 #       }
 
 # Bathroom
@@ -302,7 +302,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/bathroom.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/velvet/bathroom.webp');
 #       }
 
 # Office
@@ -312,7 +312,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/office.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/velvet/office.webp');
 #       }
 
 # AI
@@ -322,7 +322,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/ai.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/velvet/ai.webp');
 #       }
 
 # Outside
@@ -332,7 +332,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/outside.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/velvet/outside.webp');
 #       }
 
 # Hallway
@@ -342,7 +342,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/hallway.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/velvet/hallway.webp');
 #       }
 
 # Garage
@@ -352,7 +352,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/garage.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/velvet/garage.webp');
 #       }
 
 # Front Yard
@@ -362,7 +362,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/front-yard.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/velvet/front-yard.webp');
 #       }
 
 # Back Yard
@@ -372,7 +372,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/back-yard.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/velvet/back-yard.webp');
 #       }
 
 # Electrical Room
@@ -382,7 +382,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/electrical-room.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/velvet/electrical-room.webp');
 #       }
 
 # Technic Room
@@ -392,7 +392,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/technic-room.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/velvet/technic-room.webp');
 #       }
 
 # Garden
@@ -402,7 +402,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/garden.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/velvet/garden.webp');
 #       }
 
 # Energy
@@ -412,7 +412,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/energy.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/velvet/energy.webp');
 #       }
 
 # Security
@@ -422,7 +422,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/security.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/velvet/security.webp');
 #       }
 
 # Climate
@@ -432,7 +432,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/climate.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/velvet/climate.webp');
 #       }
 
 # Media
@@ -442,7 +442,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/media.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/velvet/media.webp');
 #       }
 
 # Network
@@ -452,7 +452,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/network.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/velvet/network.webp');
 #       }
 
 # Settings
@@ -462,7 +462,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/velvet/settings.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/velvet/settings.webp');
 #       }
 
 # ===== Ultimate Neon ==============================
@@ -473,7 +473,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/home.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/neon/home.webp');
 #       }
 
 # Living Room
@@ -483,7 +483,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/living-room.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/neon/living-room.webp');
 #       }
 
 # Kitchen
@@ -493,7 +493,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/kitchen.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/neon/kitchen.webp');
 #       }
 
 # Bedroom
@@ -503,7 +503,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/bedroom.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/neon/bedroom.webp');
 #       }
 
 # Master Bedroom
@@ -513,7 +513,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/master-bedroom.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/neon/master-bedroom.webp');
 #       }
 
 # Guest
@@ -523,7 +523,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/guest.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/neon/guest.webp');
 #       }
 
 # Bathroom
@@ -533,7 +533,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/bathroom.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/neon/bathroom.webp');
 #       }
 
 # Office
@@ -543,7 +543,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/office.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/neon/office.webp');
 #       }
 
 # AI
@@ -553,7 +553,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/ai.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/neon/ai.webp');
 #       }
 
 # Outside
@@ -563,7 +563,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/outside.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/neon/outside.webp');
 #       }
 
 # Hallway
@@ -573,7 +573,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/hallway.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/neon/hallway.webp');
 #       }
 
 # Garage
@@ -583,7 +583,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/garage.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/neon/garage.webp');
 #       }
 
 # Front Yard
@@ -593,7 +593,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/front-yard.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/neon/front-yard.webp');
 #       }
 
 # Back Yard
@@ -603,7 +603,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/back-yard.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/neon/back-yard.webp');
 #       }
 
 # Electrical Room
@@ -613,7 +613,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/electrical-room.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/neon/electrical-room.webp');
 #       }
 
 # Technic Room
@@ -623,7 +623,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/technic-room.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/neon/technic-room.webp');
 #       }
 
 # Garden
@@ -633,7 +633,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/garden.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/neon/garden.webp');
 #       }
 
 # Energy
@@ -643,7 +643,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/energy.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/neon/energy.webp');
 #       }
 
 # Security
@@ -653,7 +653,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/security.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/neon/security.webp');
 #       }
 
 # Climate
@@ -663,7 +663,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/climate.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/neon/climate.webp');
 #       }
 
 # Media
@@ -673,7 +673,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/media.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/neon/media.webp');
 #       }
 
 # Network
@@ -683,7 +683,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/network.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/neon/network.webp');
 #       }
 
 # Settings
@@ -693,5 +693,5 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.5/www/ultimate-theme/backgrounds/neon/settings.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@0.0.6/www/ultimate-theme/backgrounds/neon/settings.webp');
 #       }

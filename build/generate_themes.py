@@ -66,7 +66,7 @@ REPO = "HomeRiz/Home-Assistant-Ultimate-Theme"
 #
 # Must match the git tag exactly. jsDelivr happens to resolve 'v0.0.1' to tag
 # '0.0.1' via semver, but relying on that is a trap - keep them identical.
-CDN_REF = "0.0.5"
+CDN_REF = "0.0.6"
 CDN_BASE = f"https://cdn.jsdelivr.net/gh/{REPO}@{CDN_REF}/www/ultimate-theme/backgrounds"
 
 
