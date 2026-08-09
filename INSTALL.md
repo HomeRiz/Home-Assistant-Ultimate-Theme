@@ -77,7 +77,7 @@ Mushroom, Bubble Card and button-card are supported but not required.
 ### 1. Add the custom repository
 
 1. **HACS** → **⋮** (top right) → **Custom repositories**
-2. Repository: `https://github.com/HomeRiz/Home-Assistant-Ultimate-Theme`
+2. Repository: `https://github.com/HomeRiz/Home-Assistant-Ultimate-Themes`
 3. Type: **Theme**
 4. **Add**
 
@@ -153,8 +153,8 @@ work without internet, or are modifying the theme locally.
 ### 1. Build with local URLs
 
 ```bash
-git clone https://github.com/HomeRiz/Home-Assistant-Ultimate-Theme.git
-cd Home-Assistant-Ultimate-Theme
+git clone https://github.com/HomeRiz/Home-Assistant-Ultimate-Themes.git
+cd Home-Assistant-Ultimate-Themes
 pip install numpy Pillow jinja2 pyyaml
 
 python3 build/generate_themes.py --base local
@@ -245,7 +245,7 @@ views:
     card_mod:
       style: |
         :host {
-          --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Theme@main/www/ultimate-theme/backgrounds/glass/kitchen.webp');
+          --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@main/www/ultimate-theme/backgrounds/glass/kitchen.webp');
         }
 ```
 

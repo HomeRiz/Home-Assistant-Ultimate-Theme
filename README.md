@@ -4,13 +4,13 @@
 
 **72 themes. 3 aesthetics. 23 areas. A background for every dashboard and every tab.**
 
-[![Latest release](https://img.shields.io/github/v/release/HomeRiz/Home-Assistant-Ultimate-Theme?style=flat-square&label=release)](https://github.com/HomeRiz/Home-Assistant-Ultimate-Theme/releases/latest)
+[![Latest release](https://img.shields.io/github/v/release/HomeRiz/Home-Assistant-Ultimate-Themes?style=flat-square&label=release)](https://github.com/HomeRiz/Home-Assistant-Ultimate-Themes/releases/latest)
 [![HACS Custom](https://img.shields.io/badge/HACS-Custom-41BDF5.svg?style=flat-square)](https://hacs.xyz)
-[![Validate](https://img.shields.io/github/actions/workflow/status/HomeRiz/Home-Assistant-Ultimate-Theme/validate.yml?branch=main&style=flat-square&label=validate)](https://github.com/HomeRiz/Home-Assistant-Ultimate-Theme/actions/workflows/validate.yml)
-[![License MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/HomeRiz/Home-Assistant-Ultimate-Theme/blob/main/LICENSE)
+[![Validate](https://img.shields.io/github/actions/workflow/status/HomeRiz/Home-Assistant-Ultimate-Themes/validate.yml?branch=main&style=flat-square&label=validate)](https://github.com/HomeRiz/Home-Assistant-Ultimate-Themes/actions/workflows/validate.yml)
+[![License MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/HomeRiz/Home-Assistant-Ultimate-Themes/blob/main/LICENSE)
 [![Home Assistant](https://img.shields.io/badge/Home%20Assistant-2024.11%2B-41BDF5.svg?style=flat-square)](https://www.home-assistant.io)
 
-[![Ultimate Glass, AI dashboard](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Theme/main/docs/previews/glass/ai.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Theme/main/docs/previews/glass/ai.webp)
+[![Ultimate Glass, AI dashboard](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/glass/ai.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/glass/ai.webp)
 
 </div>
 
@@ -41,11 +41,11 @@ Or in HACS, search for **card-mod** and download it.
 
 ### Step 2 — install this theme
 
-[![Open this theme in HACS](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=HomeRiz&repository=Home-Assistant-Ultimate-Theme&category=theme)
+[![Open this theme in HACS](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=HomeRiz&repository=Home-Assistant-Ultimate-Themes&category=theme)
 
 The button adds it as a custom repository. If you would rather do it by hand:
 **HACS → ⋮ (top right) → Custom repositories**, paste
-`https://github.com/HomeRiz/Home-Assistant-Ultimate-Theme`, type **Theme**, **Add**.
+`https://github.com/HomeRiz/Home-Assistant-Ultimate-Themes`, type **Theme**, **Add**.
 
 Then search HACS for **Home Assistant Ultimate Theme** and **Download**.
 
@@ -140,7 +140,7 @@ works — Glass on one, Neon on the next.
 
 Heavy blur, 30px radii, no borders, bright specular rim.
 
-[![All 23 areas in Ultimate Glass](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Theme/main/docs/previews/glass.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Theme/main/docs/previews/glass.webp)
+[![All 23 areas in Ultimate Glass](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/glass.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/glass.webp)
 
 <sub>Click to view full size.</sub>
 
@@ -148,7 +148,7 @@ Heavy blur, 30px radii, no borders, bright specular rim.
 
 Softer blur, 18px radii, hairline borders, muted pastel accents.
 
-[![All 23 areas in Ultimate Velvet](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Theme/main/docs/previews/velvet.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Theme/main/docs/previews/velvet.webp)
+[![All 23 areas in Ultimate Velvet](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/velvet.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/velvet.webp)
 
 <sub>Click to view full size.</sub>
 
@@ -156,7 +156,7 @@ Softer blur, 18px radii, hairline borders, muted pastel accents.
 
 Near-black, 12px radii, accent borders with outer glow, scanlined backdrops.
 
-[![All 23 areas in Ultimate Neon](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Theme/main/docs/previews/neon.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Theme/main/docs/previews/neon.webp)
+[![All 23 areas in Ultimate Neon](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/neon.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/neon.webp)
 
 <sub>Click to view full size.</sub>
 
@@ -165,8 +165,8 @@ Near-black, 12px radii, accent borders with outer glow, scanlined backdrops.
 
 | Glass | Velvet | Neon |
 |---|---|---|
-| [![](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Theme/main/docs/previews/glass/kitchen.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Theme/main/docs/previews/glass/kitchen.webp) | [![](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Theme/main/docs/previews/velvet/kitchen.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Theme/main/docs/previews/velvet/kitchen.webp) | [![](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Theme/main/docs/previews/neon/kitchen.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Theme/main/docs/previews/neon/kitchen.webp) |
-| [![](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Theme/main/docs/previews/glass/security.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Theme/main/docs/previews/glass/security.webp) | [![](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Theme/main/docs/previews/velvet/security.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Theme/main/docs/previews/velvet/security.webp) | [![](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Theme/main/docs/previews/neon/security.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Theme/main/docs/previews/neon/security.webp) |
+| [![](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/glass/kitchen.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/glass/kitchen.webp) | [![](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/velvet/kitchen.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/velvet/kitchen.webp) | [![](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/neon/kitchen.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/neon/kitchen.webp) |
+| [![](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/glass/security.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/glass/security.webp) | [![](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/velvet/security.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/velvet/security.webp) | [![](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/neon/security.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/neon/security.webp) |
 
 The composition is deliberately identical across modes — only palette and grade
 change, so a room stays recognisable when you switch aesthetic.

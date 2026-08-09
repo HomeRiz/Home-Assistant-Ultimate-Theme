@@ -11,8 +11,8 @@ is short:
 ## Setup
 
 ```bash
-git clone https://github.com/HomeRiz/Home-Assistant-Ultimate-Theme.git
-cd Home-Assistant-Ultimate-Theme
+git clone https://github.com/HomeRiz/Home-Assistant-Ultimate-Themes.git
+cd Home-Assistant-Ultimate-Themes
 pip install numpy Pillow jinja2 pyyaml
 ```
 

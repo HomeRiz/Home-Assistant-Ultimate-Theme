@@ -1,14 +1,14 @@
 blank_issues_enabled: false
 contact_links:
   - name: Installation help
-    url: https://github.com/HomeRiz/Home-Assistant-Ultimate-Theme/blob/main/INSTALL.md
+    url: https://github.com/HomeRiz/Home-Assistant-Ultimate-Themes/blob/main/INSTALL.md
     about: Step-by-step install and a troubleshooting table. Check here first.
   - name: Per-tab backgrounds
-    url: https://github.com/HomeRiz/Home-Assistant-Ultimate-Theme/blob/main/docs/PER-VIEW-BACKGROUNDS.md
+    url: https://github.com/HomeRiz/Home-Assistant-Ultimate-Themes/blob/main/docs/PER-VIEW-BACKGROUNDS.md
     about: How to give each dashboard and each tab its own backdrop.
   - name: How the theme works
-    url: https://github.com/HomeRiz/Home-Assistant-Ultimate-Theme/blob/main/docs/ARCHITECTURE.md
+    url: https://github.com/HomeRiz/Home-Assistant-Ultimate-Themes/blob/main/docs/ARCHITECTURE.md
     about: The glass engine, the build pipeline, and how to change either.
   - name: Questions and ideas
-    url: https://github.com/HomeRiz/Home-Assistant-Ultimate-Theme/discussions
+    url: https://github.com/HomeRiz/Home-Assistant-Ultimate-Themes/discussions
     about: For anything that is not a bug report or a concrete feature request.

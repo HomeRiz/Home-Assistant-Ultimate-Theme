@@ -53,7 +53,7 @@ LOCAL_BASE = "/local/ultimate-theme/backgrounds"
 # Served straight from the repository via jsDelivr. Pin to a release tag rather
 # than @main once you cut one — jsDelivr caches @main for up to seven days, so a
 # tag makes background updates predictable.
-REPO = "HomeRiz/Home-Assistant-Ultimate-Theme"
+REPO = "HomeRiz/Home-Assistant-Ultimate-Themes"
 
 # Pin to the release tag, not to a branch. jsDelivr caches a branch for up to
 # seven days, and worse, a branch keeps moving - so re-rendering the artwork
@@ -66,7 +66,7 @@ REPO = "HomeRiz/Home-Assistant-Ultimate-Theme"
 #
 # Must match the git tag exactly. jsDelivr happens to resolve 'v0.0.1' to tag
 # '0.0.1' via semver, but relying on that is a trap - keep them identical.
-CDN_REF = "0.0.6"
+CDN_REF = "0.1.0"
 CDN_BASE = f"https://cdn.jsdelivr.net/gh/{REPO}@{CDN_REF}/www/ultimate-theme/backgrounds"
 
 

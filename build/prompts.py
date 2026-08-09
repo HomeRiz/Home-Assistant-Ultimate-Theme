@@ -131,29 +131,24 @@ NEGATIVE = (
 
 # ---------------------------------------------------------------------------
 SUBJECTS = {
-    "home":            "a warm aurora of amber and deep blue light folding over itself, like evening light spilling through an open doorway",
-    "living-room":     "soft amber and rose light pooling across a dark surface, warm lamplight bokeh, deep comfortable shadow",
-    "kitchen":         "warm copper, butter and cream light bleeding through drifting steam, appetising warmth, dark surround",
-    "bedroom":         "a deep indigo and violet nebula haze, very still and quiet, midnight calm",
-    "master-bedroom":  "plum and deep magenta silk folds lit from within, velvet depth, quietly luxurious",
-    "guest":           "soft teal and sage mist drifting slowly, calm, minimal, welcoming",
-    "bathroom":        "aqua and cyan caustics rippling as if seen through water, soft focus, cool and clean",
-    "office":          "cool steel-blue light falling in long focused shafts through vertical structure, crisp and awake",
-    "ai":              "electric violet and magenta neural filaments glowing in dark space, branching data pathways, synthetic intelligence",
-    "outside":         "a dawn sky gradient of pale blue and gold above a dark blurred treeline, open air",
-    "hallway":         "warm dim light receding down a long perspective gradient, muted slate and amber, transitional",
-    "garage":          "brushed steel grey lit by a single orange sodium lamp, industrial, oily dark",
-    "front-yard":      "morning green and gold light filtering through leaves, soft bokeh, dark vignetted edges",
-    "back-yard":       "late sunset green and warm orange across grass, dusk settling, relaxed",
-    "electrical-room": "amber and yellow energy arcs crackling in a dark industrial space, sparks of high voltage light",
-    "technic-room":    "cyan and steel-blue technical glow, faint circuit and schematic geometry dissolving into dark",
-    "garden":          "verdant green and lime light through dense foliage, dew catching light, soft focus, dark edges",
-    "energy":          "flowing green and yellow light currents streaming like energy in motion, kinetic, dark background",
-    "security":        "deep crimson and dark red light sweeping across shadow, watchful and tense, alert",
-    "climate":         "a cool cyan current and a warm orange current meeting and swirling together, hot and cold in balance",
-    "media":           "magenta and purple cinematic light streaks across a dark theatre, projector haze, dramatic",
-    "network":         "blue and cyan data streams flowing through dark space, luminous nodes and connecting lines",
-    "settings":        "restrained graphite and silver light, neutral, minimal, quietly technical",
+    # One per colour. These used to be room stories - "the Kitchen", "the
+    # Office" - which is why several of them named a colour that fought the
+    # style. They are colour stories now: the hue leads, the composition and
+    # mood vary so the fourteen do not all read as the same picture tinted.
+    "ember":    "deep crimson and scarlet light sweeping across shadow, embers still glowing at the edges, tense and alive",
+    "rose":     "hot pink and magenta blooming outward in dark space, soft overlapping petals of light, electric and romantic",
+    "amber":    "warm amber and burnt orange light folding over itself, like late sun spilling through an open doorway",
+    "citrine":  "golden yellow light crackling against deep dark, high-voltage brightness, sharp and charged",
+    "lime":     "chartreuse and yellow-green currents streaming like energy in motion, kinetic, dark background",
+    "verdant":  "vivid saturated green light through dense foliage, dew catching the light, soft focus, dark edges",
+    "jade":     "soft jade and mint mist drifting slowly, cool and restorative, minimal, very quiet",
+    "lagoon":   "aqua and cyan caustics rippling as if seen through shallow water, soft focus, clean and weightless",
+    "azure":    "electric azure streams flowing through dark space, luminous nodes and connecting lines, precise",
+    "cobalt":   "deep cobalt light falling in long focused shafts through vertical structure, crisp and awake",
+    "indigo":   "a deep indigo and periwinkle nebula haze, very still and quiet, midnight calm",
+    "violet":   "electric violet and magenta filaments branching through dark space, synthetic and luminous",
+    "sand":     "warm sand and taupe light receding down a long perspective gradient, muted, unhurried",
+    "graphite": "restrained graphite and silver light, neutral, minimal, quietly technical",
 }
 
 

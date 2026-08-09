@@ -7,6 +7,60 @@ and versions follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
+## [0.1.0] — 2026-08-08
+
+**Breaking: every theme name changed.** Your selected theme will not survive the
+update — reselect it under its new name after upgrading. Sorry. With a handful
+of installs this is the cheapest moment this will ever be.
+
+### Changed
+
+- **Themes are named by colour, not by room.** `Ultimate Glass - Kitchen` is now
+  `Ultimate Glass - Honey`… except Honey is gone too, which is the other half of
+  this release. Rooms read oddly in a theme picker: nobody has exactly these
+  rooms, and what actually separates one entry from another is its colour.
+
+- **Twenty-three colours became fourteen.** Naming by colour exposed what the
+  room names had been hiding — the set held six blues and five greens, because
+  that is how the rooms happened to fall. Six themes called Aqua, Sky, Cobalt,
+  Cyan, Glacier and Azure that all look alike is not a catalogue, it is a
+  redundancy. The fourteen that remain sit roughly 25–30° apart on the colour
+  wheel, plus two neutrals.
+
+  | | |
+  |---|---|
+  | Ember · Rose · Amber · Citrine | warm |
+  | Lime · Verdant · Jade | green |
+  | Lagoon · Azure · Cobalt | blue |
+  | Indigo · Violet | violet |
+  | Sand · Graphite | neutral |
+
+  Retired: `living-room`, `kitchen`, `master-bedroom`, `outside`, `front-yard`,
+  `back-yard`, `technic-room`, `climate`, `garage` — each within about 20° of a
+  survivor. `build/areas.py` records why for each one. Their artwork is still in
+  `drop-in/` locally, so any of them can come back.
+
+- **The repository is now `Home-Assistant-Ultimate-Themes`**, plural. It ships a
+  catalogue, not a theme. Every URL — CDN, badges, the HACS button, issue
+  templates — moved with it. GitHub redirects the old name, but jsDelivr is less
+  forgiving about redirects, so the rename and this release had to happen
+  together.
+
+- **Image prompts are colour stories now, not room stories.** Several subjects
+  used to name a colour outright — the Kitchen asked for *butter and cream* —
+  which fought every style whose palette disagreed. The hue leads now, and
+  composition and mood carry the variety.
+
+### Result
+
+45 themes instead of 72: 3 aesthetics × (1 base + 14 colours). Fewer, and each
+one visibly different from the next.
+
+Adding an aesthetic now costs 14 images instead of 23 — which is the point. The
+next ones are already drawn.
+
+---
+
 ## [0.0.6] — 2026-08-08
 
 Ships the README fix that 0.0.5 could not: it landed one commit after the tag,
@@ -309,9 +363,10 @@ See [INSTALL.md](INSTALL.md). Short version: HACS → ⋮ → Custom repositorie
 add this repo as type **Theme** → Download → add `frontend: themes:` to
 `configuration.yaml` → restart → pick a theme and set the mode to **Dark**.
 
-[0.0.6]: https://github.com/HomeRiz/Home-Assistant-Ultimate-Theme/releases/tag/0.0.6
-[0.0.5]: https://github.com/HomeRiz/Home-Assistant-Ultimate-Theme/releases/tag/0.0.5
-[0.0.4]: https://github.com/HomeRiz/Home-Assistant-Ultimate-Theme/releases/tag/0.0.4
-[0.0.3]: https://github.com/HomeRiz/Home-Assistant-Ultimate-Theme/releases/tag/0.0.3
-[0.0.2]: https://github.com/HomeRiz/Home-Assistant-Ultimate-Theme/releases/tag/0.0.2
-[0.0.1]: https://github.com/HomeRiz/Home-Assistant-Ultimate-Theme/releases/tag/0.0.1
+[0.1.0]: https://github.com/HomeRiz/Home-Assistant-Ultimate-Themes/releases/tag/0.1.0
+[0.0.6]: https://github.com/HomeRiz/Home-Assistant-Ultimate-Themes/releases/tag/0.0.6
+[0.0.5]: https://github.com/HomeRiz/Home-Assistant-Ultimate-Themes/releases/tag/0.0.5
+[0.0.4]: https://github.com/HomeRiz/Home-Assistant-Ultimate-Themes/releases/tag/0.0.4
+[0.0.3]: https://github.com/HomeRiz/Home-Assistant-Ultimate-Themes/releases/tag/0.0.3
+[0.0.2]: https://github.com/HomeRiz/Home-Assistant-Ultimate-Themes/releases/tag/0.0.2
+[0.0.1]: https://github.com/HomeRiz/Home-Assistant-Ultimate-Themes/releases/tag/0.0.1
