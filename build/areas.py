@@ -77,9 +77,42 @@ RETIRED = {
     "garage":         "cool neutral, covered by graphite",
 }
 
+# ---------------------------------------------------------------------------
+# Aesthetics that are not about colour
+# ---------------------------------------------------------------------------
+# Every aesthetic so far renders the same fourteen colours. A few do not fit
+# that: their identity is a pattern, not a hue, and asking them for an Ember
+# variant would mean abandoning the thing that defines them. Those declare
+# their own variants here and the pipeline uses these instead.
+#
+# Keep this rare. The uniform grid is what makes the catalogue legible; every
+# exception is a row in the theme picker that behaves differently from its
+# neighbours.
+VARIANTS = {
+    "ionut": [
+        # key        name        icon                    hues                  accent     seed
+        ("circuit",  "Circuit",  "mdi:chip",             [215, 205, 225, 210], "#0063FD", 2001),
+        ("facet",    "Facet",    "mdi:triangle-outline", [220, 210, 230, 215], "#1772ED", 2002),
+        ("fusion",   "Fusion",   "mdi:hexagon-multiple", [218, 208, 228, 212], "#1E51A6", 2003),
+    ],
+}
+
 AREA_KEYS = [a[0] for a in AREAS]
+
+_FIELDS = ("key", "name", "icon", "hues", "accent", "seed")
 
 
 def as_dicts():
-    keys = ("key", "name", "icon", "hues", "accent", "seed")
-    return [dict(zip(keys, a)) for a in AREAS]
+    return [dict(zip(_FIELDS, a)) for a in AREAS]
+
+
+def variants_for(mode: str):
+    """The set of themes an aesthetic renders - the fourteen colours unless it
+    declares otherwise."""
+    if mode in VARIANTS:
+        return [dict(zip(_FIELDS, v)) for v in VARIANTS[mode]]
+    return as_dicts()
+
+
+def keys_for(mode: str):
+    return [v["key"] for v in variants_for(mode)]

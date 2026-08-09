@@ -2,7 +2,7 @@
 
 # Home Assistant Ultimate Themes
 
-**45 themes. 3 aesthetics. 14 colours. A background for every dashboard and every tab.**
+**154 themes. 11 aesthetics. 14 colours. A background for every dashboard and every tab.**
 
 [![Latest release](https://img.shields.io/github/v/release/HomeRiz/Home-Assistant-Ultimate-Themes?style=flat-square&label=release)](https://github.com/HomeRiz/Home-Assistant-Ultimate-Themes/releases/latest)
 [![HACS Custom](https://img.shields.io/badge/HACS-Custom-41BDF5.svg?style=flat-square)](https://hacs.xyz)
@@ -16,14 +16,19 @@
 
 ---
 
-Three complete visual systems — **Glass**, **Velvet** and **Neon** — each rendered
-in fourteen colours. Every colour gets its own artwork, its own accent and its own
-theme entry, so each dashboard or tab can carry a different one.
+Eleven aesthetics, each rendered in fourteen colours. Every combination gets its
+own artwork, its own accent and its own theme entry, so each dashboard or tab can
+carry a different one.
 
 ```
-3 aesthetics  ×  (1 base + 14 colours)  =  45 themes
-3 aesthetics  ×  14 colours             =  42 backgrounds
+10 aesthetics  ×  (1 base + 14 colours)  =  150 themes
+ 1 aesthetic   ×  (1 base +  3 patterns) =    4 themes
+                                          =  154 themes
 ```
+
+Three of them are complete engines — **Glass**, **Velvet** and **Neon** — defining
+how a card behaves: blur character, radii, border language. The rest borrow the
+engine that suits their material and bring their own world.
 
 ---
 
@@ -137,7 +142,7 @@ tabs works — Glass on one, Neon on the next.
 
 ## Gallery
 
-Three aesthetics down, seven of the fourteen colours across. Same colour, same
+Eleven aesthetics down, seven of the fourteen colours across. Same colour, same
 composition — only the aesthetic changes.
 
 [![Three aesthetics across seven colours](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/aesthetics.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/aesthetics.webp)
@@ -163,14 +168,28 @@ composition — only the aesthetic changes.
 
 ---
 
-## The three aesthetics
+## The eleven aesthetics
 
-| | Glass | Velvet | Neon |
-|---|---|---|---|
-| Blur | `blur(16px) saturate(1.45)` | `blur(12px) saturate(1.15)` | `blur(10px) saturate(1.8)` |
-| Radius | 30px | 18px | 12px |
-| Borders | none | 1px hairline | 1px accent, glowing |
-| Character | rich, luminous, soft | muted, cozy, matte | high-chroma, scanlined |
+| Aesthetic | Engine | Character |
+|---|---|---|
+| **Glass** | — | heavy blur, 30px radii, no borders, bright specular rim |
+| **Velvet** | — | softer blur, 18px radii, hairline borders, muted pastels |
+| **Neon** | — | near-black, 12px radii, accent borders with outer glow |
+| **Cyberprep** | Glass | polished graphite and chrome, clean cyan light |
+| **Solarpunk** | Velvet | canopy light, gold and green, overgrown |
+| **Dark Academia** | Velvet | candlelight, oxblood, chiaroscuro |
+| **Cottagecore** | Velvet | dusk hearth light, sage and cream, matte |
+| **Cyberpunk** | Neon | wet asphalt, signage bokeh, grimy |
+| **Synthwave** | Neon | grid horizon, banded sun, VHS artefacts |
+| **Art Deco** | Neon, no glow | black lacquer, brass geometry, symmetrical |
+| **Ionut** | Glass | deep navy, low-poly and circuit patterns |
+
+An aesthetic that borrows an engine keeps its card behaviour and changes only
+the world it is set in. A theme does not need its own answer to *how round is a
+card* — it needs its own artwork.
+
+Art Deco is the exception that proves it: Neon's geometry, none of its light.
+Brass reflects rather than emits, and a glowing border reads as neon signage.
 
 ## The 14 colours
 
@@ -186,6 +205,10 @@ order — the theme picker reads as a gradient.
 | `Sand` | `Graphite` | |
 
 Adding or retiring one is a single line in `build/areas.py`.
+
+**Ionut is the exception.** Its variants are patterns, not colours — Circuit,
+Facet and Fusion — because an aesthetic defined by a pattern has no Ember. It
+declares its own set in `VARIANTS`; everything else renders the fourteen above.
 
 ---
 

@@ -51,7 +51,7 @@ Developer Tools → **Reload themes**.
 
 Put it *over* the existing file rather than beside it. If you installed via HACS
 that means `/config/themes/ultimate-theme/ultimate-theme.yaml`; a second copy at
-`/config/themes/ultimate-theme.yaml` defines all 45 theme names twice, because
+`/config/themes/ultimate-theme.yaml` defines all 154 theme names twice, because
 the include recurses into subfolders.
 
 **If you customise and want HACS to keep managing it:** fork this repository,
@@ -102,12 +102,25 @@ so you can replace them a few at a time.
 
 ### Styles with prompts but no theme
 
-`glass`, `velvet` and `neon` are complete visual systems — palette, blur
-character, geometry and accent language all live in `build/modes.py`.
+`glass`, `velvet` and `neon` are complete engines — palette, blur character,
+geometry and accent language all live in `build/modes.py`. The other eight
+borrow one of them and supply only artwork; see `ENGINE_OF` in the same file.
 
-Seven more exist as **artwork prompts only**: `cyberprep`, `cyberpunk`,
-`solarpunk`, `art-deco`, `dark-academia`, `cottagecore` and `synthwave`. The
-importer will process anything you drop into their folders, but no theme
-references the results yet. Turning one into a real mode means choosing its
-palette, blur, radii and border language in `build/modes.py` — a design
-decision, not a mechanical one.
+### Adding an aesthetic
+
+You almost certainly do not need a new engine. Adding an entry to `ENGINE_OF`
+in `build/modes.py` gives you a full aesthetic that borrows an existing card
+treatment and supplies only artwork — that is how eight of the eleven work.
+
+A new *engine* means answering how a card behaves from scratch: blur, radii,
+borders, sheen, inset shadow, hover. Three answers to that have been enough so
+far.
+
+If the aesthetic is defined by a pattern rather than a colour, it also needs an
+entry in `VARIANTS` in `build/areas.py` — `ionut` is the worked example. Keep
+that rare: every exception is a row in the theme picker that behaves
+differently from its neighbours.
+
+**Before adding anything, weigh the file.** `themes/ultimate-theme.yaml` is
+already ~3.6 MB and Home Assistant parses it in full at every startup. One
+aesthetic costs fifteen more themes.

@@ -33,7 +33,7 @@ sys.dont_write_bytecode = True
 from PIL import Image, ImageEnhance
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from areas import AREA_KEYS  # noqa: E402
+from areas import AREA_KEYS, keys_for  # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -42,8 +42,8 @@ OUT = os.path.join(ROOT, "www", "ultimate-theme", "backgrounds")
 AVG = os.path.join(ROOT, "www", "ultimate-theme", "avg-colors.json")
 # Single source of truth: the styles that have artwork prompts. Hardcoding the
 # list here once meant a new drop-in/<style>/ folder was silently skipped.
-from prompts import STYLES as _STYLES   # noqa: E402
-MODES = tuple(_STYLES)
+from modes import MODES as _MODES        # noqa: E402
+MODES = tuple(_MODES)
 W, H = 2560, 1440
 EXTS = (".png", ".jpg", ".jpeg", ".webp", ".bmp", ".tif", ".tiff")
 
@@ -102,7 +102,7 @@ def main() -> None:
             stem, ext = os.path.splitext(fn)
             if ext.lower() not in EXTS:
                 continue
-            if stem not in AREA_KEYS:
+            if stem not in keys_for(mode):
                 unknown.append(f"{mode}/{fn}")
                 continue
 

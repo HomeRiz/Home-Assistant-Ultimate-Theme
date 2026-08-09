@@ -31,7 +31,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 
-from areas import AREA_KEYS   # noqa: E402
+from areas import AREA_KEYS, keys_for, variants_for   # noqa: E402
 from modes import MODES       # noqa: E402
 
 THEMES = os.path.join(ROOT, "themes")
@@ -102,7 +102,7 @@ def main() -> int:
         return 1
     checks += 1
 
-    expected = len(MODES) * (1 + len(AREA_KEYS))
+    expected = sum(1 + len(keys_for(m)) for m in MODES)
     check(len(data) == expected,
           f"expected {expected} themes, found {len(data)}")
 
@@ -236,7 +236,7 @@ def main() -> int:
 
     # -- artwork + previews --------------------------------------------------
     for mode in MODES:
-        for key in AREA_KEYS:
+        for key in keys_for(mode):
             check(os.path.exists(
                 os.path.join(WWW, "ultimate-theme", "backgrounds", mode, f"{key}.webp")),
                 f"missing artwork: {mode}/{key}.webp")
@@ -436,12 +436,12 @@ def main() -> int:
     # registry - no error, no warning, and the folders read as untouched.
     drop = os.path.join(ROOT, "drop-in")
     if os.path.isdir(drop):
-        valid = set(AREA_KEYS)
         for style in sorted(os.listdir(drop)):
             d = os.path.join(drop, style)
             if not os.path.isdir(d) or style.startswith("_"):
                 continue
             checks += 1
+            valid = set(keys_for(style))
             stray = sorted(
                 os.path.splitext(f)[0] for f in os.listdir(d)
                 if os.path.splitext(f)[1].lower() in (".png", ".jpg", ".jpeg", ".webp")

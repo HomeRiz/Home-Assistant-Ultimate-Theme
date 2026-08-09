@@ -248,6 +248,58 @@ MODES = {
     ),
 }
 
+# ---------------------------------------------------------------------------
+# Additional aesthetics
+# ---------------------------------------------------------------------------
+# These are worlds, not engines. Glass, Velvet and Neon each define a way cards
+# behave - blur character, radii, border language. An anime or Art Deco theme
+# does not need its own answer to "how round is a card"; it needs its own
+# artwork. So each of these borrows the engine that suits its material and
+# brings only a label and a folder of backgrounds.
+#
+# The pairing is about surface, not subject:
+#   Glass   - clean, luminous, heavy blur
+#   Velvet  - matte, soft, low contrast
+#   Neon    - hard contrast, tight radii, accent borders
+ENGINE_OF = {
+    "ionut":         "glass",    # flat graphic artwork, luminous card treatment
+    "cyberprep":     "glass",    # chrome and clean light
+    "solarpunk":     "velvet",   # organic, diffuse, warm
+    "dark-academia": "velvet",   # candlelit, matte, chiaroscuro
+    "cottagecore":   "velvet",   # soft, unhurried, nothing glossy
+    "cyberpunk":     "neon",     # signage, glow, hard contrast
+    "synthwave":     "neon",     # grid, banded sun, chromatic fringe
+    "art-deco":      "neon",     # precise geometry - but see below
+}
+
+LABELS = {
+    "ionut":         "Ultimate Ionut",
+    "cyberprep":     "Ultimate Cyberprep",
+    "cyberpunk":     "Ultimate Cyberpunk",
+    "solarpunk":     "Ultimate Solarpunk",
+    "art-deco":      "Ultimate Art Deco",
+    "dark-academia": "Ultimate Dark Academia",
+    "cottagecore":   "Ultimate Cottagecore",
+    "synthwave":     "Ultimate Synthwave",
+}
+
+for _key, _engine in ENGINE_OF.items():
+    _m = dict(MODES[_engine])
+    _m["label"] = LABELS[_key]
+
+    if _key == "art-deco":
+        # Deco wants Neon's geometry and none of its glow. Brass reflects, it
+        # does not emit - a glowing border reads as neon signage, which is the
+        # one thing this aesthetic is not. Hairline metal instead, and a
+        # shadow-only hover.
+        _m["border_color"] = "rgba(201, 162, 39, 0.55)"
+        _m["hover_glow"] = "0 10px 28px -14px rgba(0, 0, 0, 0.75)"
+        _m["sheen"] = ("linear-gradient(160deg, rgba(201,162,39,0.20) 0%, "
+                       "rgba(201,162,39,0.05) 24%, rgba(201,162,39,0) 46%)")
+
+    MODES[_key] = _m
+
+
 _BG_SHORTHAND_PREFIX = "center / cover no-repeat fixed "
 
 for _m in MODES.values():
@@ -289,8 +341,11 @@ def _rgb01_to_hex(rgb):
 
 
 def accent_for_mode(accent_hex: str, mode_name: str) -> str:
-    """Re-express an area accent in the target mode's colour language."""
+    """Re-express a colour accent in the target mode's colour language."""
     import colorsys
+
+    # An aesthetic that borrows an engine borrows its accent treatment too.
+    mode_name = ENGINE_OF.get(mode_name, mode_name)
 
     if mode_name == "glass":
         return accent_hex

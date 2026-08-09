@@ -11,7 +11,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/glass/ember.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/glass/ember.webp');
 #       }
 
 # Rose
@@ -21,7 +21,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/glass/rose.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/glass/rose.webp');
 #       }
 
 # Amber
@@ -31,7 +31,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/glass/amber.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/glass/amber.webp');
 #       }
 
 # Citrine
@@ -41,7 +41,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/glass/citrine.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/glass/citrine.webp');
 #       }
 
 # Lime
@@ -51,7 +51,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/glass/lime.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/glass/lime.webp');
 #       }
 
 # Verdant
@@ -61,7 +61,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/glass/verdant.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/glass/verdant.webp');
 #       }
 
 # Jade
@@ -71,7 +71,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/glass/jade.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/glass/jade.webp');
 #       }
 
 # Lagoon
@@ -81,7 +81,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/glass/lagoon.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/glass/lagoon.webp');
 #       }
 
 # Azure
@@ -91,7 +91,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/glass/azure.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/glass/azure.webp');
 #       }
 
 # Cobalt
@@ -101,7 +101,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/glass/cobalt.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/glass/cobalt.webp');
 #       }
 
 # Indigo
@@ -111,7 +111,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/glass/indigo.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/glass/indigo.webp');
 #       }
 
 # Violet
@@ -121,7 +121,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/glass/violet.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/glass/violet.webp');
 #       }
 
 # Sand
@@ -131,7 +131,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/glass/sand.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/glass/sand.webp');
 #       }
 
 # Graphite
@@ -141,7 +141,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/glass/graphite.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/glass/graphite.webp');
 #       }
 
 # ===== Ultimate Velvet ==============================
@@ -152,7 +152,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/velvet/ember.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/velvet/ember.webp');
 #       }
 
 # Rose
@@ -162,7 +162,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/velvet/rose.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/velvet/rose.webp');
 #       }
 
 # Amber
@@ -172,7 +172,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/velvet/amber.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/velvet/amber.webp');
 #       }
 
 # Citrine
@@ -182,7 +182,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/velvet/citrine.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/velvet/citrine.webp');
 #       }
 
 # Lime
@@ -192,7 +192,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/velvet/lime.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/velvet/lime.webp');
 #       }
 
 # Verdant
@@ -202,7 +202,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/velvet/verdant.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/velvet/verdant.webp');
 #       }
 
 # Jade
@@ -212,7 +212,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/velvet/jade.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/velvet/jade.webp');
 #       }
 
 # Lagoon
@@ -222,7 +222,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/velvet/lagoon.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/velvet/lagoon.webp');
 #       }
 
 # Azure
@@ -232,7 +232,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/velvet/azure.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/velvet/azure.webp');
 #       }
 
 # Cobalt
@@ -242,7 +242,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/velvet/cobalt.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/velvet/cobalt.webp');
 #       }
 
 # Indigo
@@ -252,7 +252,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/velvet/indigo.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/velvet/indigo.webp');
 #       }
 
 # Violet
@@ -262,7 +262,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/velvet/violet.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/velvet/violet.webp');
 #       }
 
 # Sand
@@ -272,7 +272,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/velvet/sand.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/velvet/sand.webp');
 #       }
 
 # Graphite
@@ -282,7 +282,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/velvet/graphite.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/velvet/graphite.webp');
 #       }
 
 # ===== Ultimate Neon ==============================
@@ -293,7 +293,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/neon/ember.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/neon/ember.webp');
 #       }
 
 # Rose
@@ -303,7 +303,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/neon/rose.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/neon/rose.webp');
 #       }
 
 # Amber
@@ -313,7 +313,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/neon/amber.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/neon/amber.webp');
 #       }
 
 # Citrine
@@ -323,7 +323,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/neon/citrine.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/neon/citrine.webp');
 #       }
 
 # Lime
@@ -333,7 +333,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/neon/lime.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/neon/lime.webp');
 #       }
 
 # Verdant
@@ -343,7 +343,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/neon/verdant.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/neon/verdant.webp');
 #       }
 
 # Jade
@@ -353,7 +353,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/neon/jade.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/neon/jade.webp');
 #       }
 
 # Lagoon
@@ -363,7 +363,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/neon/lagoon.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/neon/lagoon.webp');
 #       }
 
 # Azure
@@ -373,7 +373,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/neon/azure.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/neon/azure.webp');
 #       }
 
 # Cobalt
@@ -383,7 +383,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/neon/cobalt.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/neon/cobalt.webp');
 #       }
 
 # Indigo
@@ -393,7 +393,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/neon/indigo.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/neon/indigo.webp');
 #       }
 
 # Violet
@@ -403,7 +403,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/neon/violet.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/neon/violet.webp');
 #       }
 
 # Sand
@@ -413,7 +413,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/neon/sand.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/neon/sand.webp');
 #       }
 
 # Graphite
@@ -423,5 +423,1023 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/neon/graphite.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/neon/graphite.webp');
+#       }
+
+# ===== Ultimate Ionut ==============================
+# Circuit
+# - title: Circuit
+#   path: circuit
+#   icon: mdi:chip
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/ionut/circuit.webp');
+#       }
+
+# Facet
+# - title: Facet
+#   path: facet
+#   icon: mdi:triangle-outline
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/ionut/facet.webp');
+#       }
+
+# Fusion
+# - title: Fusion
+#   path: fusion
+#   icon: mdi:hexagon-multiple
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/ionut/fusion.webp');
+#       }
+
+# ===== Ultimate Cyberprep ==============================
+# Ember
+# - title: Ember
+#   path: ember
+#   icon: mdi:fire
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/cyberprep/ember.webp');
+#       }
+
+# Rose
+# - title: Rose
+#   path: rose
+#   icon: mdi:flower
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/cyberprep/rose.webp');
+#       }
+
+# Amber
+# - title: Amber
+#   path: amber
+#   icon: mdi:weather-sunset
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/cyberprep/amber.webp');
+#       }
+
+# Citrine
+# - title: Citrine
+#   path: citrine
+#   icon: mdi:white-balance-sunny
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/cyberprep/citrine.webp');
+#       }
+
+# Lime
+# - title: Lime
+#   path: lime
+#   icon: mdi:leaf
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/cyberprep/lime.webp');
+#       }
+
+# Verdant
+# - title: Verdant
+#   path: verdant
+#   icon: mdi:sprout
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/cyberprep/verdant.webp');
+#       }
+
+# Jade
+# - title: Jade
+#   path: jade
+#   icon: mdi:diamond-stone
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/cyberprep/jade.webp');
+#       }
+
+# Lagoon
+# - title: Lagoon
+#   path: lagoon
+#   icon: mdi:waves
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/cyberprep/lagoon.webp');
+#       }
+
+# Azure
+# - title: Azure
+#   path: azure
+#   icon: mdi:water
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/cyberprep/azure.webp');
+#       }
+
+# Cobalt
+# - title: Cobalt
+#   path: cobalt
+#   icon: mdi:hexagon
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/cyberprep/cobalt.webp');
+#       }
+
+# Indigo
+# - title: Indigo
+#   path: indigo
+#   icon: mdi:weather-night
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/cyberprep/indigo.webp');
+#       }
+
+# Violet
+# - title: Violet
+#   path: violet
+#   icon: mdi:shimmer
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/cyberprep/violet.webp');
+#       }
+
+# Sand
+# - title: Sand
+#   path: sand
+#   icon: mdi:beach
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/cyberprep/sand.webp');
+#       }
+
+# Graphite
+# - title: Graphite
+#   path: graphite
+#   icon: mdi:circle-slice-8
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/cyberprep/graphite.webp');
+#       }
+
+# ===== Ultimate Solarpunk ==============================
+# Ember
+# - title: Ember
+#   path: ember
+#   icon: mdi:fire
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/solarpunk/ember.webp');
+#       }
+
+# Rose
+# - title: Rose
+#   path: rose
+#   icon: mdi:flower
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/solarpunk/rose.webp');
+#       }
+
+# Amber
+# - title: Amber
+#   path: amber
+#   icon: mdi:weather-sunset
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/solarpunk/amber.webp');
+#       }
+
+# Citrine
+# - title: Citrine
+#   path: citrine
+#   icon: mdi:white-balance-sunny
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/solarpunk/citrine.webp');
+#       }
+
+# Lime
+# - title: Lime
+#   path: lime
+#   icon: mdi:leaf
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/solarpunk/lime.webp');
+#       }
+
+# Verdant
+# - title: Verdant
+#   path: verdant
+#   icon: mdi:sprout
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/solarpunk/verdant.webp');
+#       }
+
+# Jade
+# - title: Jade
+#   path: jade
+#   icon: mdi:diamond-stone
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/solarpunk/jade.webp');
+#       }
+
+# Lagoon
+# - title: Lagoon
+#   path: lagoon
+#   icon: mdi:waves
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/solarpunk/lagoon.webp');
+#       }
+
+# Azure
+# - title: Azure
+#   path: azure
+#   icon: mdi:water
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/solarpunk/azure.webp');
+#       }
+
+# Cobalt
+# - title: Cobalt
+#   path: cobalt
+#   icon: mdi:hexagon
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/solarpunk/cobalt.webp');
+#       }
+
+# Indigo
+# - title: Indigo
+#   path: indigo
+#   icon: mdi:weather-night
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/solarpunk/indigo.webp');
+#       }
+
+# Violet
+# - title: Violet
+#   path: violet
+#   icon: mdi:shimmer
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/solarpunk/violet.webp');
+#       }
+
+# Sand
+# - title: Sand
+#   path: sand
+#   icon: mdi:beach
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/solarpunk/sand.webp');
+#       }
+
+# Graphite
+# - title: Graphite
+#   path: graphite
+#   icon: mdi:circle-slice-8
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/solarpunk/graphite.webp');
+#       }
+
+# ===== Ultimate Dark Academia ==============================
+# Ember
+# - title: Ember
+#   path: ember
+#   icon: mdi:fire
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/dark-academia/ember.webp');
+#       }
+
+# Rose
+# - title: Rose
+#   path: rose
+#   icon: mdi:flower
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/dark-academia/rose.webp');
+#       }
+
+# Amber
+# - title: Amber
+#   path: amber
+#   icon: mdi:weather-sunset
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/dark-academia/amber.webp');
+#       }
+
+# Citrine
+# - title: Citrine
+#   path: citrine
+#   icon: mdi:white-balance-sunny
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/dark-academia/citrine.webp');
+#       }
+
+# Lime
+# - title: Lime
+#   path: lime
+#   icon: mdi:leaf
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/dark-academia/lime.webp');
+#       }
+
+# Verdant
+# - title: Verdant
+#   path: verdant
+#   icon: mdi:sprout
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/dark-academia/verdant.webp');
+#       }
+
+# Jade
+# - title: Jade
+#   path: jade
+#   icon: mdi:diamond-stone
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/dark-academia/jade.webp');
+#       }
+
+# Lagoon
+# - title: Lagoon
+#   path: lagoon
+#   icon: mdi:waves
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/dark-academia/lagoon.webp');
+#       }
+
+# Azure
+# - title: Azure
+#   path: azure
+#   icon: mdi:water
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/dark-academia/azure.webp');
+#       }
+
+# Cobalt
+# - title: Cobalt
+#   path: cobalt
+#   icon: mdi:hexagon
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/dark-academia/cobalt.webp');
+#       }
+
+# Indigo
+# - title: Indigo
+#   path: indigo
+#   icon: mdi:weather-night
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/dark-academia/indigo.webp');
+#       }
+
+# Violet
+# - title: Violet
+#   path: violet
+#   icon: mdi:shimmer
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/dark-academia/violet.webp');
+#       }
+
+# Sand
+# - title: Sand
+#   path: sand
+#   icon: mdi:beach
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/dark-academia/sand.webp');
+#       }
+
+# Graphite
+# - title: Graphite
+#   path: graphite
+#   icon: mdi:circle-slice-8
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/dark-academia/graphite.webp');
+#       }
+
+# ===== Ultimate Cottagecore ==============================
+# Ember
+# - title: Ember
+#   path: ember
+#   icon: mdi:fire
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/cottagecore/ember.webp');
+#       }
+
+# Rose
+# - title: Rose
+#   path: rose
+#   icon: mdi:flower
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/cottagecore/rose.webp');
+#       }
+
+# Amber
+# - title: Amber
+#   path: amber
+#   icon: mdi:weather-sunset
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/cottagecore/amber.webp');
+#       }
+
+# Citrine
+# - title: Citrine
+#   path: citrine
+#   icon: mdi:white-balance-sunny
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/cottagecore/citrine.webp');
+#       }
+
+# Lime
+# - title: Lime
+#   path: lime
+#   icon: mdi:leaf
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/cottagecore/lime.webp');
+#       }
+
+# Verdant
+# - title: Verdant
+#   path: verdant
+#   icon: mdi:sprout
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/cottagecore/verdant.webp');
+#       }
+
+# Jade
+# - title: Jade
+#   path: jade
+#   icon: mdi:diamond-stone
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/cottagecore/jade.webp');
+#       }
+
+# Lagoon
+# - title: Lagoon
+#   path: lagoon
+#   icon: mdi:waves
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/cottagecore/lagoon.webp');
+#       }
+
+# Azure
+# - title: Azure
+#   path: azure
+#   icon: mdi:water
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/cottagecore/azure.webp');
+#       }
+
+# Cobalt
+# - title: Cobalt
+#   path: cobalt
+#   icon: mdi:hexagon
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/cottagecore/cobalt.webp');
+#       }
+
+# Indigo
+# - title: Indigo
+#   path: indigo
+#   icon: mdi:weather-night
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/cottagecore/indigo.webp');
+#       }
+
+# Violet
+# - title: Violet
+#   path: violet
+#   icon: mdi:shimmer
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/cottagecore/violet.webp');
+#       }
+
+# Sand
+# - title: Sand
+#   path: sand
+#   icon: mdi:beach
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/cottagecore/sand.webp');
+#       }
+
+# Graphite
+# - title: Graphite
+#   path: graphite
+#   icon: mdi:circle-slice-8
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/cottagecore/graphite.webp');
+#       }
+
+# ===== Ultimate Cyberpunk ==============================
+# Ember
+# - title: Ember
+#   path: ember
+#   icon: mdi:fire
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/cyberpunk/ember.webp');
+#       }
+
+# Rose
+# - title: Rose
+#   path: rose
+#   icon: mdi:flower
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/cyberpunk/rose.webp');
+#       }
+
+# Amber
+# - title: Amber
+#   path: amber
+#   icon: mdi:weather-sunset
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/cyberpunk/amber.webp');
+#       }
+
+# Citrine
+# - title: Citrine
+#   path: citrine
+#   icon: mdi:white-balance-sunny
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/cyberpunk/citrine.webp');
+#       }
+
+# Lime
+# - title: Lime
+#   path: lime
+#   icon: mdi:leaf
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/cyberpunk/lime.webp');
+#       }
+
+# Verdant
+# - title: Verdant
+#   path: verdant
+#   icon: mdi:sprout
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/cyberpunk/verdant.webp');
+#       }
+
+# Jade
+# - title: Jade
+#   path: jade
+#   icon: mdi:diamond-stone
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/cyberpunk/jade.webp');
+#       }
+
+# Lagoon
+# - title: Lagoon
+#   path: lagoon
+#   icon: mdi:waves
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/cyberpunk/lagoon.webp');
+#       }
+
+# Azure
+# - title: Azure
+#   path: azure
+#   icon: mdi:water
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/cyberpunk/azure.webp');
+#       }
+
+# Cobalt
+# - title: Cobalt
+#   path: cobalt
+#   icon: mdi:hexagon
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/cyberpunk/cobalt.webp');
+#       }
+
+# Indigo
+# - title: Indigo
+#   path: indigo
+#   icon: mdi:weather-night
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/cyberpunk/indigo.webp');
+#       }
+
+# Violet
+# - title: Violet
+#   path: violet
+#   icon: mdi:shimmer
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/cyberpunk/violet.webp');
+#       }
+
+# Sand
+# - title: Sand
+#   path: sand
+#   icon: mdi:beach
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/cyberpunk/sand.webp');
+#       }
+
+# Graphite
+# - title: Graphite
+#   path: graphite
+#   icon: mdi:circle-slice-8
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/cyberpunk/graphite.webp');
+#       }
+
+# ===== Ultimate Synthwave ==============================
+# Ember
+# - title: Ember
+#   path: ember
+#   icon: mdi:fire
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/synthwave/ember.webp');
+#       }
+
+# Rose
+# - title: Rose
+#   path: rose
+#   icon: mdi:flower
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/synthwave/rose.webp');
+#       }
+
+# Amber
+# - title: Amber
+#   path: amber
+#   icon: mdi:weather-sunset
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/synthwave/amber.webp');
+#       }
+
+# Citrine
+# - title: Citrine
+#   path: citrine
+#   icon: mdi:white-balance-sunny
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/synthwave/citrine.webp');
+#       }
+
+# Lime
+# - title: Lime
+#   path: lime
+#   icon: mdi:leaf
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/synthwave/lime.webp');
+#       }
+
+# Verdant
+# - title: Verdant
+#   path: verdant
+#   icon: mdi:sprout
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/synthwave/verdant.webp');
+#       }
+
+# Jade
+# - title: Jade
+#   path: jade
+#   icon: mdi:diamond-stone
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/synthwave/jade.webp');
+#       }
+
+# Lagoon
+# - title: Lagoon
+#   path: lagoon
+#   icon: mdi:waves
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/synthwave/lagoon.webp');
+#       }
+
+# Azure
+# - title: Azure
+#   path: azure
+#   icon: mdi:water
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/synthwave/azure.webp');
+#       }
+
+# Cobalt
+# - title: Cobalt
+#   path: cobalt
+#   icon: mdi:hexagon
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/synthwave/cobalt.webp');
+#       }
+
+# Indigo
+# - title: Indigo
+#   path: indigo
+#   icon: mdi:weather-night
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/synthwave/indigo.webp');
+#       }
+
+# Violet
+# - title: Violet
+#   path: violet
+#   icon: mdi:shimmer
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/synthwave/violet.webp');
+#       }
+
+# Sand
+# - title: Sand
+#   path: sand
+#   icon: mdi:beach
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/synthwave/sand.webp');
+#       }
+
+# Graphite
+# - title: Graphite
+#   path: graphite
+#   icon: mdi:circle-slice-8
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/synthwave/graphite.webp');
+#       }
+
+# ===== Ultimate Art Deco ==============================
+# Ember
+# - title: Ember
+#   path: ember
+#   icon: mdi:fire
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/art-deco/ember.webp');
+#       }
+
+# Rose
+# - title: Rose
+#   path: rose
+#   icon: mdi:flower
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/art-deco/rose.webp');
+#       }
+
+# Amber
+# - title: Amber
+#   path: amber
+#   icon: mdi:weather-sunset
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/art-deco/amber.webp');
+#       }
+
+# Citrine
+# - title: Citrine
+#   path: citrine
+#   icon: mdi:white-balance-sunny
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/art-deco/citrine.webp');
+#       }
+
+# Lime
+# - title: Lime
+#   path: lime
+#   icon: mdi:leaf
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/art-deco/lime.webp');
+#       }
+
+# Verdant
+# - title: Verdant
+#   path: verdant
+#   icon: mdi:sprout
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/art-deco/verdant.webp');
+#       }
+
+# Jade
+# - title: Jade
+#   path: jade
+#   icon: mdi:diamond-stone
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/art-deco/jade.webp');
+#       }
+
+# Lagoon
+# - title: Lagoon
+#   path: lagoon
+#   icon: mdi:waves
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/art-deco/lagoon.webp');
+#       }
+
+# Azure
+# - title: Azure
+#   path: azure
+#   icon: mdi:water
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/art-deco/azure.webp');
+#       }
+
+# Cobalt
+# - title: Cobalt
+#   path: cobalt
+#   icon: mdi:hexagon
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/art-deco/cobalt.webp');
+#       }
+
+# Indigo
+# - title: Indigo
+#   path: indigo
+#   icon: mdi:weather-night
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/art-deco/indigo.webp');
+#       }
+
+# Violet
+# - title: Violet
+#   path: violet
+#   icon: mdi:shimmer
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/art-deco/violet.webp');
+#       }
+
+# Sand
+# - title: Sand
+#   path: sand
+#   icon: mdi:beach
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/art-deco/sand.webp');
+#       }
+
+# Graphite
+# - title: Graphite
+#   path: graphite
+#   icon: mdi:circle-slice-8
+#   card_mod:
+#     style: |
+#       :host {
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.2/www/ultimate-theme/backgrounds/art-deco/graphite.webp');
 #       }

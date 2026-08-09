@@ -91,11 +91,11 @@ HACS creates its own subfolder and puts the file inside it:
 /config/themes/ultimate-theme/ultimate-theme.yaml
 ```
 
-That one file contains all 45 themes. **Leave it where HACS put it.** The
+That one file contains all 154 themes. **Leave it where HACS put it.** The
 `!include_dir_merge_named` include recurses into subdirectories, so Home
 Assistant finds it there. Moving it to `/config/themes/` directly will work
 until the next HACS update recreates the subfolder — and then you have two
-copies of all 45 theme names fighting each other.
+copies of all 154 theme names fighting each other.
 
 > HACS installs **only** the theme YAML — it never touches `/config/www`. That is
 > why the default build loads backgrounds from a CDN, so a HACS install needs no
@@ -139,7 +139,7 @@ work without internet, or are modifying the theme locally.
 > **Shortcut: use the release assets.** Every release attaches two files, so you
 > don't need to clone anything or install Python:
 >
-> 1. Download **`ultimate-theme-backgrounds-<version>.zip`** (~5 MB) and unzip it
+> 1. Download **`ultimate-theme-backgrounds-<version>.zip`** (~26 MB) and unzip it
 >    into `/config/www/`. You should end up with
 >    `/config/www/ultimate-theme/backgrounds/…`.
 > 2. Download **`ultimate-theme-local-<version>.yaml`**, rename it to
@@ -174,16 +174,14 @@ Afterwards:
 ```
 /config/themes/ultimate-theme.yaml
 
-/config/www/ultimate-theme/backgrounds/glass/*.webp
-/config/www/ultimate-theme/backgrounds/velvet/*.webp
-/config/www/ultimate-theme/backgrounds/neon/*.webp
+/config/www/ultimate-theme/backgrounds/<aesthetic>/*.webp
 ```
 
 > **Already installed via HACS? Pick one, not both.**
 >
 > HACS keeps its copy at `/config/themes/ultimate-theme/ultimate-theme.yaml`.
 > Adding a second copy at `/config/themes/ultimate-theme.yaml` means Home
-> Assistant loads all 45 theme names **twice** — the include recurses, so it
+> Assistant loads all 154 theme names **twice** — the include recurses, so it
 > merges both files. Which one wins is not something you want to rely on, and
 > the symptom is confusing: backgrounds that come from the CDN when you expected
 > local ones.
@@ -212,7 +210,7 @@ Whichever transfer method you already use:
 > `/local/ultimate-theme/backgrounds/glass/amber.webp` — exactly what the theme
 > references. **Don't rename `ultimate-theme`** or every background 404s.
 
-Backgrounds total about 5 MB (glass 1.7, velvet 1.4, neon 2.1).
+Backgrounds total about 26 MB across the eleven aesthetics.
 
 ### 3–4. Same as Route A
 
@@ -415,7 +413,7 @@ most of the project goes missing.
 You almost certainly have two copies of the theme on the instance: HACS's at
 `/config/themes/ultimate-theme/ultimate-theme.yaml` and yours at
 `/config/themes/ultimate-theme.yaml`. The include recurses, so both are loaded
-and the same 45 theme names are defined twice. Delete whichever one you did not
+and the same 154 theme names are defined twice. Delete whichever one you did not
 intend to keep, then Developer Tools → **Reload themes**.
 
 To check which file a background actually came from, open the browser's Network

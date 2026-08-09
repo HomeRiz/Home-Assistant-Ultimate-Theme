@@ -78,7 +78,7 @@ working around. To check a panel, open the console and read
 
 One critical gotcha: **`card-mod-theme` must equal the theme's own name**, exactly.
 If it doesn't match, card-mod silently does nothing — no error, just a flat theme.
-The generator sets it automatically and `verify.py` checks all 45.
+The generator sets it automatically and `verify.py` checks all 154.
 
 ---
 
@@ -226,7 +226,9 @@ HACS manages **exactly one** theme configuration file per repository — if
 `themes/` holds more than one, only the first is installed. Splitting by mode
 would silently ship a third of the project to anyone installing via HACS.
 
-So all 45 themes live in `themes/ultimate-theme.yaml` (~25,000 lines, ~1.1 MB).
+So all 154 themes live in `themes/ultimate-theme.yaml` (~87,000 lines, ~3.6 MB).
+That size is the standing argument against a twelfth aesthetic: Home Assistant
+parses the file in full at every startup.
 Home Assistant parses it once at startup. `verify.py` fails the build if a second
 `.yaml` ever appears in `themes/`, and so does CI.
 
@@ -273,7 +275,7 @@ build/modes.py     ─┤                                    │
                     │                                    │
 build/template.jinja2 ──→ generate_themes.py ←───────────┘
                                   │
-                                  ├─→ themes/ultimate-theme.yaml      (45 themes)
+                                  ├─→ themes/ultimate-theme.yaml      (154 themes)
                                   └─→ dashboards/per-view-backgrounds.yaml
 
 build/prompts.py  ──→ docs/IMAGE-PROMPTS.md, docs/image-prompts.tsv

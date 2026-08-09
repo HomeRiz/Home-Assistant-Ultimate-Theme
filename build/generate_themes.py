@@ -40,7 +40,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 
-from areas import as_dicts          # noqa: E402
+from areas import as_dicts, variants_for   # noqa: E402
 from modes import MODES, accent_for_mode   # noqa: E402
 
 THEMES_DIR = os.path.join(ROOT, "themes")
@@ -66,7 +66,7 @@ REPO = "HomeRiz/Home-Assistant-Ultimate-Themes"
 #
 # Must match the git tag exactly. jsDelivr happens to resolve 'v0.0.1' to tag
 # '0.0.1' via semver, but relying on that is a trap - keep them identical.
-CDN_REF = "0.1.1"
+CDN_REF = "0.1.2"
 CDN_BASE = f"https://cdn.jsdelivr.net/gh/{REPO}@{CDN_REF}/www/ultimate-theme/backgrounds"
 
 
@@ -125,13 +125,13 @@ def main() -> None:
         print("! avg-colors.json missing - run generate_backgrounds.py first. "
               "Falling back to accent-derived header tints.")
 
-    areas = as_dicts()
     os.makedirs(THEMES_DIR, exist_ok=True)
     os.makedirs(DASH_DIR, exist_ok=True)
 
     total = 0
     chunks = []
     for mode_name, m in MODES.items():
+        areas = variants_for(mode_name)
 
         # ---- base theme (no area background) ------------------------------
         chunks.append(tpl.render(
@@ -167,7 +167,7 @@ def main() -> None:
         "# Home Assistant Ultimate Theme\n"
         "# GENERATED FILE - edit build/modes.py + build/template.jinja2 and\n"
         "# re-run build/generate_themes.py instead.\n"
-        f"# {total} themes: {len(MODES)} modes x (1 base + {len(areas)} areas).\n"
+        f"# {total} themes across {len(MODES)} aesthetics.\n"
         f"# Backgrounds: {args.base}\n"
     )
     body = header + "\n".join(chunks)
@@ -185,6 +185,7 @@ def main() -> None:
                 "# Raw Configuration Editor. See docs/PER-VIEW-BACKGROUNDS.md.",
                 ""]
     for mode_name in MODES:
+        areas = variants_for(mode_name)
         snippets.append(f"# ===== {MODES[mode_name]['label']} " + "=" * 30)
         for area in areas:
             snippets.append(

@@ -35,7 +35,7 @@ sys.dont_write_bytecode = True
 from PIL import Image, ImageChops, ImageDraw, ImageFilter, ImageFont
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from areas import as_dicts  # noqa: E402
+from areas import as_dicts, variants_for  # noqa: E402
 from modes import accent_for_mode  # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -125,6 +125,21 @@ SECONDARY = [
     ("Window", "Closed", "lock"), ("Brightness", "62%", "bulb"),
     ("Air quality", "Good", "drop"), ("Presence", "Home", "shield"),
 ]
+
+
+# The seven borrowed aesthetics render with their engine's card treatment and
+# their own artwork - see ENGINE_OF in build/modes.py for why.
+from modes import ENGINE_OF as _ENGINE_OF, LABELS as _LABELS  # noqa: E402
+
+for _k, _e in _ENGINE_OF.items():
+    _s = dict(SPECS[_e])
+    _s["label"] = _LABELS[_k]
+    if _k == "art-deco":
+        _s["border"] = (201, 162, 39, 140)
+        _s["glow"] = 0.0
+        _s["sheen"] = (201, 162, 39, 40)
+    SPECS[_k] = _s
+
 
 
 def hex_rgb(h: str) -> tuple[int, int, int]:
@@ -374,35 +389,50 @@ def contact_sheet(mode: str, areas: list[dict]) -> Image.Image:
 
 # Seven of the fourteen, spread across the wheel. Enough to show what an
 # aesthetic does to a colour without a row so wide it renders as a smear.
+MODE_LABEL = {"dark-academia": "Dark acad.", "cottagecore": "Cottagecore",
+              "art-deco": "Art deco", "cyberprep": "Cyberprep"}
+
 SAMPLE = ["ember", "amber", "citrine", "verdant", "lagoon", "cobalt", "violet"]
 
 
-def aesthetics_sheet(modes, areas) -> Image.Image:
+def aesthetics_sheet(modes, _unused=None) -> Image.Image:
     """One row per aesthetic, the same colours in each — the comparison that
-    three separate contact sheets could only imply."""
-    by_key = {a["key"]: a for a in areas}
-    cols = [by_key[k] for k in SAMPLE if k in by_key]
+    separate contact sheets could only imply. An aesthetic with its own
+    variants (see VARIANTS in build/areas.py) shows those instead, centred,
+    because it has no Ember to put in the Ember column."""
     tw, th, pad, label_w, cap = 250, 141, 10, 92, 26
+    ncol = len(SAMPLE)
 
-    W = label_w + len(cols) * (tw + pad) + pad
+    W = label_w + ncol * (tw + pad) + pad
     H = pad + cap + len(modes) * (th + pad)
     sheet = Image.new("RGB", (W, H), (12, 12, 16))
     d = ImageDraw.Draw(sheet)
     fh = font("Poppins-Regular.ttf", 14)
     fl = font("Poppins-Regular.ttf", 15)
 
-    for c, a in enumerate(cols):
-        x = label_w + c * (tw + pad)
-        d.text((x + 2, pad), a["name"], font=fh, fill=(150, 150, 162))
+    by_key = {a["key"]: a for a in as_dicts()}
+    for c, k in enumerate(SAMPLE):
+        if k in by_key:
+            d.text((label_w + c * (tw + pad) + 2, pad), by_key[k]["name"],
+                   font=fh, fill=(150, 150, 162))
 
     for r, mode in enumerate(modes):
         y = pad + cap + r * (th + pad)
-        d.text((pad, y + th // 2 - 9), mode.capitalize(), font=fl, fill=(210, 210, 222))
-        for c, a in enumerate(cols):
-            x = label_w + c * (tw + pad)
-            im = Image.open(os.path.join(OUT, mode, f"{a['key']}.webp")).resize(
-                (tw, th), Image.LANCZOS)
-            sheet.paste(im, (x, y))
+        d.text((pad, y + th // 2 - 9), MODE_LABEL.get(mode, mode.capitalize()),
+               font=fl, fill=(210, 210, 222))
+
+        keys = [k for k in SAMPLE if k in {v["key"] for v in variants_for(mode)}]
+        offset = 0
+        if not keys:                                   # its own variants
+            keys = [v["key"] for v in variants_for(mode)][:ncol]
+            offset = (ncol - len(keys)) // 2           # centre the short row
+
+        for c, key in enumerate(keys):
+            p = os.path.join(OUT, mode, f"{key}.webp")
+            if not os.path.exists(p):
+                continue
+            x = label_w + (c + offset) * (tw + pad)
+            sheet.paste(Image.open(p).resize((tw, th), Image.LANCZOS), (x, y))
     return sheet
 
 
@@ -413,10 +443,10 @@ def main() -> None:
     only = args[0] if args else None
 
     resume = "--resume" in sys.argv
-    areas = as_dicts()
     for mode in SPECS:
         if only and mode != only:
             continue
+        areas = variants_for(mode)
         os.makedirs(os.path.join(OUT, mode), exist_ok=True)
         if not sheets_only:
             for a in areas:

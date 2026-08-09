@@ -7,6 +7,69 @@ and versions follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
+## [0.1.2] — 2026-08-09
+
+Eight new aesthetics, and one of them does not follow the rules.
+
+### Added
+
+- **Seven aesthetics that borrow an engine.** `cyberprep`, `cyberpunk`,
+  `solarpunk`, `art-deco`, `dark-academia`, `cottagecore` and `synthwave` had
+  artwork prompts since 0.0.5 but no themes. They have themes now.
+
+  They do not define new engines. Glass, Velvet and Neon each answer *how a card
+  behaves* — blur character, radii, border language. An Art Deco theme does not
+  need its own answer to that; it needs its own artwork. So each borrows the
+  engine that suits its material and brings a label and a folder of backgrounds:
+
+  | Aesthetic | Engine | Why |
+  |---|---|---|
+  | Cyberprep | Glass | chrome and clean light |
+  | Solarpunk, Dark Academia, Cottagecore | Velvet | matte, diffuse, low contrast |
+  | Cyberpunk, Synthwave | Neon | hard contrast, glow, tight radii |
+  | Art Deco | Neon, minus the glow | see below |
+
+  Art Deco takes Neon's geometry and none of its light. Brass reflects; it does
+  not emit, and a glowing border reads as neon signage — the one thing this
+  aesthetic is not. Hairline metal instead, and a shadow-only hover.
+
+- **`Ultimate Ionut`** — the first aesthetic whose variants are not colours.
+  Three patterns: **Circuit**, **Facet**, **Fusion**. Deep navy throughout,
+  authored artwork rather than generated.
+
+  This needed a change to the pipeline. Every aesthetic until now rendered the
+  same fourteen colours; an aesthetic defined by a *pattern* has no Ember. So
+  `build/areas.py` grew a `VARIANTS` registry: an aesthetic may declare its own
+  set, and the generator, the previews, the importer and `verify.py` all ask
+  what a mode renders instead of assuming.
+
+  The comment above that registry says to keep it rare, and it means it — every
+  exception is a row in the theme picker that behaves differently from its
+  neighbours.
+
+  Two of the eight images supplied for it were left out: measured mean luminance
+  147 and 132, with image centres at 144 and 85. White card text is not readable
+  over either. That constraint is the one rule in the set that is not a matter
+  of taste.
+
+### Changed
+
+- The combined gallery sheet grows a row per aesthetic automatically, and
+  centres the row for an aesthetic with fewer variants than there are columns.
+- `import_backgrounds.py` takes its mode list from `MODES` rather than the
+  prompt registry — artwork can be authored rather than prompted, and Ionut was
+  invisible to the old lookup.
+
+### Result
+
+154 themes across 11 aesthetics, up from 45 across 3.
+
+`themes/ultimate-theme.yaml` is now ~3.6 MB and ~87,000 lines. Home Assistant
+parses it in full at startup; on slower hardware that may be noticeable, and it
+is the reason to think twice before the twelfth aesthetic.
+
+---
+
 ## [0.1.1] — 2026-08-09
 
 Cleanup after 0.1.0. The rename reached the code and the files but not every
@@ -399,6 +462,7 @@ See [INSTALL.md](INSTALL.md). Short version: HACS → ⋮ → Custom repositorie
 add this repo as type **Theme** → Download → add `frontend: themes:` to
 `configuration.yaml` → restart → pick a theme and set the mode to **Dark**.
 
+[0.1.2]: https://github.com/HomeRiz/Home-Assistant-Ultimate-Themes/releases/tag/0.1.2
 [0.1.1]: https://github.com/HomeRiz/Home-Assistant-Ultimate-Themes/releases/tag/0.1.1
 [0.1.0]: https://github.com/HomeRiz/Home-Assistant-Ultimate-Themes/releases/tag/0.1.0
 [0.0.6]: https://github.com/HomeRiz/Home-Assistant-Ultimate-Themes/releases/tag/0.0.6
