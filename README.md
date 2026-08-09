@@ -137,40 +137,27 @@ tabs works — Glass on one, Neon on the next.
 
 ## Gallery
 
-### Ultimate Glass
+Three aesthetics down, seven of the fourteen colours across. Same colour, same
+composition — only the aesthetic changes.
 
-Heavy blur, 30px radii, no borders, bright specular rim.
-
-[![All 14 colours in Ultimate Glass](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/glass.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/glass.webp)
-
-<sub>Click to view full size.</sub>
-
-### Ultimate Velvet
-
-Softer blur, 18px radii, hairline borders, muted pastel accents.
-
-[![All 14 colours in Ultimate Velvet](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/velvet.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/velvet.webp)
-
-<sub>Click to view full size.</sub>
-
-### Ultimate Neon
-
-Near-black, 12px radii, accent borders with outer glow, scanlined backdrops.
-
-[![All 14 colours in Ultimate Neon](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/neon.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/neon.webp)
+[![Three aesthetics across seven colours](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/aesthetics.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/aesthetics.webp)
 
 <sub>Click to view full size.</sub>
 
 <details>
-<summary><b>The same colour across all three aesthetics</b></summary>
+<summary><b>All fourteen colours, one aesthetic at a time</b></summary>
 
-| Glass | Velvet | Neon |
-|---|---|---|
-| [![](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/glass/ember.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/glass/ember.webp) | [![](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/velvet/ember.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/velvet/ember.webp) | [![](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/neon/ember.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/neon/ember.webp) |
-| [![](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/glass/azure.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/glass/azure.webp) | [![](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/velvet/azure.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/velvet/azure.webp) | [![](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/neon/azure.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/neon/azure.webp) |
+**Ultimate Glass** — heavy blur, 30px radii, no borders, bright specular rim.
 
-The composition is deliberately identical across aesthetics — only palette and
-grade change, so a colour stays recognisable when you switch between them.
+[![All 14 colours in Ultimate Glass](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/glass.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/glass.webp)
+
+**Ultimate Velvet** — softer blur, 18px radii, hairline borders, muted pastels.
+
+[![All 14 colours in Ultimate Velvet](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/velvet.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/velvet.webp)
+
+**Ultimate Neon** — near-black, 12px radii, accent borders with outer glow.
+
+[![All 14 colours in Ultimate Neon](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/neon.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/neon.webp)
 
 </details>
 

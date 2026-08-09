@@ -372,6 +372,40 @@ def contact_sheet(mode: str, areas: list[dict]) -> Image.Image:
     return sheet
 
 
+# Seven of the fourteen, spread across the wheel. Enough to show what an
+# aesthetic does to a colour without a row so wide it renders as a smear.
+SAMPLE = ["ember", "amber", "citrine", "verdant", "lagoon", "cobalt", "violet"]
+
+
+def aesthetics_sheet(modes, areas) -> Image.Image:
+    """One row per aesthetic, the same colours in each — the comparison that
+    three separate contact sheets could only imply."""
+    by_key = {a["key"]: a for a in areas}
+    cols = [by_key[k] for k in SAMPLE if k in by_key]
+    tw, th, pad, label_w, cap = 250, 141, 10, 92, 26
+
+    W = label_w + len(cols) * (tw + pad) + pad
+    H = pad + cap + len(modes) * (th + pad)
+    sheet = Image.new("RGB", (W, H), (12, 12, 16))
+    d = ImageDraw.Draw(sheet)
+    fh = font("Poppins-Regular.ttf", 14)
+    fl = font("Poppins-Regular.ttf", 15)
+
+    for c, a in enumerate(cols):
+        x = label_w + c * (tw + pad)
+        d.text((x + 2, pad), a["name"], font=fh, fill=(150, 150, 162))
+
+    for r, mode in enumerate(modes):
+        y = pad + cap + r * (th + pad)
+        d.text((pad, y + th // 2 - 9), mode.capitalize(), font=fl, fill=(210, 210, 222))
+        for c, a in enumerate(cols):
+            x = label_w + c * (tw + pad)
+            im = Image.open(os.path.join(OUT, mode, f"{a['key']}.webp")).resize(
+                (tw, th), Image.LANCZOS)
+            sheet.paste(im, (x, y))
+    return sheet
+
+
 def main() -> None:
     args = sys.argv[1:]
     sheets_only = "--sheets" in args
@@ -396,6 +430,12 @@ def main() -> None:
         sp = os.path.join(OUT, f"{mode}.webp")
         sheet.save(sp, "WEBP", quality=82, method=4)
         print(f"{mode:11s} contact sheet     {os.path.getsize(sp)/1024:6.0f} KB")
+
+    if not only:
+        combined = aesthetics_sheet(list(SPECS), areas)
+        cp = os.path.join(OUT, "aesthetics.webp")
+        combined.save(cp, "WEBP", quality=82, method=4)
+        print(f"{'all':11s} aesthetics sheet  {os.path.getsize(cp)/1024:6.0f} KB")
 
 
 if __name__ == "__main__":
