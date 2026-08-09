@@ -429,6 +429,29 @@ def main() -> int:
                     f"{doc} names {m.group(0)!r}, which is not a theme in "
                     f"{fn}. A rename left the documentation behind.")
 
+    # drop-in/ is a local workspace and never published, but a file in there
+    # whose name is not a colour key is dead weight: the importer skips it in
+    # silence, so it just sits looking like it was processed. This is how nine
+    # retired colours stayed in every style folder after 0.1.0 renamed the
+    # registry - no error, no warning, and the folders read as untouched.
+    drop = os.path.join(ROOT, "drop-in")
+    if os.path.isdir(drop):
+        valid = set(AREA_KEYS)
+        for style in sorted(os.listdir(drop)):
+            d = os.path.join(drop, style)
+            if not os.path.isdir(d) or style.startswith("_"):
+                continue
+            checks += 1
+            stray = sorted(
+                os.path.splitext(f)[0] for f in os.listdir(d)
+                if os.path.splitext(f)[1].lower() in (".png", ".jpg", ".jpeg", ".webp")
+                and os.path.splitext(f)[0] not in valid)
+            if stray:
+                warnings.append(
+                    f"drop-in/{style}/ holds {len(stray)} image(s) matching no "
+                    f"colour key - the importer will skip them: "
+                    f"{', '.join(stray[:4])}{'…' if len(stray) > 4 else ''}")
+
     if errors:
         print(f"\nFAILED - {len(errors)} error(s):")
         for e in errors[:40]:
