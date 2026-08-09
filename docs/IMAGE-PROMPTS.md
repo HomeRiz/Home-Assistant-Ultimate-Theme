@@ -2,12 +2,12 @@
 
 Every background is `STYLE + SUBJECT + CONSTRAINTS`. The **subject is identical across all three modes** — that is deliberate. It means the Kitchen still reads as the Kitchen whether you are in Glass, Velvet or Neon.
 
-You do not have to do all 69. Anything you don't supply keeps its procedurally generated background, so you can replace them a few at a time.
+You do not have to do all 140. Anything you don't supply keeps its procedurally generated background, so you can replace them a few at a time.
 
 ## How to use
 
 1. Generate an image.
-2. Save it as `drop-in/<mode>/<area-key>.png` (e.g. `drop-in/glass/kitchen.png`). The filename **must** match the area key exactly — that is how the importer knows where it goes.
+2. Save it as `drop-in/<style>/<colour-key>.png` (e.g. `drop-in/glass/amber.png`). The filename **must** match the colour key exactly — that is how the importer knows where it goes.
 3. Run:
 
 ```bash
@@ -19,7 +19,7 @@ The importer centre-crops to 2560×1440, darkens slightly so glass cards stay le
 
 ## Palette arbitration
 
-The 23 subjects are shared by every style, and several name a colour outright. This clause sits between the subject and the constraints so the style's palette wins while the composition carries over — which is what keeps a room recognisable across aesthetics.
+The 14 subjects are shared by every style, and several name a colour outright. This clause sits between the subject and the constraints so the style's palette wins while the composition carries over — which is what keeps a colour recognisable across aesthetics.
 
 ```
 Where the subject names a colour absent from this style's palette, translate it to the nearest colour that belongs to the style - the style palette always wins. Keep the subject's composition, mood and direction of light exactly.
@@ -101,7 +101,7 @@ Abstract wallpaper, 1984 retro synthwave: deep indigo-to-magenta sky gradient #2
 
 ## Subjects
 
-| Area key | Dashboard | Subject |
+| Colour key | Name | Subject |
 |---|---|---|
 | `ember` | Ember | deep crimson and scarlet light sweeping across shadow, embers still glowing at the edges, tense and alive |
 | `rose` | Rose | hot pink and magenta blooming outward in dark space, soft overlapping petals of light, electric and romantic |
@@ -121,7 +121,7 @@ Abstract wallpaper, 1984 retro synthwave: deep indigo-to-magenta sky gradient #2
 ## Ready-to-paste full prompts
 
 <details>
-<summary><b>glass</b> — all 23 prompts</summary>
+<summary><b>glass</b> — all 14 prompts</summary>
 
 **`glass/ember.png`** — Ember
 
@@ -210,7 +210,7 @@ Abstract wallpaper in the style of Apple's spatial glass interfaces: liquid glas
 </details>
 
 <details>
-<summary><b>velvet</b> — all 23 prompts</summary>
+<summary><b>velvet</b> — all 14 prompts</summary>
 
 **`velvet/ember.png`** — Ember
 
@@ -299,7 +299,7 @@ Abstract wallpaper, velvet-soft and matte — deep base #1e1e2e with muted paste
 </details>
 
 <details>
-<summary><b>neon</b> — all 23 prompts</summary>
+<summary><b>neon</b> — all 14 prompts</summary>
 
 **`neon/ember.png`** — Ember
 
@@ -388,7 +388,7 @@ Abstract cyberpunk wallpaper: near-black #04050a base, high-chroma neon accent l
 </details>
 
 <details>
-<summary><b>cyberprep</b> — all 23 prompts</summary>
+<summary><b>cyberprep</b> — all 14 prompts</summary>
 
 **`cyberprep/ember.png`** — Ember
 
@@ -477,7 +477,7 @@ Abstract wallpaper, cyberprep — the optimistic answer to cyberpunk. Dark polis
 </details>
 
 <details>
-<summary><b>cyberpunk</b> — all 23 prompts</summary>
+<summary><b>cyberpunk</b> — all 14 prompts</summary>
 
 **`cyberpunk/ember.png`** — Ember
 
@@ -566,7 +566,7 @@ Abstract wallpaper, street-level cyberpunk: rain-slick black asphalt reflecting 
 </details>
 
 <details>
-<summary><b>solarpunk</b> — all 23 prompts</summary>
+<summary><b>solarpunk</b> — all 14 prompts</summary>
 
 **`solarpunk/ember.png`** — Ember
 
@@ -655,7 +655,7 @@ Abstract wallpaper, solarpunk: deep forest green base with warm gold sunlight fi
 </details>
 
 <details>
-<summary><b>art-deco</b> — all 23 prompts</summary>
+<summary><b>art-deco</b> — all 14 prompts</summary>
 
 **`art-deco/ember.png`** — Ember
 
@@ -744,7 +744,7 @@ Abstract wallpaper, 1920s art deco: black lacquer and deep emerald #0B3D2E groun
 </details>
 
 <details>
-<summary><b>dark-academia</b> — all 23 prompts</summary>
+<summary><b>dark-academia</b> — all 14 prompts</summary>
 
 **`dark-academia/ember.png`** — Ember
 
@@ -833,7 +833,7 @@ Abstract wallpaper, dark academia: oxblood #5C1A1B, walnut brown and aged parchm
 </details>
 
 <details>
-<summary><b>cottagecore</b> — all 23 prompts</summary>
+<summary><b>cottagecore</b> — all 14 prompts</summary>
 
 **`cottagecore/ember.png`** — Ember
 
@@ -922,7 +922,7 @@ Abstract wallpaper, cottagecore at dusk: muted sage #7C8B6F, warm cream and drie
 </details>
 
 <details>
-<summary><b>synthwave</b> — all 23 prompts</summary>
+<summary><b>synthwave</b> — all 14 prompts</summary>
 
 **`synthwave/ember.png`** — Ember
 

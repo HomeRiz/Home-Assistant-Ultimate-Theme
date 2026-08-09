@@ -23,7 +23,7 @@ python3 build/generate_themes.py        # themes/ultimate-theme.yaml
 python3 build/verify.py                 # must pass before you open a PR
 ```
 
-Slower ones, only needed when areas or artwork change:
+Slower ones, only needed when colours or artwork change:
 
 ```bash
 python3 build/generate_backgrounds.py --resume   # artwork
@@ -38,18 +38,22 @@ a six-second one.
 
 ## Common contributions
 
-### Add an area
+### Add a colour
 
 One line in `build/areas.py`:
 
 ```python
-("laundry", "Laundry", "mdi:washing-machine", [200, 45, 175, 30], "#4DD0E1", 1024),
-#  key       name       icon                   hue anchors          accent     seed
+("teal", "Teal", "mdi:diamond-stone", [180, 195, 165, 210], "#4DD0E1", 1024),
+#  key     name    icon                 hue anchors           accent     seed
 ```
 
-- **key** — lowercase, hyphenated. Becomes the filename and the URL. Never change
-  an existing one; it breaks everyone's dashboards.
-- **hue anchors** — 3–5 HSV hues (0–360) that tell the story of the room.
+- **key** — lowercase, hyphenated. Becomes the filename and the theme name.
+  Renaming one breaks every dashboard that selected it — 0.1.0 did exactly that
+  on purpose, and it is not something to repeat casually.
+- Check it is not within ~20° of a colour already in the list. That redundancy
+  is what 0.1.0 removed.
+- **hue anchors** — 3–5 HSV hues (0–360) around the accent, which give the
+  artwork its variation without leaving the colour.
 - **accent** — drives `--primary-color`. Pick against the Glass palette; the
   other two modes re-derive it automatically.
 - **seed** — any unused integer. Fixes the composition forever.

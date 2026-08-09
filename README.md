@@ -2,7 +2,7 @@
 
 # Home Assistant Ultimate Themes
 
-**72 themes. 3 aesthetics. 23 areas. A background for every dashboard and every tab.**
+**45 themes. 3 aesthetics. 14 colours. A background for every dashboard and every tab.**
 
 [![Latest release](https://img.shields.io/github/v/release/HomeRiz/Home-Assistant-Ultimate-Themes?style=flat-square&label=release)](https://github.com/HomeRiz/Home-Assistant-Ultimate-Themes/releases/latest)
 [![HACS Custom](https://img.shields.io/badge/HACS-Custom-41BDF5.svg?style=flat-square)](https://hacs.xyz)
@@ -17,12 +17,12 @@
 ---
 
 Three complete visual systems — **Glass**, **Velvet** and **Neon** — each rendered
-across 23 areas of the home. Every area gets its own artwork, its own accent
-colour and its own theme entry, so a dashboard can look like the room it controls.
+in fourteen colours. Every colour gets its own artwork, its own accent and its own
+theme entry, so each dashboard or tab can carry a different one.
 
 ```
-3 modes  ×  (1 base + 23 areas)  =  72 themes
-3 modes  ×  23 areas             =  69 backgrounds
+3 aesthetics  ×  (1 base + 14 colours)  =  45 themes
+3 aesthetics  ×  14 colours             =  42 backgrounds
 ```
 
 ---
@@ -96,7 +96,7 @@ Replace `XXXXXXXXXXXX` with your own number from Step 3.
 only read at startup.
 
 Then: your username, bottom left → **Theme** → pick one. Start with
-`Ultimate Glass - Home`, and set the dropdown beside it to **Dark**.
+`Ultimate Glass - Cobalt`, and set the dropdown beside it to **Dark**.
 
 > **Give it a few seconds on the first load.** The module is fetched separately
 > from the rest of the frontend, so Settings can render plain and then pick up the
@@ -111,24 +111,25 @@ Then: your username, bottom left → **Theme** → pick one. Start with
 
 ## A theme per tab
 
-Every area exists as a full theme, so a single dashboard can change backdrop as
-you move between tabs. In the dashboard's **Raw configuration editor**:
+Every colour exists as a full theme, so a single dashboard can change backdrop as
+you move between tabs. Your tabs stay whatever they are — you just choose a colour
+for each. In the dashboard's **Raw configuration editor**:
 
 ```yaml
-theme: Ultimate Glass - Home        # the whole dashboard
+theme: Ultimate Glass - Cobalt        # the whole dashboard
 
 views:
   - title: Kitchen
     path: kitchen
-    theme: Ultimate Glass - Kitchen  # just this tab
+    theme: Ultimate Glass - Amber      # just this tab
 
   - title: Energy
     path: energy
-    theme: Ultimate Neon - Electrical Room
+    theme: Ultimate Neon - Citrine
 ```
 
-Each tab gets that theme's colours *and* its backdrop. Mixing modes across tabs
-works — Glass on one, Neon on the next.
+Each tab gets that theme's colours *and* its backdrop. Mixing aesthetics across
+tabs works — Glass on one, Neon on the next.
 
 [Full guide, including image-only overrides →](docs/PER-VIEW-BACKGROUNDS.md)
 
@@ -140,7 +141,7 @@ works — Glass on one, Neon on the next.
 
 Heavy blur, 30px radii, no borders, bright specular rim.
 
-[![All 23 areas in Ultimate Glass](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/glass.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/glass.webp)
+[![All 14 colours in Ultimate Glass](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/glass.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/glass.webp)
 
 <sub>Click to view full size.</sub>
 
@@ -148,7 +149,7 @@ Heavy blur, 30px radii, no borders, bright specular rim.
 
 Softer blur, 18px radii, hairline borders, muted pastel accents.
 
-[![All 23 areas in Ultimate Velvet](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/velvet.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/velvet.webp)
+[![All 14 colours in Ultimate Velvet](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/velvet.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/velvet.webp)
 
 <sub>Click to view full size.</sub>
 
@@ -156,26 +157,26 @@ Softer blur, 18px radii, hairline borders, muted pastel accents.
 
 Near-black, 12px radii, accent borders with outer glow, scanlined backdrops.
 
-[![All 23 areas in Ultimate Neon](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/neon.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/neon.webp)
+[![All 14 colours in Ultimate Neon](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/neon.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/neon.webp)
 
 <sub>Click to view full size.</sub>
 
 <details>
-<summary><b>The same area across all three modes</b></summary>
+<summary><b>The same colour across all three aesthetics</b></summary>
 
 | Glass | Velvet | Neon |
 |---|---|---|
 | [![](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/glass/ember.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/glass/ember.webp) | [![](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/velvet/ember.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/velvet/ember.webp) | [![](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/neon/ember.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/neon/ember.webp) |
 | [![](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/glass/azure.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/glass/azure.webp) | [![](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/velvet/azure.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/velvet/azure.webp) | [![](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/neon/azure.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/neon/azure.webp) |
 
-The composition is deliberately identical across modes — only palette and grade
-change, so a room stays recognisable when you switch aesthetic.
+The composition is deliberately identical across aesthetics — only palette and
+grade change, so a colour stays recognisable when you switch between them.
 
 </details>
 
 ---
 
-## The three modes
+## The three aesthetics
 
 | | Glass | Velvet | Neon |
 |---|---|---|---|
@@ -184,21 +185,20 @@ change, so a room stays recognisable when you switch aesthetic.
 | Borders | none | 1px hairline | 1px accent, glowing |
 | Character | rich, luminous, soft | muted, cozy, matte | high-chroma, scanlined |
 
-## The 23 areas
+## The 14 colours
 
-| Rooms | Outdoors | Systems |
+Roughly 25–30° apart on the colour wheel, plus two neutrals. Listed in spectral
+order — the theme picker reads as a gradient.
+
+| | | |
 |---|---|---|
-| `home` | `outside` | `ai` |
-| `living-room` | `front-yard` | `electrical-room` |
-| `kitchen` | `back-yard` | `technic-room` |
-| `bedroom` | `garden` | `energy` |
-| `master-bedroom` | `garage` | `security` |
-| `guest` | | `climate` |
-| `bathroom` | | `media` |
-| `office` | | `network` |
-| `hallway` | | `settings` |
+| `Ember` | `Rose` | `Amber` |
+| `Citrine` | `Lime` | `Verdant` |
+| `Jade` | `Lagoon` | `Azure` |
+| `Cobalt` | `Indigo` | `Violet` |
+| `Sand` | `Graphite` | |
 
-Adding one is a single line in `build/areas.py`.
+Adding or retiring one is a single line in `build/areas.py`.
 
 ---
 
@@ -220,5 +220,5 @@ Screenshots are the review for anything visual.
 
 ## Licence
 
-[MIT](LICENSE). Portions of the CSS derive from other MIT-licensed themes; those
+[MIT](https://github.com/HomeRiz/Home-Assistant-Ultimate-Themes/blob/main/LICENSE). Portions of the CSS derive from other MIT-licensed themes; those
 notices are in [NOTICE.md](NOTICE.md).

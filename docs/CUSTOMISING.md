@@ -18,7 +18,7 @@ block reaches which panel, and why — see [ARCHITECTURE.md](ARCHITECTURE.md).
 - **iOS-safe backgrounds** — painted onto a fixed pseudo-element, because
   `background-attachment: fixed` misbehaves on iOS Safari and the companion app
 - **Per-view background hook** — one dashboard, a different backdrop per tab
-- **Full accent ladder** — `--ha-color-primary-05..95` computed per area
+- **Full accent ladder** — `--ha-color-primary-05..95` computed per colour
 - **Hover lift** — guarded by `prefers-reduced-motion`
 - **button-card templates** — `ultimate_glass`, `ultimate_glass_icon`,
   `ultimate_glass_tile`, `ultimate_flat`, `ultimate_neon`
@@ -43,7 +43,7 @@ python3 build/verify.py               # validates every value in every theme
 |---|---|---|
 | How cards look | `build/template.jinja2` | regenerate themes |
 | A mode's palette or geometry | `build/modes.py` | regenerate themes |
-| Add an area | `build/areas.py` | backgrounds `--resume`, previews `--resume`, themes |
+| Add a colour | `build/areas.py` | backgrounds `--resume`, previews `--resume`, themes |
 | The artwork itself | `build/generate_backgrounds.py` | re-render that mode |
 
 Copy the rebuilt `themes/ultimate-theme.yaml` onto the instance, then
@@ -51,7 +51,7 @@ Developer Tools → **Reload themes**.
 
 Put it *over* the existing file rather than beside it. If you installed via HACS
 that means `/config/themes/ultimate-theme/ultimate-theme.yaml`; a second copy at
-`/config/themes/ultimate-theme.yaml` defines all 72 theme names twice, because
+`/config/themes/ultimate-theme.yaml` defines all 45 theme names twice, because
 the include recurses into subfolders.
 
 **If you customise and want HACS to keep managing it:** fork this repository,
@@ -91,12 +91,12 @@ into.
 ```bash
 mkdir -p drop-in/{glass,velvet,neon}    # local workspace, not tracked by git
 
-# save yours as drop-in/<mode>/<area-key>.png, then:
+# save yours as drop-in/<style>/<colour-key>.png, then:
 python3 build/import_backgrounds.py     # crop, darken, convert, re-tint headers
 python3 build/generate_themes.py
 ```
 
-The filename must match the area key exactly — that is how the importer knows
+The filename must match the colour key exactly — that is how the importer knows
 where each image goes. Anything you don't supply keeps its generated background,
 so you can replace them a few at a time.
 

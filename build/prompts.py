@@ -4,7 +4,7 @@ Generates docs/IMAGE-PROMPTS.md and docs/image-prompts.tsv.
 
 The prompt for any given image is  STYLE + SUBJECT + CONSTRAINTS.  Keeping the
 three parts separate means the 23 subjects stay identical across the 3 modes,
-which is what makes a room recognisable when you switch aesthetics.
+which is what makes a colour recognisable when you switch aesthetics.
 """
 
 from __future__ import annotations
@@ -102,7 +102,7 @@ STYLES = {
     ),
 }
 
-# The 23 subjects are shared by every style, and several of them name a colour
+# The subjects are shared by every style, and several of them name a colour
 # outright ("amber and deep blue"). That was harmless while all three styles
 # were abstract light, but Art Deco in amber or Cottagecore in electric violet
 # is not the brief. This clause settles the conflict without giving up the
@@ -173,7 +173,7 @@ def main() -> None:
             f"{mode.upper()} - {len(areas)} background prompts",
             "=" * 60,
             "",
-            "Save each image in THIS folder as <area-key>.png - the filename",
+            "Save each image in THIS folder as <colour-key>.png - the filename",
             "must match the key exactly, that is how the importer places it.",
             "",
             "  python3 build/import_backgrounds.py",
@@ -215,17 +215,17 @@ def main() -> None:
         "Velvet or Neon.\n"
     )
     md.append(
-        "You do not have to do all 69. Anything you don't supply keeps its "
-        "procedurally generated background, so you can replace them a few at a "
-        "time.\n"
+        f"You do not have to do all {len(STYLES) * len(areas)}. Anything you "
+        f"don't supply keeps its procedurally generated background, so you can "
+        f"replace them a few at a time.\n"
     )
 
     md.append("## How to use\n")
     md.append(
         "1. Generate an image.\n"
-        "2. Save it as `drop-in/<mode>/<area-key>.png` "
-        "(e.g. `drop-in/glass/kitchen.png`). The filename **must** match the "
-        "area key exactly — that is how the importer knows where it goes.\n"
+        "2. Save it as `drop-in/<style>/<colour-key>.png` "
+        "(e.g. `drop-in/glass/amber.png`). The filename **must** match the "
+        "colour key exactly — that is how the importer knows where it goes.\n"
         "3. Run:\n\n"
         "```bash\n"
         "python3 build/import_backgrounds.py\n"
@@ -238,10 +238,10 @@ def main() -> None:
 
     md.append("## Palette arbitration\n")
     md.append(
-        "The 23 subjects are shared by every style, and several name a colour "
+        f"The {len(areas)} subjects are shared by every style, and several name a colour "
         "outright. This clause sits between the subject and the constraints so "
         "the style's palette wins while the composition carries over — which is "
-        "what keeps a room recognisable across aesthetics.\n"
+        "what keeps a colour recognisable across aesthetics.\n"
     )
     md.append(f"```\n{PALETTE_RULE}\n```\n")
 
@@ -255,7 +255,7 @@ def main() -> None:
         md.append(f"### `{mode}`\n\n```\n{style}\n```\n")
 
     md.append("## Subjects\n")
-    md.append("| Area key | Dashboard | Subject |")
+    md.append("| Colour key | Name | Subject |")
     md.append("|---|---|---|")
     for a in areas:
         md.append(f"| `{a['key']}` | {a['name']} | {SUBJECTS[a['key']]} |")
@@ -263,7 +263,7 @@ def main() -> None:
 
     md.append("## Ready-to-paste full prompts\n")
     for mode in STYLES:
-        md.append(f"<details>\n<summary><b>{mode}</b> — all 23 prompts</summary>\n")
+        md.append(f"<details>\n<summary><b>{mode}</b> — all {len(areas)} prompts</summary>\n")
         for a in areas:
             md.append(f"**`{mode}/{a['key']}.png`** — {a['name']}\n")
             md.append(f"```\n{full_prompt(mode, a['key'])}\n```\n")

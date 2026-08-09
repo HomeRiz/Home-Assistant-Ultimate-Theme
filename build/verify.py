@@ -411,6 +411,24 @@ def main() -> int:
                     f"README.md references {rel} which does not exist - a "
                     f"renamed or retired colour left the link behind.")
 
+    # A doc that names a theme which does not exist sends people looking for it
+    # in the picker. When the colour registry was renamed, README and INSTALL
+    # kept recommending "Ultimate Glass - Home" for a release in which no such
+    # theme existed. CHANGELOG is exempt: it describes history, including names
+    # that were deliberately retired.
+    for doc in ("README.md", "INSTALL.md", "docs/PER-VIEW-BACKGROUNDS.md",
+                "docs/CUSTOMISING.md", "docs/ARCHITECTURE.md"):
+        path = os.path.join(ROOT, doc)
+        if not os.path.exists(path):
+            continue
+        for m in re.finditer(r"Ultimate (?:Glass|Velvet|Neon) - [A-Z][A-Za-z]*",
+                             open(path).read()):
+            checks += 1
+            if m.group(0) not in data:
+                errors.append(
+                    f"{doc} names {m.group(0)!r}, which is not a theme in "
+                    f"{fn}. A rename left the documentation behind.")
+
     if errors:
         print(f"\nFAILED - {len(errors)} error(s):")
         for e in errors[:40]:

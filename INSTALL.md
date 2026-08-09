@@ -91,11 +91,11 @@ HACS creates its own subfolder and puts the file inside it:
 /config/themes/ultimate-theme/ultimate-theme.yaml
 ```
 
-That one file contains all 72 themes. **Leave it where HACS put it.** The
+That one file contains all 45 themes. **Leave it where HACS put it.** The
 `!include_dir_merge_named` include recurses into subdirectories, so Home
 Assistant finds it there. Moving it to `/config/themes/` directly will work
 until the next HACS update recreates the subfolder — and then you have two
-copies of all 72 theme names fighting each other.
+copies of all 45 theme names fighting each other.
 
 > HACS installs **only** the theme YAML — it never touches `/config/www`. That is
 > why the default build loads backgrounds from a CDN, so a HACS install needs no
@@ -122,8 +122,8 @@ evaluated at startup. Afterwards, Developer Tools → **Reload themes** is enoug
 
 Then click your username (bottom left) → **Theme**. Start with:
 
-- `Ultimate Glass` — base, no area background
-- `Ultimate Glass - Home` — with the Home backdrop
+- `Ultimate Glass` — base, no colour backdrop
+- `Ultimate Glass - Cobalt` — with the Cobalt backdrop
 
 Set the mode dropdown beside it to **Dark**.
 
@@ -139,7 +139,7 @@ work without internet, or are modifying the theme locally.
 > **Shortcut: use the release assets.** Every release attaches two files, so you
 > don't need to clone anything or install Python:
 >
-> 1. Download **`ultimate-theme-backgrounds-<version>.zip`** (~8 MB) and unzip it
+> 1. Download **`ultimate-theme-backgrounds-<version>.zip`** (~5 MB) and unzip it
 >    into `/config/www/`. You should end up with
 >    `/config/www/ultimate-theme/backgrounds/…`.
 > 2. Download **`ultimate-theme-local-<version>.yaml`**, rename it to
@@ -183,7 +183,7 @@ Afterwards:
 >
 > HACS keeps its copy at `/config/themes/ultimate-theme/ultimate-theme.yaml`.
 > Adding a second copy at `/config/themes/ultimate-theme.yaml` means Home
-> Assistant loads all 72 theme names **twice** — the include recurses, so it
+> Assistant loads all 45 theme names **twice** — the include recurses, so it
 > merges both files. Which one wins is not something you want to rely on, and
 > the symptom is confusing: backgrounds that come from the CDN when you expected
 > local ones.
@@ -208,11 +208,11 @@ Whichever transfer method you already use:
 
 > **The `/config/www` → `/local` mapping matters.** Home Assistant serves
 > `/config/www/` at the URL `/local/`. So
-> `/config/www/ultimate-theme/backgrounds/glass/kitchen.webp` is fetched as
-> `/local/ultimate-theme/backgrounds/glass/kitchen.webp` — exactly what the theme
+> `/config/www/ultimate-theme/backgrounds/glass/amber.webp` is fetched as
+> `/local/ultimate-theme/backgrounds/glass/amber.webp` — exactly what the theme
 > references. **Don't rename `ultimate-theme`** or every background 404s.
 
-Backgrounds total about 8 MB (glass 2.6, velvet 2.2, neon 3.3).
+Backgrounds total about 5 MB (glass 1.7, velvet 1.4, neon 2.1).
 
 ### 3–4. Same as Route A
 
@@ -226,7 +226,7 @@ Every background is dark by design, so white card text stays readable over it.
 Light mode works and uses lighter card surfaces, but keeps light text.
 
 A true light mode needs a light background set — see
-[Using your own artwork](README.md#using-your-own-artwork).
+[Using your own artwork](docs/CUSTOMISING.md#using-your-own-artwork).
 
 ---
 
@@ -236,7 +236,7 @@ The part you probably came for. Quick version — in your dashboard's **Raw
 configuration editor**:
 
 ```yaml
-theme: Ultimate Glass - Home        # whole-dashboard default
+theme: Ultimate Glass - Cobalt        # whole-dashboard default
 
 views:
   - title: Kitchen
@@ -245,12 +245,12 @@ views:
     card_mod:
       style: |
         :host {
-          --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@main/www/ultimate-theme/backgrounds/glass/kitchen.webp');
+          --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@main/www/ultimate-theme/backgrounds/glass/amber.webp');
         }
 ```
 
-`dashboards/per-view-backgrounds.yaml` has a ready-made block for every area in
-every mode. Full detail in
+`dashboards/per-view-backgrounds.yaml` has a ready-made block for every colour in
+every aesthetic. Full detail in
 **[docs/PER-VIEW-BACKGROUNDS.md](docs/PER-VIEW-BACKGROUNDS.md)**.
 
 ---
@@ -318,7 +318,7 @@ Open the browser console on any Home Assistant page and run:
 
 ```js
 document.querySelector('home-assistant')
-  .hass.themes.themes['Ultimate Glass - Home']['ultimate-background']
+  .hass.themes.themes['Ultimate Glass - Cobalt']['ultimate-background']
 ```
 
 The URL it prints ends in `@<version>` — that is the build actually in use.
@@ -409,13 +409,13 @@ folder can't be renamed.
 **Only some themes appear.**
 The repository's `themes/` folder must contain exactly one `.yaml` file. HACS
 installs only the first one it finds, so a stray second file in the *repo* means
-two thirds of the project goes missing.
+most of the project goes missing.
 
 **Backgrounds load from the CDN when I built with `--base local`.**
 You almost certainly have two copies of the theme on the instance: HACS's at
 `/config/themes/ultimate-theme/ultimate-theme.yaml` and yours at
 `/config/themes/ultimate-theme.yaml`. The include recurses, so both are loaded
-and the same 72 theme names are defined twice. Delete whichever one you did not
+and the same 45 theme names are defined twice. Delete whichever one you did not
 intend to keep, then Developer Tools → **Reload themes**.
 
 To check which file a background actually came from, open the browser's Network

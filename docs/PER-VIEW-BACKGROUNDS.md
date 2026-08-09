@@ -6,7 +6,7 @@ specific one wins.
 | Level | What it sets | How |
 |---|---|---|
 | **Profile** | Your default everywhere | Profile → Theme |
-| **Dashboard** | One whole dashboard | Assign an area theme to that dashboard |
+| **Dashboard** | One whole dashboard | Assign a colour theme to that dashboard |
 | **View (tab)** | A single tab | `theme:` on the view, or `card_mod` for the image alone |
 
 ---
@@ -16,10 +16,10 @@ specific one wins.
 Click your username (bottom left) → **Theme** → pick one:
 
 - `Ultimate Glass` / `Ultimate Velvet` / `Ultimate Neon` — the base themes,
-  no area background, just the mode's own gradient.
-- Or jump straight to an area theme like `Ultimate Glass - Home`.
+  no colour backdrop, just the aesthetic's own gradient.
+- Or jump straight to a colour theme like `Ultimate Glass - Cobalt`.
 
-Set the mode dropdown next to it to **Dark**. All backgrounds are dark by
+Set the light/dark dropdown next to it to **Dark**. All backgrounds are dark by
 design so that white card text stays legible; light mode uses lighter card
 surfaces but keeps light text.
 
@@ -27,7 +27,7 @@ surfaces but keeps light text.
 
 ## 2. Dashboard level — a theme per dashboard
 
-Every area exists as a full theme, so you can hand a whole dashboard its own
+Every colour exists as a full theme, so you can hand a whole dashboard its own
 identity.
 
 **Storage mode** (dashboards you edit in the UI):
@@ -36,7 +36,7 @@ identity.
 2. Add a top-level `theme:` key:
 
 ```yaml
-theme: Ultimate Glass - Kitchen
+theme: Ultimate Glass - Amber
 views:
   - title: Overview
     ...
@@ -56,21 +56,21 @@ Home Assistant lets a view carry its own theme, and as of 0.0.3 that changes
 the backdrop as well as the colours:
 
 ```yaml
-theme: Ultimate Glass - Home          # dashboard default
+theme: Ultimate Glass - Cobalt          # dashboard default
 
 views:
   - title: Kitchen
     path: kitchen
     icon: mdi:silverware-fork-knife
-    theme: Ultimate Glass - Kitchen
+    theme: Ultimate Glass - Amber
 
   - title: Energy
     path: energy
     icon: mdi:lightning-bolt
-    theme: Ultimate Neon - Electrical Room
+    theme: Ultimate Neon - Citrine
 ```
 
-Modes can be mixed freely across tabs of one dashboard.
+Aesthetics can be mixed freely across tabs of one dashboard.
 
 > **Before 0.0.3 this only changed the colours.** Home Assistant applies a
 > view's theme to `hui-view-container`, which sits below `hui-root` — and the
@@ -97,7 +97,7 @@ views:
     card_mod:
       style: |
         :host {
-          --ultimate-view-background: url('/local/ultimate-theme/backgrounds/glass/kitchen.webp');
+          --ultimate-view-background: url('/local/ultimate-theme/backgrounds/glass/amber.webp');
         }
 
   - title: Garden
@@ -106,7 +106,7 @@ views:
     card_mod:
       style: |
         :host {
-          --ultimate-view-background: url('/local/ultimate-theme/backgrounds/glass/garden.webp');
+          --ultimate-view-background: url('/local/ultimate-theme/backgrounds/glass/verdant.webp');
         }
 ```
 
@@ -119,7 +119,7 @@ one set of card styling.
 > and it persists normally.
 
 `dashboards/per-view-backgrounds.yaml` has a ready-made commented block for
-every area × every mode — copy the ones you need.
+every colour × every aesthetic — copy the ones you need.
 
 ### Fading the view background
 
@@ -127,7 +127,7 @@ every area × every mode — copy the ones you need.
 card_mod:
   style: |
     :host {
-      --ultimate-view-background: url('/local/ultimate-theme/backgrounds/neon/ai.webp');
+      --ultimate-view-background: url('/local/ultimate-theme/backgrounds/neon/violet.webp');
       --ultimate-view-background-opacity: 0.55;
     }
 ```
@@ -192,6 +192,6 @@ likely on a very old Android WebView. Update the companion app.
 
 **Images 404**
 Check the path. Files must be at
-`/config/www/ultimate-theme/backgrounds/<mode>/<area>.webp`, which Home
-Assistant serves at `/local/ultimate-theme/backgrounds/<mode>/<area>.webp`.
+`/config/www/ultimate-theme/backgrounds/<aesthetic>/<colour>.webp`, which Home
+Assistant serves at `/local/ultimate-theme/backgrounds/<aesthetic>/<colour>.webp`.
 `/config/www` maps to `/local`, not `/www`.

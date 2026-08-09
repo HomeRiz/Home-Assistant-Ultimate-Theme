@@ -1,6 +1,6 @@
 # Third-party notices
 
-The Home Assistant Ultimate Themes is an original work, but portions of its CSS
+Home Assistant Ultimate Themes is an original work, but portions of its CSS
 were derived from existing open-source Home Assistant themes. Those projects are
 distributed under the MIT License, which requires their copyright and permission
 notices to be retained in derivative works. They are reproduced below.

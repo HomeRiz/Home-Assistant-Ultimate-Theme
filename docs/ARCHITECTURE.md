@@ -78,7 +78,7 @@ working around. To check a panel, open the console and read
 
 One critical gotcha: **`card-mod-theme` must equal the theme's own name**, exactly.
 If it doesn't match, card-mod silently does nothing — no error, just a flat theme.
-The generator sets it automatically and `verify.py` checks all 72.
+The generator sets it automatically and `verify.py` checks all 45.
 
 ---
 
@@ -159,10 +159,10 @@ theme's own backdrop. That's the per-tab mechanism — see
 
 ## Accent propagation
 
-Each area has one accent colour. From that single hex the generator derives:
+Each colour has one accent hex. From that single value the generator derives:
 
 ```
-area accent (#FF9F0A)
+colour accent (#FF9F0A)
    ├─ --primary-color
    ├─ --accent-color
    ├─ --state-icon-active-color        active entities
@@ -176,7 +176,7 @@ area accent (#FF9F0A)
 That ladder is what Home Assistant 2025+ uses for its newer components.
 Hardcoding it per theme would be 792 values; computing it is four lines.
 
-**The accent is not used verbatim in every mode.** An area's accent is chosen
+**The accent is not used verbatim in every mode.** An accent is chosen
 against the Glass palette, so `accent_for_mode()` in `build/modes.py`
 re-expresses it:
 
@@ -188,7 +188,7 @@ re-expresses it:
 
 This is what keeps Velvet genuinely on-palette instead of wearing borrowed
 colours, and Neon genuinely luminous. In Neon the accent also flows into
-`color-mix()` for borders and glows, so switching areas re-tints the whole
+`color-mix()` for borders and glows, so switching colours re-tints the whole
 chrome, not just icons.
 
 ---
@@ -226,7 +226,7 @@ HACS manages **exactly one** theme configuration file per repository — if
 `themes/` holds more than one, only the first is installed. Splitting by mode
 would silently ship a third of the project to anyone installing via HACS.
 
-So all 72 themes live in `themes/ultimate-theme.yaml` (~32,000 lines, ~1.3 MB).
+So all 45 themes live in `themes/ultimate-theme.yaml` (~25,000 lines, ~1.1 MB).
 Home Assistant parses it once at startup. `verify.py` fails the build if a second
 `.yaml` ever appears in `themes/`, and so does CI.
 
@@ -273,7 +273,7 @@ build/modes.py     ─┤                                    │
                     │                                    │
 build/template.jinja2 ──→ generate_themes.py ←───────────┘
                                   │
-                                  ├─→ themes/ultimate-theme.yaml      (72 themes)
+                                  ├─→ themes/ultimate-theme.yaml      (45 themes)
                                   └─→ dashboards/per-view-backgrounds.yaml
 
 build/prompts.py  ──→ docs/IMAGE-PROMPTS.md, docs/image-prompts.tsv
@@ -307,9 +307,9 @@ dashboard's browser chrome matches its own artwork.
    snaps every blob hue to the nearest Velvet accent, with a saturation boost so
    the pastel palette doesn't drain to grey once blobs blend.
 
-Each area has a fixed seed, so **the composition is identical across all three
-modes** — only palette and grade change. That's what makes the Kitchen still read
-as the Kitchen when you switch aesthetics.
+Each colour has a fixed seed, so **the composition is identical across all three
+modes** — only palette and grade change. That is what makes Amber still read as
+Amber when you switch aesthetics.
 
 ---
 
