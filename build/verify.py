@@ -398,6 +398,19 @@ def main() -> int:
                     f"README.md: image {m.group(1)!r} is relative - it 404s "
                     f"inside HACS. Use an absolute URL.")
 
+    # The README references preview images by name. When the colour registry
+    # was renamed, those references silently kept pointing at rooms that no
+    # longer existed - and one of them, kitchen, had been deleted outright. The
+    # repository page just showed a broken image. Check they resolve.
+    if os.path.exists(readme):
+        for m in re.finditer(r"docs/previews/([A-Za-z0-9/_-]+\.webp)", open(readme).read()):
+            checks += 1
+            rel = os.path.join("docs", "previews", m.group(1))
+            if not os.path.exists(os.path.join(ROOT, rel)):
+                errors.append(
+                    f"README.md references {rel} which does not exist - a "
+                    f"renamed or retired colour left the link behind.")
+
     if errors:
         print(f"\nFAILED - {len(errors)} error(s):")
         for e in errors[:40]:

@@ -83,7 +83,7 @@ Mushroom, Bubble Card and button-card are supported but not required.
 
 ### 2. Download
 
-Search HACS for **Home Assistant Ultimate Theme** → **Download**.
+Search HACS for **Home Assistant Ultimate Themes** → **Download**.
 
 HACS creates its own subfolder and puts the file inside it:
 

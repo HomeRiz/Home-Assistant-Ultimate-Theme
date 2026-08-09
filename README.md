@@ -1,6 +1,6 @@
 <div align="center">
 
-# Home Assistant Ultimate Theme
+# Home Assistant Ultimate Themes
 
 **72 themes. 3 aesthetics. 23 areas. A background for every dashboard and every tab.**
 
@@ -10,7 +10,7 @@
 [![License MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/HomeRiz/Home-Assistant-Ultimate-Themes/blob/main/LICENSE)
 [![Home Assistant](https://img.shields.io/badge/Home%20Assistant-2024.11%2B-41BDF5.svg?style=flat-square)](https://www.home-assistant.io)
 
-[![Ultimate Glass, AI dashboard](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/glass/ai.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/glass/ai.webp)
+[![Ultimate Glass, Violet](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/glass/violet.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/glass/violet.webp)
 
 </div>
 
@@ -47,7 +47,7 @@ The button adds it as a custom repository. If you would rather do it by hand:
 **HACS → ⋮ (top right) → Custom repositories**, paste
 `https://github.com/HomeRiz/Home-Assistant-Ultimate-Themes`, type **Theme**, **Add**.
 
-Then search HACS for **Home Assistant Ultimate Theme** and **Download**.
+Then search HACS for **Home Assistant Ultimate Themes** and **Download**.
 
 ### Step 3 — find your card-mod URL
 
@@ -165,8 +165,8 @@ Near-black, 12px radii, accent borders with outer glow, scanlined backdrops.
 
 | Glass | Velvet | Neon |
 |---|---|---|
-| [![](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/glass/kitchen.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/glass/kitchen.webp) | [![](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/velvet/kitchen.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/velvet/kitchen.webp) | [![](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/neon/kitchen.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/neon/kitchen.webp) |
-| [![](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/glass/security.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/glass/security.webp) | [![](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/velvet/security.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/velvet/security.webp) | [![](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/neon/security.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/neon/security.webp) |
+| [![](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/glass/ember.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/glass/ember.webp) | [![](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/velvet/ember.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/velvet/ember.webp) | [![](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/neon/ember.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/neon/ember.webp) |
+| [![](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/glass/azure.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/glass/azure.webp) | [![](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/velvet/azure.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/velvet/azure.webp) | [![](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/neon/azure.webp)](https://raw.githubusercontent.com/HomeRiz/Home-Assistant-Ultimate-Themes/main/docs/previews/neon/azure.webp) |
 
 The composition is deliberately identical across modes — only palette and grade
 change, so a room stays recognisable when you switch aesthetic.

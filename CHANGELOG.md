@@ -7,6 +7,42 @@ and versions follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
+## [0.1.1] — 2026-08-09
+
+Cleanup after 0.1.0. The rename reached the code and the files but not every
+place that referred to them by name.
+
+### Fixed
+
+- **`hacs.json` still called the project `Home Assistant Ultimate Theme`**,
+  singular. That field is the name HACS displays and the one people type into
+  its search box, so the install instructions were pointing at a name that did
+  not exist. It is plural now, matching the repository.
+
+- **Three README preview images pointed at colours that were gone.** The hero
+  still asked for `glass/ai.webp`, and the side-by-side comparison for
+  `kitchen.webp` and `security.webp`. Two of those had been renamed —
+  `ai` → `violet`, `security` → `ember` — and `kitchen` was retired outright in
+  0.1.0, so its file no longer exists at all. The repository page rendered a
+  broken image where the comparison should be.
+
+  The hero is `violet` now; the comparison uses `ember` and `azure`.
+
+- `NOTICE.md` and `INSTALL.md` carried the singular name in prose.
+
+### Added
+
+- `verify.py` resolves every `docs/previews/…` path the README references
+  against the files actually in the repository, and fails when one is missing.
+  This is the check that would have caught the above: renaming the colour
+  registry moved 84 files correctly and left three hardcoded links behind, with
+  nothing to notice it.
+
+No theme CSS changed, and no theme names changed — if 0.1.0 works for you, this
+only fixes what the documentation says about it.
+
+---
+
 ## [0.1.0] — 2026-08-08
 
 **Breaking: every theme name changed.** Your selected theme will not survive the
@@ -363,6 +399,7 @@ See [INSTALL.md](INSTALL.md). Short version: HACS → ⋮ → Custom repositorie
 add this repo as type **Theme** → Download → add `frontend: themes:` to
 `configuration.yaml` → restart → pick a theme and set the mode to **Dark**.
 
+[0.1.1]: https://github.com/HomeRiz/Home-Assistant-Ultimate-Themes/releases/tag/0.1.1
 [0.1.0]: https://github.com/HomeRiz/Home-Assistant-Ultimate-Themes/releases/tag/0.1.0
 [0.0.6]: https://github.com/HomeRiz/Home-Assistant-Ultimate-Themes/releases/tag/0.0.6
 [0.0.5]: https://github.com/HomeRiz/Home-Assistant-Ultimate-Themes/releases/tag/0.0.5

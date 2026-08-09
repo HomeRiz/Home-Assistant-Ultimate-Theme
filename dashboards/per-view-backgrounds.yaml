@@ -11,7 +11,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.0/www/ultimate-theme/backgrounds/glass/ember.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/glass/ember.webp');
 #       }
 
 # Rose
@@ -21,7 +21,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.0/www/ultimate-theme/backgrounds/glass/rose.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/glass/rose.webp');
 #       }
 
 # Amber
@@ -31,7 +31,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.0/www/ultimate-theme/backgrounds/glass/amber.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/glass/amber.webp');
 #       }
 
 # Citrine
@@ -41,7 +41,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.0/www/ultimate-theme/backgrounds/glass/citrine.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/glass/citrine.webp');
 #       }
 
 # Lime
@@ -51,7 +51,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.0/www/ultimate-theme/backgrounds/glass/lime.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/glass/lime.webp');
 #       }
 
 # Verdant
@@ -61,7 +61,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.0/www/ultimate-theme/backgrounds/glass/verdant.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/glass/verdant.webp');
 #       }
 
 # Jade
@@ -71,7 +71,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.0/www/ultimate-theme/backgrounds/glass/jade.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/glass/jade.webp');
 #       }
 
 # Lagoon
@@ -81,7 +81,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.0/www/ultimate-theme/backgrounds/glass/lagoon.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/glass/lagoon.webp');
 #       }
 
 # Azure
@@ -91,7 +91,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.0/www/ultimate-theme/backgrounds/glass/azure.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/glass/azure.webp');
 #       }
 
 # Cobalt
@@ -101,7 +101,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.0/www/ultimate-theme/backgrounds/glass/cobalt.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/glass/cobalt.webp');
 #       }
 
 # Indigo
@@ -111,7 +111,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.0/www/ultimate-theme/backgrounds/glass/indigo.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/glass/indigo.webp');
 #       }
 
 # Violet
@@ -121,7 +121,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.0/www/ultimate-theme/backgrounds/glass/violet.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/glass/violet.webp');
 #       }
 
 # Sand
@@ -131,7 +131,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.0/www/ultimate-theme/backgrounds/glass/sand.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/glass/sand.webp');
 #       }
 
 # Graphite
@@ -141,7 +141,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.0/www/ultimate-theme/backgrounds/glass/graphite.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/glass/graphite.webp');
 #       }
 
 # ===== Ultimate Velvet ==============================
@@ -152,7 +152,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.0/www/ultimate-theme/backgrounds/velvet/ember.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/velvet/ember.webp');
 #       }
 
 # Rose
@@ -162,7 +162,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.0/www/ultimate-theme/backgrounds/velvet/rose.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/velvet/rose.webp');
 #       }
 
 # Amber
@@ -172,7 +172,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.0/www/ultimate-theme/backgrounds/velvet/amber.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/velvet/amber.webp');
 #       }
 
 # Citrine
@@ -182,7 +182,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.0/www/ultimate-theme/backgrounds/velvet/citrine.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/velvet/citrine.webp');
 #       }
 
 # Lime
@@ -192,7 +192,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.0/www/ultimate-theme/backgrounds/velvet/lime.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/velvet/lime.webp');
 #       }
 
 # Verdant
@@ -202,7 +202,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.0/www/ultimate-theme/backgrounds/velvet/verdant.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/velvet/verdant.webp');
 #       }
 
 # Jade
@@ -212,7 +212,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.0/www/ultimate-theme/backgrounds/velvet/jade.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/velvet/jade.webp');
 #       }
 
 # Lagoon
@@ -222,7 +222,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.0/www/ultimate-theme/backgrounds/velvet/lagoon.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/velvet/lagoon.webp');
 #       }
 
 # Azure
@@ -232,7 +232,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.0/www/ultimate-theme/backgrounds/velvet/azure.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/velvet/azure.webp');
 #       }
 
 # Cobalt
@@ -242,7 +242,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.0/www/ultimate-theme/backgrounds/velvet/cobalt.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/velvet/cobalt.webp');
 #       }
 
 # Indigo
@@ -252,7 +252,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.0/www/ultimate-theme/backgrounds/velvet/indigo.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/velvet/indigo.webp');
 #       }
 
 # Violet
@@ -262,7 +262,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.0/www/ultimate-theme/backgrounds/velvet/violet.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/velvet/violet.webp');
 #       }
 
 # Sand
@@ -272,7 +272,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.0/www/ultimate-theme/backgrounds/velvet/sand.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/velvet/sand.webp');
 #       }
 
 # Graphite
@@ -282,7 +282,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.0/www/ultimate-theme/backgrounds/velvet/graphite.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/velvet/graphite.webp');
 #       }
 
 # ===== Ultimate Neon ==============================
@@ -293,7 +293,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.0/www/ultimate-theme/backgrounds/neon/ember.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/neon/ember.webp');
 #       }
 
 # Rose
@@ -303,7 +303,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.0/www/ultimate-theme/backgrounds/neon/rose.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/neon/rose.webp');
 #       }
 
 # Amber
@@ -313,7 +313,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.0/www/ultimate-theme/backgrounds/neon/amber.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/neon/amber.webp');
 #       }
 
 # Citrine
@@ -323,7 +323,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.0/www/ultimate-theme/backgrounds/neon/citrine.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/neon/citrine.webp');
 #       }
 
 # Lime
@@ -333,7 +333,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.0/www/ultimate-theme/backgrounds/neon/lime.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/neon/lime.webp');
 #       }
 
 # Verdant
@@ -343,7 +343,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.0/www/ultimate-theme/backgrounds/neon/verdant.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/neon/verdant.webp');
 #       }
 
 # Jade
@@ -353,7 +353,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.0/www/ultimate-theme/backgrounds/neon/jade.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/neon/jade.webp');
 #       }
 
 # Lagoon
@@ -363,7 +363,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.0/www/ultimate-theme/backgrounds/neon/lagoon.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/neon/lagoon.webp');
 #       }
 
 # Azure
@@ -373,7 +373,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.0/www/ultimate-theme/backgrounds/neon/azure.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/neon/azure.webp');
 #       }
 
 # Cobalt
@@ -383,7 +383,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.0/www/ultimate-theme/backgrounds/neon/cobalt.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/neon/cobalt.webp');
 #       }
 
 # Indigo
@@ -393,7 +393,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.0/www/ultimate-theme/backgrounds/neon/indigo.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/neon/indigo.webp');
 #       }
 
 # Violet
@@ -403,7 +403,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.0/www/ultimate-theme/backgrounds/neon/violet.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/neon/violet.webp');
 #       }
 
 # Sand
@@ -413,7 +413,7 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.0/www/ultimate-theme/backgrounds/neon/sand.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/neon/sand.webp');
 #       }
 
 # Graphite
@@ -423,5 +423,5 @@
 #   card_mod:
 #     style: |
 #       :host {
-#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.0/www/ultimate-theme/backgrounds/neon/graphite.webp');
+#         --ultimate-view-background: url('https://cdn.jsdelivr.net/gh/HomeRiz/Home-Assistant-Ultimate-Themes@0.1.1/www/ultimate-theme/backgrounds/neon/graphite.webp');
 #       }
